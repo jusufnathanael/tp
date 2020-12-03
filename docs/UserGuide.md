@@ -72,21 +72,19 @@ The app should print out a list of different commands.
 <a name="about"></a>
 ## 2. About this Document
 
-Please take note that the ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
-symbol is used to indicate important warnings throughout the document.
-
 <a name="command_format"></a>
-Please also take note of the labels on command formatting:
+Please take note these labels below on command formatting:
 
 | Label | Meaning |
 | --- | --- |
-| `{curly brackets}` | Words contained in `{curly brackets}` are parameters to be supplied by the user. <br> eg. in `delete {BOOKMARK_NUMBER}`, `BOOKMARK_NUMBER` is a parameter which can be used as `delete 1`.
-| `{PARAM1/PARAM2}` | Parameters with `/` inside are parameters that accept different types of inputs. <br> eg. `launch {INDEX/DESCRIPTION}` shows that either `INDEX` or `DESCRIPTION` can be used.
-|`(optional)`| Parameters with `(optional)` are optional inputs. <br> eg. `show {DAY(optional)}` can be used as `show` or as `show mon`.
-| `DAY` | Parameter `DAY` takes three-letter abbreviations of days in a week <br> The full list of DAY parameters are **mon, tue, wed, thu, fri, sat, sun**.<br> Your inputs need not be case sensitive. <br> eg. `show {DAY(optional)}` can be used as `show mon`, `show tue`, etc.|
-|`MODULE`|Parameter `MODULE` has to be an NUS module recognised by NUSMods.<br> You can go to https://nusmods.com/ to get the full list of NUS modules available. <br> eg. `CS2113`, `CS2101`  |
-|`START TIME`,<br> `END TIME`| Parameters `START TIME` and `END TIME` requires input to be in the format `HH:mm` and in 24 Hours. <br> eg. `12:00`, `14:00`, `00:00`|
+| `{curly brackets}` | Words contained in `{curly brackets}` are parameters to be supplied by the user. <br> E.g., in `delete {BOOKMARK_NUMBER}`, `BOOKMARK_NUMBER` is a parameter which can be used as `delete 1`.
+| `{PARAM1/PARAM2}` | Parameters with `/` inside are parameters that accept different types of inputs. <br> E.g., `launch {INDEX/DESCRIPTION}` shows that either `INDEX` or `DESCRIPTION` can be used.
+| `(optional)` | Parameters with `(optional)` are optional inputs. <br> E.g., `show {DAY(optional)}` can be used as `show` or as `show mon`.
+| `DAY` | Parameter `DAY` takes three-letter abbreviations of days in a week. <br> The full list of DAY parameters are `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`.<br> Your inputs need not be case sensitive. <br> E.g., `show {DAY(optional)}` can be used as `show mon`, `show tue`, etc.
+| `MODULE` | Parameter `MODULE` has to be an NUS module recognised by NUSMods. <br> You can go to https://nusmods.com/ to get the full list of NUS modules available. <br> E.g., `CS2113`, `CS2101`
+| `START TIME` | Parameters `START TIME` and `END TIME` requires input to be in the format `HH:mm` and in 24-hour clock system. <br> E.g., `12:00`, `14:00`, `00:00`
 
+<br><br>
 
 ## 3. Features   
 
@@ -104,13 +102,13 @@ Each mode has its own different sets of features and commands, which will be exp
 <!-- @@author -->
 
 <a name="global"></a> 
-### 5.1 Global Commands
+### 3.1 Global Commands
 
 These commands can be used by you in every mode of the app.
 
 
 <a name="help"></a>  
-#### 5.1.1 Show help information: `help` (Yu Shing + Zhan Hao)
+#### 3.1.1 Show help information: `help` (Yu Shing + Zhan Hao)
 You can see the list of commands available in the mode you are currently in.
 ```
 Format: help {COMMAND(optional)}
