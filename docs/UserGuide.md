@@ -58,7 +58,7 @@ _right-click_ the file, then select the option `Copy as path`.
 5. Start the Command Prompt, type in "java -jar", then paste the absolute path that you just copied previously.
 It should look something similar to `C:\Users\user>java -jar "C:\Users\user\Downloads\zoomaster.jar"`.
 
-6. Finally, press <kbd>Enter</kbd>. You should the Zoomaster logo indicating 
+6. Finally, press <kbd>Enter</kbd>. You should see the Zoomaster logo indicating 
 that you have successfully started Zoomaster.<br><br>
 ![](./images/zoomasterIcon.png)
 
