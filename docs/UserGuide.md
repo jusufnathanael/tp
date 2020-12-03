@@ -746,7 +746,7 @@ and save the txt file. You can now add the module in Zoomaster.
 
 **Global** 
 
-**Action** | **Format, Examples**
+<div style="width:500px">Action</div> | **Format, Examples**
 ---------- | --------------------
 **help** | `help {COMMAND(optional)}` <br> example: `help`, `help add`
 **mode** | `mode {bookmark/timetable/planner}`<br> example: `mode bookmark`, `mode timetable`
@@ -783,7 +783,7 @@ and save the txt file. You can now add the module in Zoomaster.
 **Planner Mode**
 
 **Action** | **Format, Examples**
----------- | --------------------
+:--------------------------------------: | :--------------------:
 **load** | `load`
 **show** | `show {DAY(optional)}` <br>example: `show`, `show wed`, `show today` 
 **add** | see add in timetable mode above
