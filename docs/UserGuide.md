@@ -56,10 +56,7 @@ ways to input commands to it to access these features.
 _right-click_ the file, then select the option `Copy as path`.
 
 5. Start the Command Prompt, type in "java -jar", then paste the absolute path that you just copied previously.
-It should look similar to the picture below:
-```
-C:\Users\user>java -jar "C:\Users\user\Downloads\zoomaster.jar"
-```
+It should look something similar to `C:\Users\user>java -jar "C:\Users\user\Downloads\zoomaster.jar"`.
 
 6. Finally, press <kbd>Enter</kbd>. You should the Zoomaster logo indicating 
 that you have successfully started Zoomaster.<br><br>
@@ -70,7 +67,7 @@ The app should print out a list of different commands.
 
 8. You can now refer to the sections below to explore the different features of the Zoomaster app.
 
-
+<br>
 
 <a name="about"></a>
 ## 2. About this Document
