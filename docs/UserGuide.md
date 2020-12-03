@@ -13,60 +13,62 @@ ways to input commands to it to access these features.
 * [2. About This Document](#about)
 * [3. Features](#features)
   * [3.1 Global](#global)
-    *  [3.1.1. Show help information:](#help) **help**
-    *  [3.1.2. Switch mode:](#mode) **mode**
-    *  [3.1.3. Launch current lesson:](#launchnow) **launch now**
-    *  [3.1.4. Show user settings:](#showsettings) **showsettings**
-    *  [3.1.5. Set a setting:](#setsetting) **set**
+    *  [3.1.1. Show Help Information:](#help) **help**
+    *  [3.1.2. Switch Mode:](#mode) **mode**
+    *  [3.1.3. Launch Current Lesson:](#launchnow) **launch now**
+    *  [3.1.4. Show User Settings:](#showsettings) **showsettings**
+    *  [3.1.5. Set a Setting:](#setsetting) **set**
     *  [3.1.6. Clear:](#clear) **clear**
     *  [3.1.7. Exit:](#exit) **exit**
-  * [3.2 Bookmark mode](#bookmarkmode)
-    * [3.2.1. Show bookmarks:](#showbookmark) **show**
-    * [3.2.2. Add bookmark:](#addbookmark)  **add**
-    * [3.2.3. Delete bookmark:](#deletebookmark)  **delete**
-    * [3.2.4. Edit bookmark:](#editbookmark)  **edit**
-    * [3.2.5. Find bookmark:](#findbookmark)  **find**
-    * [3.2.6. Launch bookmark:](#launchbookmark)  **launch**
-  * [3.3 Timetable mode](#timetablemode)
-    * [3.3.1. Show timetable:](#showtimetable) **show**
-    * [3.3.2. Show module, slot and bookmarks:](#showmoduledetails) **show**
-    * [3.3.3. Add module, slot and bookmark:](#addtimeslot) **add**
-    * [3.3.4. Delete module, time slot and bookmarks:](#deletetimeslot)  **delete**
-    * [3.3.5. Edit slot's module, title, time:](#edittimeslot)  **edit**
-    * [3.3.6. Launch bookmarks from module, slot:](#launchtimeslot)  **launch**
-  * [3.4 Planner mode](#plannermode)
-    * [3.4.1. Load planner:](#loadplanner) **load**
-    * [3.4.2. Add meeting:](#addmeeting) **add**
-    * [3.4.3. Show planner:](#showplanner) **show**
-    * [3.4.4. Save planner:](#saveplanner) **save**
+  * [3.2 Bookmark Mode](#bookmarkmode)
+    * [3.2.1. Show Bookmarks:](#showbookmark) **show**
+    * [3.2.2. Add Bookmarks:](#addbookmark)  **add**
+    * [3.2.3. Delete Bookmarks:](#deletebookmark)  **delete**
+    * [3.2.4. Edit Bookmarks:](#editbookmark)  **edit**
+    * [3.2.5. Find Bookmarks:](#findbookmark)  **find**
+    * [3.2.6. Launch Bookmarks:](#launchbookmark)  **launch**
+  * [3.3 Timetable Mode](#timetablemode)
+    * [3.3.1. Show Timetable:](#showtimetable) **show**
+    * [3.3.2. Show Modules, Slots, and Bookmarks:](#showmoduledetails) **show**
+    * [3.3.3. Add Modules, Slots, and Bookmarks:](#addtimeslot) **add**
+    * [3.3.4. Delete Modules, Slots, and Bookmarks:](#deletetimeslot)  **delete**
+    * [3.3.5. Edit Modules, Slots, Titles, and Time:](#edittimeslot)  **edit**
+    * [3.3.6. Launch Bookmarks from a Module or Slot:](#launchtimeslot)  **launch**
+  * [3.4 Planner Mode](#plannermode)
+    * [3.4.1. Load Planner:](#loadplanner) **load**
+    * [3.4.2. Add Meeting:](#addmeeting) **add**
+    * [3.4.3. Show Planner:](#showplanner) **show**
+    * [3.4.4. Save Planner:](#saveplanner) **save**
 * [4. FAQ](#faq)
 * [5. Command Summary](#command-summary)
 
+<br>
 
-<br/><br/>   
 ## 1. Quick Start  
   
-1. Ensure that you have Java 11 or above installed.  
-2. You can download the latest version of `Zoomaster` from [here](https://github.com/AY2021S1-CS2113T-W11-1/tp/releases)
- if you are running an older version.
-3. Now move the **zoomaster.jar** file into your desired home folder for Zoomaster. <br/><br/> 
-4. Copy the absolute path of your **zoomaster.jar** file by first highlighting your file, then while
-holding the <kbd>Shift</kbd> key on your keyboard, right-click on that file and select the option "Copy as path". 
-<br/><br/> 
-5. Afterwards, start Command Prompt by pressing <kbd>Windows</kbd> + <kbd>R</kbd> on the keyboard, 
-then type in "cmd" and hit the <kbd>Enter</kbd> key. <br/><br/> 
-6. In the Command Prompt, type in "java -jar", then paste the absolute path you copied previously in step 4. 
-It should look similar to the picture below:  
-![](https://raw.githubusercontent.com/Speedweener/ip/master/docs/images/zoomastercommand.png) <br/><br/> 
-7. Finally, press <kbd>Enter</kbd>. You should see something similar to this Zoomaster logo indicating 
-that you have successfully started your Zoomaster program. <br/><br/> 
-![](https://raw.githubusercontent.com/Speedweener/ip/master/docs/images/zoomastercommandline.PNG)
+1. Ensure that you have Java 11 or above installed.
 
-8. The app is now ready to go! Go ahead and test it out with a `help` command. 
-The app should print out a list of different commands. <br/><br/> 
+2. You can download the latest version of `Zoomaster` from [here](https://github.com/AY2021S1-CS2113T-W11-1/tp/releases).
 
-9. You can now refer to the section below to explore the different features of the Zoomaster app.
+3. Now, move the `zoomaster.jar` file into your desired folder for Zoomaster.
 
+4. Copy the absolute path of your `zoomaster.jar` file by holding the <kbd>Shift</kbd> key on your keyboard and
+_right-click_ the file, then select the option `Copy as path`.
+
+5. Start the Command Prompt, type in "java -jar", then paste the absolute path that you just copied previously.
+It should look similar to the picture below:
+```
+C:\Users\user>java -jar "C:\Users\user\Downloads\zoomaster.jar"
+```
+
+6. Finally, press <kbd>Enter</kbd>. You should the Zoomaster logo indicating 
+that you have successfully started Zoomaster.<br><br>
+![](./images/zoomasterIcon.png)
+
+7. The app is now ready to go! Go ahead and test it out with a `help` command. 
+The app should print out a list of different commands.
+
+8. You can now refer to the sections below to explore the different features of the Zoomaster app.
 
 
 
@@ -88,7 +90,7 @@ Please also take note of the labels on command formatting:
 |`MODULE`|Parameter `MODULE` has to be an NUS module recognised by NUSMods.<br> You can go to https://nusmods.com/ to get the full list of NUS modules available. <br> eg. `CS2113`, `CS2101`  |
 |`START TIME`,<br> `END TIME`| Parameters `START TIME` and `END TIME` requires input to be in the format `HH:mm` and in 24 Hours. <br> eg. `12:00`, `14:00`, `00:00`|
 
-  
+
 ## 3. Features   
 
 This section will explain to you the different features of Zoomaster and how you can interact with it. 
