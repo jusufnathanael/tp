@@ -88,24 +88,24 @@ Please take note these labels below on command formatting:
 
 ## 3. Features   
 
-This section will explain to you the different features of Zoomaster and how you can interact with it. 
+This section will explain to you the different features of Zoomaster and how you can interact with it.
+
 <!-- @@author fchensan -->
 Zoomaster has three different modes:
-* **Bookmark mode**
-    In this mode, Zoomaster stores all of your bookmarks that are not related to any modules.
-* **Timetable mode**
-    Here, you can create a timetable of all of your classes, and assign a bookmark or Zoom link on each of the time slots.
-* **Planner mode**
-    Have you ever had difficulties deciding when to have a meeting as all of your groupmates have different classes? In Planner mode, Zoomaster can help you find common free timings by allowing you to import your teammates' timetables.
 
-Each mode has its own different sets of features and commands, which will be explained in sections 5.2, 5.3, and 5.4.
+* **Bookmark mode** : In this mode, Zoomaster stores all of your bookmarks that are not related to any modules.
+* **Timetable mode** : Here, you can create a timetable of all of your classes, and assign a bookmark or Zoom link on each of the time slots.
+* **Planner mode** : Here, Zoomaster can help you find the common empty time slots by importing your teammates' timetables.
+
+Each mode has its own different sets of features and commands, which will be explained in the sections below.
 <!-- @@author -->
+
+<br>
 
 <a name="global"></a> 
 ### 3.1 Global Commands
 
 These commands can be used by you in every mode of the app.
-
 
 <a name="help"></a>  
 #### 3.1.1 Show help information: `help` (Yu Shing + Zhan Hao)
