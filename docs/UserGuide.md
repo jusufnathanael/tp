@@ -6,7 +6,7 @@ Zoomaster is a desktop app for organizing website links, optimized for use via a
 Interface (CLI) while retaining the benefits of a Graphical User Interface (GUI). If you can 
 type fast, Zoomaster can help fetch useful website links for you quicker than the bookmark 
 function on your browser. This user guide will walk you through the features of Zoomaster and 
-ways to input commands to it to access these features.
+how to input the commands.
 
 ### Table of Contents
 * [1. Quick Start](#quick-start)
@@ -742,33 +742,49 @@ and save the txt file. You can now add the module in Zoomaster.
 
 
 <br/></br>
-## 7.0 Command Summary
+## 5. Command Summary
+
+**Global** 
+
 **Action** | **Format, Examples**
------------- | -------------
-***Global***|
-**help**|`help {COMMAND(optional)}`<br>example: `help`, `help add`
-**mode**|`mode {bookmark/timetable/planner}`<br>example: `mode bookmark`
-**clear**|`clear`
-**launch now**|`launch now`
-**show settings**|`showsettings`
-**set a setting**|`set {SETTING_NAME} {NEW_OPTION}`
-**exit**|`exit`
-***Bookmark Mode***|
-**show**|`show`
-**add**|`add {DESCRIPTION} {URL}` <br>example: `add cheatsheet www.google.com` <br/><br/>
-**delete**|`delete {INDEX}`<br>example: `delete 2`|
-**edit**|`edit {desc/url} {INDEX} {NEW_VALUE}`<br>example: `edit desc 1 math`, `edit url 3 www.google.com`|
-**find**|`find {MODULE} {DESCRIPTION(optional)}` <br>example: `find CS2113 tutorial`
-**launch**|`launch {MODULE} {DESCRIPTION(optional)}` <br>example: `launch CS2113`
-***Timetable Mode***|
-**show (lessons)**|`show {DAY(optional)}` <br>example: `show`, `show wed`, `show today` 
-**show (bookmarks<br>attatched)**| `show {MODULE} bookmarks(optional)`<br>example: `show CS2113`, `show CS2113 bookmarks`
-**add**|`add {MODULE}` <br>example: `add CS2113T` <br/><br/> `add {MODULE} {DESCRIPTION} {DAY} {START_TIME} {END_TIME}` <br>example: `add CS2113T tutorial wed 11:00 12:00` <br/><br/>`add {MODULE} {DESCRIPTION} {URL}` <br>example: `add CS2113T tutorial www.yahoo.com` <br/><br/> `add {MODULE} {DESCRIPTION} {DAY} {START_TIME} {END_TIME} {URL}` <br>example: `add CS2113T tutorial wed 11:00 12:00 www.yahoo.com` <br/><br/>`add {MODULE} {INDEX} {URL}` <br>example: `add CS2113T 2 www.yahoo.com`
-**delete**| `delete {MODULE}` <br>example: `delete CS2113`<br/><br/>`delete {MODULE} {INDEX}` <br>example: `delete CS2113 2`<br/><br/>`delete {MODULE} bookmarks` <br>example: `delete CS2113 bookmarks`<br/><br/>`delete {MODULE} {INDEX} bookmarks` <br>example: `delete CS2113 2 bookmarks`<br/><br/>
-**edit**| `edit module {DAY} {INDEX} {new MODULE}` <br> example: `edit module fri 2 CS1010` <br/><br/> `edit title {DAY} {INDEX} {new TITLE}`<br> example: `edit title fri 2 tutorial` <br/><br/>`edit time {DAY} {INDEX} {new START_TIME} {new END_TIME}` <br> example: `edit time fri 2 16:00 18:00`
-**launch**|`launch {MODULE}` <br> example: `launch CS2113` <br/><br/> `launch {MODULE} {INDEX}` <br> example: `launch CS2113 1` 
-***Planner Mode***|
-**load**|`load`
-**show**|`show {DAY(optional)}` <br>example: `show`, `show wed`, `show today` 
-**add**|see add in timetable mode above
-**save**|`save`
+---------- | --------------------
+**help** | `help {COMMAND(optional)}` <br> example: `help`, `help add`
+**mode** | `mode {bookmark/timetable/planner}`<br> example: `mode bookmark`, `mode timetable`
+**clear** | `clear`
+**launch now** | `launch now`
+**show settings** | `showsettings`
+**set a setting** | `set {SETTING_NAME} {NEW_OPTION}`
+**exit** | `exit`
+
+**Bookmark Mode**
+
+**Action** | **Format, Examples**
+---------- | --------------------
+**show** | `show`
+**add** | `add {DESCRIPTION} {URL}` <br> example: `add cheatsheet www.google.com`
+**delete** | `delete {INDEX}` <br> example: `delete 2`
+**edit** | `edit {desc/url} {INDEX} {NEW_VALUE}` <br> example: `edit desc 1 math`, `edit url 3 www.google.com`
+**find** | `find {MODULE} {DESCRIPTION(optional)}` <br> example: `find CS2113 tutorial`
+**launch** | `launch {MODULE} {DESCRIPTION(optional)}` <br> example: `launch CS2113`
+
+
+**Timetable Mode**
+
+**Action** | **Format, Examples**
+---------- | --------------------
+**show (lessons)** | `show {DAY(optional)}` <br> example: `show`, `show wed`, `show today` 
+**show (modules/bookmarks)** | `show {MODULE} bookmarks(optional)` <br> example: `show CS2113`, `show CS2113 bookmarks`
+**add** | `add {MODULE}` <br> example: `add CS2113T` <br/> `add {MODULE} {DESCRIPTION} {DAY} {START_TIME} {END_TIME}` <br> example: `add CS2113T tutorial wed 11:00 12:00` <br/><br/>`add {MODULE} {DESCRIPTION} {URL}` <br>example: `add CS2113T tutorial www.yahoo.com` <br/><br/> `add {MODULE} {DESCRIPTION} {DAY} {START_TIME} {END_TIME} {URL}` <br>example: `add CS2113T tutorial wed 11:00 12:00 www.yahoo.com` <br/><br/>`add {MODULE} {INDEX} {URL}` <br>example: `add CS2113T 2 www.yahoo.com`
+**delete** | `delete {MODULE}` <br>example: `delete CS2113`<br/><br/>`delete {MODULE} {INDEX}` <br>example: `delete CS2113 2`<br/><br/>`delete {MODULE} bookmarks` <br>example: `delete CS2113 bookmarks`<br/><br/>`delete {MODULE} {INDEX} bookmarks` <br>example: `delete CS2113 2 bookmarks`<br/><br/>
+**edit** | `edit module {DAY} {INDEX} {new MODULE}` <br> example: `edit module fri 2 CS1010` <br/><br/> `edit title {DAY} {INDEX} {new TITLE}`<br> example: `edit title fri 2 tutorial` <br/><br/>`edit time {DAY} {INDEX} {new START_TIME} {new END_TIME}` <br> example: `edit time fri 2 16:00 18:00`
+**launch** |`launch {MODULE}` <br> example: `launch CS2113` <br/><br/> `launch {MODULE} {INDEX}` <br> example: `launch CS2113 1` 
+
+
+**Planner Mode**
+
+**Action** | **Format, Examples**
+---------- | --------------------
+**load** | `load`
+**show** | `show {DAY(optional)}` <br>example: `show`, `show wed`, `show today` 
+**add** | see add in timetable mode above
+**save** | `save`
