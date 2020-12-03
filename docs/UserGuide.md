@@ -1,68 +1,50 @@
-
 # User Guide  
   
-## 1.0 Introduction  
+### Introduction  
   
-Zoomaster is a desktop app for organizing website links, optimized for use via a 
-Command Line Interface (CLI) while retaining the benefits of a Graphical User Interface (GUI). 
-If you can type fast, Zoomaster can help fetch useful website links for you quicker than the bookmark function on your browser.
-This user guide will walk you through the features of Zoomaster and ways to input commands to it to access these features.
+Zoomaster is a desktop app for organizing website links, optimized for use via a Command Line 
+Interface (CLI) while retaining the benefits of a Graphical User Interface (GUI). If you can 
+type fast, Zoomaster can help fetch useful website links for you quicker than the bookmark 
+function on your browser. This user guide will walk you through the features of Zoomaster and 
+ways to input commands to it to access these features.
 
-<br/>
+### Table of Contents
+* [1. Quick Start](#quick-start)
+* [2. About This Document](#about)
+* [3. Features](#features)
+  * [3.1 Global](#global)
+    *  [3.1.1. Show help information:](#help) **help**
+    *  [3.1.2. Switch mode:](#mode) **mode**
+    *  [3.1.3. Launch current lesson:](#launchnow) **launch now**
+    *  [3.1.4. Show user settings:](#showsettings) **showsettings**
+    *  [3.1.5. Set a setting:](#setsetting) **set**
+    *  [3.1.6. Clear:](#clear) **clear**
+    *  [3.1.7. Exit:](#exit) **exit**
+  * [3.2 Bookmark mode](#bookmarkmode)
+    * [3.2.1. Show bookmarks:](#showbookmark) **show**
+    * [3.2.2. Add bookmark:](#addbookmark)  **add**
+    * [3.2.3. Delete bookmark:](#deletebookmark)  **delete**
+    * [3.2.4. Edit bookmark:](#editbookmark)  **edit**
+    * [3.2.5. Find bookmark:](#findbookmark)  **find**
+    * [3.2.6. Launch bookmark:](#launchbookmark)  **launch**
+  * [3.3 Timetable mode](#timetablemode)
+    * [3.3.1. Show timetable:](#showtimetable) **show**
+    * [3.3.2. Show module, slot and bookmarks:](#showmoduledetails) **show**
+    * [3.3.3. Add module, slot and bookmark:](#addtimeslot) **add**
+    * [3.3.4. Delete module, time slot and bookmarks:](#deletetimeslot)  **delete**
+    * [3.3.5. Edit slot's module, title, time:](#edittimeslot)  **edit**
+    * [3.3.6. Launch bookmarks from module, slot:](#launchtimeslot)  **launch**
+  * [3.4 Planner mode](#plannermode)
+    * [3.4.1. Load planner:](#loadplanner) **load**
+    * [3.4.2. Add meeting:](#addmeeting) **add**
+    * [3.4.3. Show planner:](#showplanner) **show**
+    * [3.4.4. Save planner:](#saveplanner) **save**
+* [4. FAQ](#faq)
+* [5. Command Summary](#command-summary)
 
-## 2.0 About this Document
 
-Please take note that the ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
-symbol is used to indicate important warnings throughout the document.
-
-<a name="command_format"></a>
-Please also take note of the labels on command formatting:
-
-| Label | Meaning |
-| --- | --- |
-| `{curly brackets}` | Words contained in `{curly brackets}` are parameters to be supplied by the user. <br> eg. in `delete {BOOKMARK_NUMBER}`, `BOOKMARK_NUMBER` is a parameter which can be used as `delete 1`.
-| `{PARAM1/PARAM2}` | Parameters with `/` inside are parameters that accept different types of inputs. <br> eg. `launch {INDEX/DESCRIPTION}` shows that either `INDEX` or `DESCRIPTION` can be used.
-|`(optional)`| Parameters with `(optional)` are optional inputs. <br> eg. `show {DAY(optional)}` can be used as `show` or as `show mon`.
-| `DAY` | Parameter `DAY` takes three-letter abbreviations of days in a week <br> The full list of DAY parameters are **mon, tue, wed, thu, fri, sat, sun**.<br> Your inputs need not be case sensitive. <br> eg. `show {DAY(optional)}` can be used as `show mon`, `show tue`, etc.|
-|`MODULE`|Parameter `MODULE` has to be an NUS module recognised by NUSMods.<br> You can go to https://nusmods.com/ to get the full list of NUS modules available. <br> eg. `CS2113`, `CS2101`  |
-|`START TIME`,<br> `END TIME`| Parameters `START TIME` and `END TIME` requires input to be in the format `HH:mm` and in 24 Hours. <br> eg. `12:00`, `14:00`, `00:00`|
-
-<br/><br/> 
-## 3.0 Table of contents
-* [4.0 Quick Start](#quick-start)
-* [5.0 Features](#features)
-  * [5.1 Global](#global)
-    *  [Show help information:](#help) **help**
-    *  [Switch mode:](#mode) **mode**
-    *  [Clear:](#clear)  **clear**
-    *  [Launch current lesson:](#launchnow)  **launch now**
-    *  [Show user settings:](#showsettings)  **showsettings**
-    *  [Set a setting:](#setsetting)  **set**
-    *  [Exit:](#exit)  **exit**
-  * [5.2 Bookmark mode](#bookmarkmode)
-    * [Show bookmarks:](#showbookmark) **show**
-    * [Add bookmark:](#addbookmark)  **add**
-    * [Delete bookmark:](#deletebookmark)  **delete**
-    * [Edit bookmark:](#editbookmark)  **edit**
-    * [Find bookmark:](#findbookmark)  **find**
-    * [Launch bookmark:](#launchbookmark)  **launch**
-  * [5.3 Timetable mode](#timetablemode)
-    * [Show timetable:](#showtimetable) **show**
-    * [Show module, slot and bookmarks:](#showmoduledetails) **show**
-    * [Add module, slot and bookmark:](#addtimeslot) **add**
-    * [Delete module, time slot and bookmarks:](#deletetimeslot)  **delete**
-    * [Edit slot's module, title, time:](#edittimeslot)  **edit**
-    * [Launch bookmarks from module, slot:](#launchtimeslot)  **launch**
-  * [5.4 Planner mode](#plannermode)
-    * [Load planner:](#loadplanner) **load**
-    * [Add meeting:](#addmeeting) **add**
-    * [Show planner:](#showplanner) **show**
-    * [Save planner:](#saveplanner) **save**
-* [6.0 FAQ](#faq)
-* [7.0 Command Summary](#command-summary)
-  
 <br/><br/>   
-## 4.0 Quick Start  
+## 1. Quick Start  
   
 1. Ensure that you have Java 11 or above installed.  
 2. You can download the latest version of `Zoomaster` from [here](https://github.com/AY2021S1-CS2113T-W11-1/tp/releases)
@@ -84,8 +66,30 @@ that you have successfully started your Zoomaster program. <br/><br/>
 The app should print out a list of different commands. <br/><br/> 
 
 9. You can now refer to the section below to explore the different features of the Zoomaster app.
+
+
+
+
+<a name="about"></a>
+## 2. About this Document
+
+Please take note that the ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
+symbol is used to indicate important warnings throughout the document.
+
+<a name="command_format"></a>
+Please also take note of the labels on command formatting:
+
+| Label | Meaning |
+| --- | --- |
+| `{curly brackets}` | Words contained in `{curly brackets}` are parameters to be supplied by the user. <br> eg. in `delete {BOOKMARK_NUMBER}`, `BOOKMARK_NUMBER` is a parameter which can be used as `delete 1`.
+| `{PARAM1/PARAM2}` | Parameters with `/` inside are parameters that accept different types of inputs. <br> eg. `launch {INDEX/DESCRIPTION}` shows that either `INDEX` or `DESCRIPTION` can be used.
+|`(optional)`| Parameters with `(optional)` are optional inputs. <br> eg. `show {DAY(optional)}` can be used as `show` or as `show mon`.
+| `DAY` | Parameter `DAY` takes three-letter abbreviations of days in a week <br> The full list of DAY parameters are **mon, tue, wed, thu, fri, sat, sun**.<br> Your inputs need not be case sensitive. <br> eg. `show {DAY(optional)}` can be used as `show mon`, `show tue`, etc.|
+|`MODULE`|Parameter `MODULE` has to be an NUS module recognised by NUSMods.<br> You can go to https://nusmods.com/ to get the full list of NUS modules available. <br> eg. `CS2113`, `CS2101`  |
+|`START TIME`,<br> `END TIME`| Parameters `START TIME` and `END TIME` requires input to be in the format `HH:mm` and in 24 Hours. <br> eg. `12:00`, `14:00`, `00:00`|
+
   
-## 5.0 Features   
+## 3. Features   
 
 This section will explain to you the different features of Zoomaster and how you can interact with it. 
 <!-- @@author fchensan -->
