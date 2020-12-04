@@ -62,7 +62,7 @@ It should look something similar to `C:\Users\user>java -jar "C:\Users\user\Down
 that you have successfully started Zoomaster.<br><br>
 ![](./images/zoomasterIcon.png)
 
-7. The app is now ready to go! Go ahead and test it out with a `help` command. 
+7. The app is now ready to go! Go ahead and test it out with the `help` command. 
 The app should print out a list of different commands.
 
 8. You can now refer to the sections below to explore the different features of the Zoomaster app.
