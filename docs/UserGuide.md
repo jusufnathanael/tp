@@ -195,17 +195,22 @@ Once you are comfortable using Zoomaster, this command, along with the `set` com
 ```
 Format: showsettings
 ```
-When you type in this command, you will see two settings that you can adjust: <br></br>
-![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/showsettings.png) <br></br>
+When you type in this command, you will see two settings that you can adjust:
+```
+[def_mode] Default mode at start-up: <<mainmenu>> timetable bookmark
+[autosave] Autosave after each command (if off, only save on exit): <<on>> off
+```
+
 The two settings are:
-* Default mode on start-up.
+* Default mode at start-up.
     You can choose between `mainmenu`, `timetable`, or `bookmark` as the first mode you will enter when you start Zoomaster.
 * Autosave.
     By default, this is turned on and Zoomaster will save files every time you make changes. You might want to turn this off if you prefer to save only when you exit. 
 
-<br/><br/> 
+<br>
+
 <a name="setsetting"></a>  
-#### 5.1.6. Set a setting: `set {SETTING_NAME} {NEW_OPTION}` (Francisco)
+#### 3.1.5. Set a setting: `set {SETTING_NAME} {NEW_OPTION}` (Francisco)
 While `showsettings` shows you the settings, this command lets you change one of the settings.
 * `{SETTING_NAME}` is the name of the setting as shown when you type in the `showsettings` command.
 * `{NEW_OPTION}` is the new setting option that you would like to select. This needs to be typed in exactly as show from the `showsettings` command.
@@ -217,9 +222,11 @@ You can type in `set def_mode bookmark` and Zoomaster will change your settings,
 
 The next time you run Zoomaster, you will automatically enter `bookmark` mode.
 
+<br>
+
 <!-- @@author Speedweener -->
 <a name="clear"></a>  
-#### 3.1.3. Clear screen: `clear` (Zhan Hao)
+#### 3.1.6. Clear screen: `clear` (Zhan Hao)
 
 You can clear the command prompt screen using this command. 
 It is useful when your screen gets cluttered with prior commands. For example, when you have added a whole bunch
