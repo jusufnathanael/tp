@@ -237,24 +237,26 @@ clear your screen.
 Format: clear
 ```
 
->Here is an example of clearing the screen using the clear command. <br/><br/> 
->![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/clear.png) <br/><br/> 
+>Here is an example of clearing the screen using the clear command.
+>
+>![](./docs/images/clear.png)
 
+<br>
 
 <!-- @@author -->
 <br/><br/> 
 <a name="exit"></a>  
 #### 5.1.7 Exit the app: `exit`  
-You can exit the application by using the exit command.
-  
+You can exit the application by using the exit command.  
 ```
-Format: exit    
+Format: exit
 ```
->You should see this message on exit.  
-![](https://github.com/TYS0n1/tp/blob/team-Branch2/docs/diagrams/exit.png?raw=true)
+>You should see this message on exit.
+>
+>![](https://github.com/TYS0n1/tp/blob/team-Branch2/docs/diagrams/exit.png?raw=true)
 
-<br/>
-<br/> 
+<br>
+<br> 
 
 
 <a name="bookmarkmode"></a>  
