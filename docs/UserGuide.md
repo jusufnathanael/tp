@@ -107,8 +107,10 @@ Each mode has its own different sets of features and commands, which will be exp
 
 These commands can be used by you in every mode of the app.
 
+<br>
+
 <a name="help"></a>  
-#### 3.1.1 Show help information: `help` (Yu Shing + Zhan Hao)
+#### 3.1.1. Show help information: `help` (Yu Shing + Zhan Hao)
 You can see the list of commands available in the mode you are currently in.
 ```
 Format: help {COMMAND(optional)}
@@ -126,7 +128,7 @@ Format: help {COMMAND(optional)}
 >
 >![](https://github.com/TYS0n1/tp/blob/master/docs/images/showhelpcommand%20bookmark.png?raw=true)
 
-<br/><br/> 
+<br>
 
 If you require additional information about a command, you can insert the optional parameter of `{COMMAND}` 
 after `help` show you additional information about the commands and how to format the command properly.
@@ -139,11 +141,11 @@ Example of usage:
 >
 >![](https://github.com/TYS0n1/tp/blob/team-Branch2/docs/diagrams/help%20add%20msg.png?raw=true)
 
-<br/><br/> 
+<br>
 
 <!-- @@author TYS0n1 -->
 <a name="mode"></a>  
-#### 5.1.2 Switch mode: `mode` (Yu Shing)
+#### 3.1.2. Switch mode: `mode` (Yu Shing)
 You can switch between “bookmark”, “timetable” and "planner" modes. Depending on the mode you select the behaviour of the commands below changes. <br/><br/> 
 
 There are three modes for Zoomaster, Bookmark, Timetable and Planner modes.
@@ -161,28 +163,11 @@ Example of usage:
 >![](https://github.com/TYS0n1/tp/blob/master/docs/images/changemodecommand%20main%20menu%20to%20bookmarks.png?raw=true) <br/><br/> 
 >For the other modes, you should see a similar message like "changing to timetable/planner mode".
 
-
-<!-- @@author Speedweener -->
-
-<br/><br/> 
-<a name="clear"></a>  
-#### 5.1.3 Clear screen: `clear` (Zhan Hao)
-You can clear the command prompt screen using this command. 
-It is useful when your screen gets cluttered with prior commands. For example, when you have added a whole bunch
-of modules and timeslots to your timetable. Then you can use `clear` command to remove those commands. <br></br>
-Note that if your monitor screen has high dimensions, you might need multiple calls of this command to fully
-clear your screen.
-```
-Format: clear
-```
-
->Here is an example of clearing the screen using the clear command. <br/><br/> 
->![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/clear.png) <br/><br/> 
-
+<br>
 
 <a name="launchnow"></a>  
 <!-- @@author xingrong123-->
-#### 5.1.4 Launch bookmarks of current lesson: `launch now` (Xing Rong)
+#### 3.1.3. Launch bookmarks of current lesson: `launch now` (Xing Rong)
 You can launch the bookmarks of a current lesson slot in your timetable. 
 The time depends on the system time of your machine with an additional 5 minutes of buffer, 
 allowing you to launch your zoom session ahead of time.
@@ -228,6 +213,24 @@ You can type in `set def_mode bookmark` and Zoomaster will change your settings,
 ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/setsettings.png)
 
 The next time you run Zoomaster, you will automatically enter `bookmark` mode.
+
+<!-- @@author Speedweener -->
+<a name="clear"></a>  
+#### 3.1.3. Clear screen: `clear` (Zhan Hao)
+
+You can clear the command prompt screen using this command. 
+It is useful when your screen gets cluttered with prior commands. For example, when you have added a whole bunch
+of modules and timeslots to your timetable. Then you can use `clear` command to remove those commands. <br></br>
+Note that if your monitor screen has high dimensions, you might need multiple calls of this command to fully
+clear your screen.
+```
+Format: clear
+```
+
+>Here is an example of clearing the screen using the clear command. <br/><br/> 
+>![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/clear.png) <br/><br/> 
+
+
 <!-- @@author -->
 <br/><br/> 
 <a name="exit"></a>  
