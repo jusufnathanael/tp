@@ -118,15 +118,15 @@ Format: help {COMMAND(optional)}
 >Let's say you require help to see the commands you can access the main menu mode. 
 >You will first enter `help` into the console.
 >
->![](https://raw.githubusercontent.com/Speedweener/ip/master/docs/images/helpcommandsingle.PNG)
+>![](./images/helpcommandsingle.PNG)
 >
 >Then you should see the following message to guide you with the relevant commands.
 >
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showhelpcommand%20main%20menu.png?raw=true)
+>![](./images/showhelpcommand%20main%20menu.png?raw=true)
 >
 >Typing `help` in bookmark mode will show these commands.
 >
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showhelpcommand%20bookmark.png?raw=true)
+>![](./images/showhelpcommand%20bookmark.png?raw=true)
 
 <br>
 
@@ -180,7 +180,7 @@ Format: launch now
 >Here is an example of launching the bookmark of the current lesson. In this case, the URL attached to the slot
 >is www.google.com.
 >
->![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/launchnow.png)
+>![](./images/launchnow.png)
 
 You should expect to see the urls of the current or 5 minutes advance lesson slot launching
 in your native browser. Otherwise, you should see the message `no lesson now`.
@@ -239,7 +239,7 @@ Format: clear
 
 >Here is an example of clearing the screen using the clear command.
 >
->![](./docs/images/clear.png)
+>![](./images/clear.png)
 
 <br>
 
