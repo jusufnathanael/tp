@@ -121,23 +121,10 @@ Format: help {COMMAND(optional)}
 >Then you should see the following message to guide you with the relevant commands.
 >
 >![](https://github.com/TYS0n1/tp/blob/master/docs/images/showhelpcommand%20main%20menu.png?raw=true)
-
-<br/><br/> 
+>
 >Typing `help` in bookmark mode will show these commands.
 >
 >![](https://github.com/TYS0n1/tp/blob/master/docs/images/showhelpcommand%20bookmark.png?raw=true)
->
-<br/><br/> 
->Typing `help` in timetable mode will show these commands.
->
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showhelpcommand%20timetable1.png?raw=true)
-
-<br/><br/> 
->Lastly, typing `help` in planner mode will show these commands.
->
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showhelpcommand%20planner.png?raw=true)
->
-
 
 <br/><br/> 
 
@@ -147,12 +134,8 @@ after `help` show you additional information about the commands and how to forma
 Example of usage:   
 * `help add`
 * `help delete`
->The following example represents the case if you require help with the `add` command in timetable mode. 
->First, you type the command `help add`.
->
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showhelpcommand%20timetable%20add.png?raw=true)
->
->Then you should see the following message to explain and instruct you on how to use the `add` command in timetable mode
+
+>You should see the following message if you enter `help add` in timetable mode.
 >
 >![](https://github.com/TYS0n1/tp/blob/team-Branch2/docs/diagrams/help%20add%20msg.png?raw=true)
 
@@ -662,7 +645,7 @@ Format: load
 
 You can try to download some timetable samples from [here](https://github.com/AY2021S1-CS2113T-W11-1/tp/tree/master/docs/timetable_samples).
 
-
+<br>
 
 <a name="addmeeting"></a>  
 #### 5.4.2. Add meeting: `add`  
@@ -675,7 +658,7 @@ Format: same as [add time slots](#addtimeslot) command.
 * Note that this command does not automatically store the newly added meeting to the .txt files. 
 * You will need to type `save` to save your changes.
 
-
+<br>
 
 <a name="showplanner"></a>  
 #### 5.4.3. Show planner: `show`
@@ -702,6 +685,7 @@ Output:
 
 <img src="./images/showplannercommand.PNG" width="308" height="328" />
 
+<br>
 
 <a name="saveplanner"></a>  
 #### 5.4.4. Save planner: `save`  
