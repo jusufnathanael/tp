@@ -662,7 +662,7 @@ Format: load
 
 You can try to download some timetable samples from [here](https://github.com/AY2021S1-CS2113T-W11-1/tp/tree/master/docs/timetable_samples).
 
-<br/>
+
 
 <a name="addmeeting"></a>  
 #### 5.4.2. Add meeting: `add`  
@@ -675,7 +675,7 @@ Format: same as [add time slots](#addtimeslot) command.
 * Note that this command does not automatically store the newly added meeting to the .txt files. 
 * You will need to type `save` to save your changes.
 
-<br/>
+
 
 <a name="showplanner"></a>  
 #### 5.4.3. Show planner: `show`
@@ -702,7 +702,6 @@ Output:
 
 <img src="./images/showplannercommand.PNG" width="308" height="328" />
 
-<br/>
 
 <a name="saveplanner"></a>  
 #### 5.4.4. Save planner: `save`  
