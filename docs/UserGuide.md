@@ -146,10 +146,9 @@ Example of usage:
 <!-- @@author TYS0n1 -->
 <a name="mode"></a>  
 #### 3.1.2. Switch mode: `mode` (Yu Shing)
-You can switch between “bookmark”, “timetable” and "planner" modes. Depending on the mode you select the behaviour of the commands below changes. <br/><br/> 
+There are three modes in Zoomaster: **bookmark**, **timetable** and **planner** modes and you can switch between them. Depending on the mode you select, the behaviour of the commands below changes.
 
-There are three modes for Zoomaster, Bookmark, Timetable and Planner modes.
-
+There are three modes for Zoomaster., Bookmark, Timetable and Planner modes.
 ```
 Format: mode {bookmark/timetable/planner}
 ```
@@ -159,8 +158,10 @@ Example of usage:
 * `mode timetable` 
 * `mode planner`
 
->Here is an example of switching from the main menu of Zoomaster to the bookmark modes. <br/><br/> 
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/changemodecommand%20main%20menu%20to%20bookmarks.png?raw=true) <br/><br/> 
+>Here is an example of switching from the main menu of Zoomaster to the bookmark modes.
+>
+>![](https://github.com/TYS0n1/tp/blob/master/docs/images/changemodecommand%20main%20menu%20to%20bookmarks.png?raw=true)
+>
 >For the other modes, you should see a similar message like "changing to timetable/planner mode".
 
 <br>
@@ -177,17 +178,19 @@ Format: launch now
 ```
 
 >Here is an example of launching the bookmark of the current lesson. In this case, the URL attached to the slot
->is www.google.com. <br/><br/> 
->![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/launchnow.png) <br/><br/> 
+>is www.google.com.
+>
+>![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/launchnow.png)
 
 You should expect to see the urls of the current or 5 minutes advance lesson slot launching
 in your native browser. Otherwise, you should see the message `no lesson now`.
 <!-- @@author -->
 
-<br/><br/> 
+<br>
+
 <!-- @@author fchensan -->
 <a name="showsettings"></a>  
-#### 5.1.5. Show settings: `showsettings` (Francisco)
+#### 3.1.4. Show settings: `showsettings` (Francisco)
 Once you are comfortable using Zoomaster, this command, along with the `set` command, helps you customise Zoomaster's behaviour.
 ```
 Format: showsettings
