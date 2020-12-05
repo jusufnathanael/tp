@@ -244,7 +244,6 @@ Format: clear
 <br>
 
 <!-- @@author -->
-<br/><br/> 
 <a name="exit"></a>  
 #### 5.1.7 Exit the app: `exit`  
 You can exit the application by using the exit command.  
@@ -260,11 +259,11 @@ Format: exit
 
 
 <a name="bookmarkmode"></a>  
-### 5.2 Bookmark Mode  
+### 3.2. Bookmark Mode  
 
 <!-- @@author Speedweener -->
 <a name="showbookmark"></a>   
-#### 5.2.1 Show bookmarks: `show` (Zhan Hao)
+#### 3.2.1. Show bookmarks: `show` (Zhan Hao)
 This feature helps you print out all bookmarks in your bookmark list.
 ```
 Format: show
@@ -277,12 +276,12 @@ If your bookmark list is empty, you will get the message shown in the screenshot
 
 ![](images/showEmptyBookmarks.PNG)
 
-<br/><br/> 
+<br>
+
 <a name="addbookmark"></a>  
 #### 5.2.2 Add bookmark: `add` (Zhan Hao)
 You can add bookmarks to your bookmark list. A bookmark contains its description and URL.
 
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* The validity of the `URL` you entered cannot be checked. Please ensure that you entered the correct link. 
 >* Your `DESCRIPTION` must only contain one word (no whitespace inside). You can use underscore("_") or dashes("-") to string
 >multiple words together. Eg. "github_team_repo" or "cs2113t-website".
@@ -297,7 +296,8 @@ Example of usage:
 * `add example http://example.com`  
 * `add cs2113t-website https://nus-cs2113-ay2021s1.github.io/website/`  
 
-<br/><br/> 
+<br>
+
 <a name="deletebookmark"></a>  
 #### 5.2.3 Delete bookmarks: `delete` (Zhan Hao)
 Deletes a bookmark with the specified index.  
@@ -315,8 +315,9 @@ Example of usage:
 You should see a message similar to the screenshot below.  
 ![](images/deletebookmarksoutput.PNG)
 
+<br>
+
 <!-- @@author fchensan -->
-<br/><br/> 
 <a name="editbookmark"></a>  
 #### 5.2.3 Edit bookmarks: `edit` (Francisco) 
 This command edits a bookmark's description or URL with the specified index.  
@@ -334,8 +335,8 @@ You should enter a `desc` or `url` depending on which one you want to edit.
 > appear:  
 > ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/editbookmark.png)
 
+<br>
 
-<br/><br/> 
 <!-- @@author Speedweener -->
 <a name="findbookmark"></a>  
 #### 5.2.4 Find bookmarks: `find` (Zhan Hao) 
