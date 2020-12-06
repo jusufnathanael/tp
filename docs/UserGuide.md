@@ -278,11 +278,11 @@ Format: show
 ```
 >Example of a printed out bookmark list.  
 >
->![](./images/bookmark/showBookmark_output.png)
+>![](./images/bookmark/showBookmark_output.PNG)
 >
 >If your bookmark list is empty, you will get the message shown in the screenshot below.  
 >
->![](./images/bookmark/showBookmark_empty.png)
+>![](./images/bookmark/showBookmark_empty.PNG)
 
 <br>
 
