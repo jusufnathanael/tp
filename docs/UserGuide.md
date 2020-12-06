@@ -118,9 +118,7 @@ Format: help {COMMAND(optional)}
 >Let's say you require help to see the commands you can access the main menu mode. 
 >You will first enter `help` into the console.
 >
->![](./images/helpcommandsingle.PNG)
->
->Then you should see the following message to guide you with the relevant commands.
+>Then, you should see the following message to guide you with the relevant commands.
 >
 >![](./images/showhelpcommand%20main%20menu.png?raw=true)
 >
@@ -215,10 +213,11 @@ While `showsettings` shows you the settings, this command lets you change one of
 * `{SETTING_NAME}` is the name of the setting as shown when you type in the `showsettings` command.
 * `{NEW_OPTION}` is the new setting option that you would like to select. This needs to be typed in exactly as show from the `showsettings` command.
 
-For example, let's say that you want Zoomaster to enter `bookmark` mode when you start it. 
-You can type in `set def_mode bookmark` and Zoomaster will change your settings, as shown below.  
+For example, let's say that you want Zoomaster to enter `bookmark` mode when you start it.
 
-![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/setsettings.png)
+>You can type in `set def_mode bookmark` and Zoomaster will change your settings, as shown below.  
+>
+>![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/setsettings.png)
 
 The next time you run Zoomaster, you will automatically enter `bookmark` mode.
 
@@ -252,7 +251,7 @@ Format: exit
 ```
 >You should see this message on exit.
 >
->![](https://github.com/TYS0n1/tp/blob/team-Branch2/docs/diagrams/exit.png?raw=true)
+>`Bye. Hope to see you again soon!`
 
 <br>
 <br> 
@@ -268,18 +267,18 @@ This feature helps you print out all bookmarks in your bookmark list.
 ```
 Format: show
 ```
-Example of a printed out bookmark list.  
+>Example of a printed out bookmark list.  
+>
+>![](images/showOutput.PNG)
 
-![](images/showOutput.PNG)
-
-If your bookmark list is empty, you will get the message shown in the screenshot below.  
-
-![](images/showEmptyBookmarks.PNG)
+>If your bookmark list is empty, you will get the message shown in the screenshot below.  
+>
+>![](images/showEmptyBookmarks.PNG)
 
 <br>
 
 <a name="addbookmark"></a>  
-#### 5.2.2 Add bookmark: `add` (Zhan Hao)
+#### 3.2.2. Add bookmark: `add` (Zhan Hao)
 You can add bookmarks to your bookmark list. A bookmark contains its description and URL.
 
 >* The validity of the `URL` you entered cannot be checked. Please ensure that you entered the correct link. 
@@ -299,7 +298,7 @@ Example of usage:
 <br>
 
 <a name="deletebookmark"></a>  
-#### 5.2.3 Delete bookmarks: `delete` (Zhan Hao)
+#### 3.2.3. Delete bookmarks: `delete` (Zhan Hao)
 Deletes a bookmark with the specified index.  
 The index will correspond to the index of that bookmark in the list. 
 You can do a `show` command to check the bookmark indexes.  
@@ -312,14 +311,15 @@ Example of usage:
 * `delete 2`  
 * `delete 4`  
 
-You should see a message similar to the screenshot below.  
-![](images/deletebookmarksoutput.PNG)
+>You should see a message similar to the screenshot below.  
+>
+>![](images/deletebookmarksoutput.PNG)
 
 <br>
 
 <!-- @@author fchensan -->
 <a name="editbookmark"></a>  
-#### 5.2.3 Edit bookmarks: `edit` (Francisco) 
+#### 3.2.4. Edit bookmarks: `edit` (Francisco) 
 This command edits a bookmark's description or URL with the specified index.  
 Just like `delete`, the index will correspond to the index of that bookmark in the list. 
 You can do a `show` command to check the bookmark indexes.  
@@ -339,10 +339,9 @@ You should enter a `desc` or `url` depending on which one you want to edit.
 
 <!-- @@author Speedweener -->
 <a name="findbookmark"></a>  
-#### 5.2.4 Find bookmarks: `find` (Zhan Hao) 
+#### 3.2.5. Find bookmarks: `find` (Zhan Hao) 
 You can use this command to find bookmarks with matching description.
 
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* Your `DESCRIPTION` must only contain one word (no whitespace inside). 
 >See the [command format](#command_format) for more details.
 
@@ -354,26 +353,25 @@ Example of usage:
 * `find cs2113t-website`
 * `find notes`  
 
-You should see a message similar to the screenshot below when a successful match is found.  
-![](images/findBookmarkoutput.PNG)
+>You should see a message similar to the screenshot below when a successful match is found.  
+>
+>![](images/findBookmarkoutput.PNG)
 
 Else you should see "No bookmarks contain the specified keyword!".
 
-<br/><br/> 
-<a name="launchbookmark"></a>  
-#### 5.2.5 Launch bookmarks: `launch` (Zhan Hao)  
-You can use this feature to launch bookmarks in your native browser. <br></br>
-Your selection of bookmark(s) can be via:
-* Index
-* Matching description
+<br>
 
+<a name="launchbookmark"></a>  
+#### 3.2.6. Launch bookmarks: `launch` (Zhan Hao)  
+You can use this feature to launch bookmarks in your native browser.
+
+Your selection of bookmark(s) can be via _index_ or _matching description_.
 The index will correspond to the index of that bookmark in the list. 
 You can do a `show` command to check the bookmark indexes.  
 
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* Your `DESCRIPTION` must only contain one word (no whitespace inside). 
 >See the [command format](#command_format) for more details.
->
+
 ```
 Format: launch {INDEX/DESCRIPTION}
 ``` 
@@ -383,9 +381,7 @@ Example of usage:
 * `launch cs2113t-website`  
 * `launch abc`  
 
-
-<br/>
-<br/> 
+<br><br>
 
 <a name="timetablemode"></a>  
 ### 5.3 Timetable mode    
