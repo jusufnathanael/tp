@@ -1,14 +1,12 @@
 # Developer Guide
 
-## Introduction
-
 ![](./images/zoomasterWhite.png)
 
-Zoomaster is a Java application for the Command Line. It provides a simple and intuitive way to store Zoom links for 
-online classes and other useful links for the lesson at hand.
+## Introduction
 
-Zoomaster can also intelligently determine the current lesson users are having, allowing them to launch the correct 
-links quickly and elegantly from the command line.
+Zoomaster is a Java application for the Command Line. It provides a simple and intuitive way to store Zoom links for 
+online classes and other useful links for the lesson at hand. Zoomaster can also intelligently determine the current 
+lesson users are having, allowing them to launch the correct links quickly and elegantly from the command line.
 
 ### Target audience
 This developer guide is for experienced programmers with knowledge of object oriented programming.
@@ -33,8 +31,6 @@ You can navigate the guide via the table of contents below.
 
 Otherwise, each major section is distinguished by a bold header and underline. Sub-sections are of a smaller font than 
 major sections but still larger than normal paragraphs to distinguish them.
-
-<br>
 
 ### Table of contents
 * [Getting Started](#getting-started)
@@ -87,10 +83,8 @@ then its various components.
 ### Architecture
 The figure below shows a high-level design for the architecture of Zoomaster.
 
-<div align="center">
-<img src="./diagrams/architecture.png" width=400 height=548><br>
-<i> Figure 1.1 Architecture diagram of Zoomaster </i><br>
-</div>
+![](./diagrams/architecture.png)
+<div align="center"><i>Figure 1.1 Architecture diagram of Zoomaster</i></div><br>
 
 Our Program can be split into 7 components:
 * Initialization
