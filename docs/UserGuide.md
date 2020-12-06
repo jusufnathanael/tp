@@ -358,7 +358,7 @@ Example of usage:
 >
 >![](images/findBookmarkoutput.PNG)
 >
->Else you should see:
+>Else you should see the following message:
 >
 >`No bookmarks contain the specified keyword!`
 
@@ -388,24 +388,23 @@ Example of usage:
 <br>
 
 <a name="timetablemode"></a>  
-### 5.3 Timetable mode    
+### 3.3. Timetable mode    
 
 <!-- @@author TYS0n1 -->
 <a name="showtimetable"></a>
-#### 5.3.1 Show timetable: `show` (Yu Shing)
-You will be able to see the timetable for a certain day or the whole week.  
-**today** can also be a `DAY` input to show the timetable for the current day based on system time.  
-If your selected timetable is the current day, you should be able to see a
-"current time" indicator with your system local time. 
-Else if you have a lesson ongoing currently, it will instead show a "lesson now" indicator
-*around* your current lesson.
+#### 3.3.1. Show timetable: `show` (Yu Shing)
+You will be able to see the timetable for a certain day or the whole week.
 
->  
->![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png) 
-> * You have to enter `DAY` input according to the command format else it will not be recognised as a valid date. 
->The valid inputs are `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`and `today`. 
+If your selected timetable is the current day, you should be able to see a
+`<current time>` indicator with your system local time. Otherwise, if you
+have a lesson ongoing currently, it will show a `<lesson now>` indicator
+*around* your current lesson instead.
+
+>* You have to enter `DAY` input according to the command format else it will not be recognised as a valid date. 
+>The valid inputs are `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun` and `today`. 
 >You can see the [command format](#command_format) for more information.
->* Zoomaster will interpret your command as the [Show module and slot feature](#showmoduledetails) 
+>
+>* Zoomaster will interpret your command as the [show module and slot feature](#showmoduledetails) 
 >if you do not enter the correct `DAY` input. As such, you would see an error message saying you have entered an invalid module.
 
 ```
@@ -417,27 +416,31 @@ Example of usage:
 * `show wed`
 * `show today`
 
->Here are some examples of outcomes you will see on the command line interface <br></br>
->* You will see an empty list message if your timetable is empty. <br></br>
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20empty%20timetable.png?raw=true) <br></br><br></br>
->* You will see your entire timetable if you use `show` input. <br></br>
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20all%20timetable.png?raw=true) <br></br><br></br>
->* You will see the timetable of your selected day if you use `show {day}` input. 
->This example uses Wednesday as its selected day input. <br></br>
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20wed%20timetable.png?raw=true) <br></br><br></br>
->* You will see the timetable for today if you use `show today` input. <br></br>
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20today%20timetable.png?raw=true) <br></br><br></br>
->* Example of "current time" indicator showing the current time <br></br>
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20current%20time%20indicator.png?raw=true) 
-><br></br><br></br>
->* Example of "lesson now" indicator highlighting the current lesson <br></br>
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20lesson%20now%20indicator.png?raw=true) <br></br><br></br>
+Here are some examples of outcomes you will see on the command line interface.
 
-<!-- @@author -->
+>You will see an empty list message if your timetable is empty.
+>
+>![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20empty%20timetable.png?raw=true)
+>
+>You will see your entire timetable if you use `show` input.
+>
+>![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20all%20timetable.png?raw=true)
+>
+>You will see the timetable of your selected day if you use `show {day}` input. 
+>
+>This example uses Wednesday as its selected day input.
+>
+>![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20wed%20timetable.png?raw=true)
+>
+>You will see the timetable for today if you use `show today` input.
+>
+>![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20today%20timetable.png?raw=true)
+
+<br>
+
 <!-- @@author xingrong123-->
-<br/><br/>
 <a name="showmoduledetails"></a>
-#### 5.3.2 Show module and slot details: `show` (Xing Rong)
+#### 3.3.2. Show module and slot details: `show` (Xing Rong)
 You can use this command to show the details of a module or slot that has been added.  
 You can see the respective indexes of each of the slots from the module 
 and using the `bookmarks` keyword will show the bookmarks which are saved in the module and its slots.
@@ -457,9 +460,10 @@ Example of usage:
 >* `show CS2113T bookmarks`  
 >![](images/showTimetableCommand/showmodulebookmarksoutput.PNG)
 
-<br/><br/> 
+<br>
+
 <a name="addtimeslot"></a>
-#### 5.3.3 Add module, time slot and bookmark: `add` (Xing Rong)
+#### 3.3.3. Add module, time slot and bookmark: `add` (Xing Rong)
 You can add modules, time slots and bookmarks using this feature.
 You can also chain commands when adding multiple slots and bookmarks to a module by using `,` as a separator.
 
@@ -551,10 +555,10 @@ More examples:
 * `add cs2113t 1 www.yahoo.com`
 * `add cs2113t lecture fri 16:00 18:00 www.google.com, notes www.google.com, tutorial fri 10:00 12:00`
 
+<br>
 
-<br/><br/> 
 <a name="deletetimeslot"></a>
-#### 5.3.4 Delete module, time slot and bookmarks: `delete` (Xing Rong)
+#### 3.3.4. Delete module, time slot and bookmarks: `delete` (Xing Rong)
 Deletes module, time slot or their bookmarks.
 
 > ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
@@ -579,13 +583,13 @@ Example of usage:
 >* `delete CS2113T bookmarks` 
 >* `delete CS2113T 1 bookmarks` 
 <!-- @@author -->
-<br/><br/> 
+
+<br>
 
 <a name="edittimeslot"></a>
-#### 5.3.5 Edit slot's module, title, time: `edit`  (Francisco) 
+#### 3.3.5. Edit slot's module, title, time: `edit`  (Francisco) 
 Edits the module, title or time for a specific slot.
 
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* You can only edit a module that is listed on the NUSMods website. 
 >You can see the [command format](#command_format) for more information. 
 
@@ -613,7 +617,8 @@ The second `DAY` parameter is for the new day of the week you wish to set your s
 >* `edit module mon 1 CS1010`  
 >* `edit title mon 1 lecture`
 >* `edit time mon 1 fri 10:00 12:00`
-<br/><br/> 
+
+<br>
 
 <!-- @@author xingrong123-->
 <a name="launchtimeslot"></a>
@@ -640,8 +645,8 @@ Example of usage:
 * `launch CS2113`  
 * `launch CS2113 2`
 
-<!-- @@author -->
 
+<br>
 <br>
 
 <!-- @@author jusufnathanael -->
@@ -712,7 +717,7 @@ Format: save
 <!-- @@author Speedweener -->
 
 <br/><br/> 
-## 6.0 FAQ  
+## 4. FAQ  
 
 **Q**: My Zoomaster logo looks weird! Is there something wrong with my program?   
 
@@ -745,7 +750,7 @@ and save the txt file. You can now add the module in Zoomaster.
 
 **Global** 
 
-| **Action** | **Format, Examples**
+**Action** | **Format, Examples**
 ---------- | --------------------
 **help** | `help {COMMAND(optional)}` <br> example: `help`, `help add`
 **mode** | `mode {bookmark/timetable/planner}`<br> example: `mode bookmark`, `mode timetable`
