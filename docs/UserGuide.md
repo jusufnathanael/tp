@@ -459,11 +459,11 @@ Format (show module details): show {MODULE} bookmarks(optional)
 Example of usage:   
 >`show CS2113T`  
 >
->![](./images/timetable/showModule_output.png)  
+>![](./images/timetable/showModule_output.PNG)  
 >
 >`show CS2113T bookmarks`  
 >
->![](./images/timetable/showModuleBookmarks_output.png)
+>![](./images/timetable/showModuleBookmarks_output.PNG)
 
 <br>
 
@@ -709,7 +709,7 @@ Example of usage:
 
 >This is the output if you type `show` after initialisation in planner mode:
 >
-><img src="./images/planner/showPlanner.png" width="400" height="426" />
+><img src="./images/planner/showPlanner.PNG" width="400" height="426" />
 
 <br>
 
