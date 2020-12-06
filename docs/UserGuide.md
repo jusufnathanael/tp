@@ -41,15 +41,14 @@ how to input the commands.
     * [3.4.4. Save Planner:](#saveplanner) **save**
 * [4. FAQ](#faq)
 * [5. Command Summary](#commandsummary)
-    * [5.1. Global Commands:](#globalcommands) **global**
-    * [5.2. Bookmark Mode Commands:](#bookmarkcommands) **bookmark mode**
-    * [5.3. Timetable Mode Commands:](#timetablecommands) **timetable mode**
-    * [5.4. Planner Mode Commands:](#plannercommands) **planner mode**
-    
-    
+    * [5.1. Global Commands](#globalcommands)
+    * [5.2. Bookmark Mode Commands](#bookmarkcommands)
+    * [5.3. Timetable Mode Commands](#timetablecommands)
+    * [5.4. Planner Mode Commands](#plannercommands)
     
 
 <br>
+
 
 <a name="quickstart"></a>
 ## 1. Quick Start  
@@ -786,6 +785,8 @@ on a new line and save the txt file. You can now add the module in Zoomaster.
 **set a setting** | `set {SETTING_NAME} {NEW_OPTION}`
 **exit** | `exit`
 
+<br>
+
 <a name="bookmarkcommands"></a>
 **5.2. Bookmark Mode Commands**
 
@@ -798,6 +799,8 @@ on a new line and save the txt file. You can now add the module in Zoomaster.
 **find** | `find {MODULE} {DESCRIPTION(optional)}` <br> example: `find CS2113 tutorial`
 **launch** | `launch {MODULE} {DESCRIPTION(optional)}` <br> example: `launch CS2113`
 
+<br>
+
 <a name="timetablecommands"></a>
 **5.3. Timetable Mode Commands**
 
@@ -809,6 +812,8 @@ on a new line and save the txt file. You can now add the module in Zoomaster.
 **delete** | `delete {MODULE}` <br>example: `delete CS2113`<br/><br/>`delete {MODULE} {INDEX}` <br>example: `delete CS2113 2`<br/><br/>`delete {MODULE} bookmarks` <br>example: `delete CS2113 bookmarks`<br/><br/>`delete {MODULE} {INDEX} bookmarks` <br>example: `delete CS2113 2 bookmarks`<br/><br/>
 **edit** | `edit module {DAY} {INDEX} {new MODULE}` <br> example: `edit module fri 2 CS1010` <br/><br/> `edit title {DAY} {INDEX} {new TITLE}`<br> example: `edit title fri 2 tutorial` <br/><br/>`edit time {DAY} {INDEX} {new START_TIME} {new END_TIME}` <br> example: `edit time fri 2 16:00 18:00`
 **launch** |`launch {MODULE}` <br> example: `launch CS2113` <br/><br/> `launch {MODULE} {INDEX}` <br> example: `launch CS2113 1` 
+
+<br>
 
 <a name="plannercommands"></a>
 **5.4. Planner Mode Commands**
