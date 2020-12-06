@@ -426,13 +426,7 @@ Here are some examples of outcomes you will see on the command line interface.
 >
 >![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20all%20timetable.png?raw=true)
 >
->You will see the timetable of your selected day if you use `show {day}` input. 
->
->This example uses Wednesday as its selected day input.
->
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20wed%20timetable.png?raw=true)
->
->You will see the timetable for today if you use `show today` input.
+>You will see the timetable of your selected day if you use `show {day}` input.
 >
 >![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20today%20timetable.png?raw=true)
 
@@ -441,23 +435,25 @@ Here are some examples of outcomes you will see on the command line interface.
 <!-- @@author xingrong123-->
 <a name="showmoduledetails"></a>
 #### 3.3.2. Show module and slot details: `show` (Xing Rong)
-You can use this command to show the details of a module or slot that has been added.  
+You can use this command to show the details of a module or slot that has been added.
+
 You can see the respective indexes of each of the slots from the module 
 and using the `bookmarks` keyword will show the bookmarks which are saved in the module and its slots.
 
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
-> * You can only see modules that are listed on the NUSMods website. 
-> You can see the [command format](#command_format) for more information.
->
+>You can only see modules that are listed on the NUSMods website. 
+>You can see the [command format](#command_format) for more information.
+
 ```
 Format (show module details): show {MODULE} bookmarks(optional)
 ```
 
 Example of usage:   
->* `show CS2113T`  
+>`show CS2113T`  
+>
 >![](images/showTimetableCommand/showmoduleoutput.PNG)  
 >
->* `show CS2113T bookmarks`  
+>`show CS2113T bookmarks`  
+>
 >![](images/showTimetableCommand/showmodulebookmarksoutput.PNG)
 
 <br>
@@ -471,19 +467,17 @@ You can also chain commands when adding multiple slots and bookmarks to a module
 >* You are required to insert **a space** between each parameter.
 >* The chaining of commands only performs on **one module** which is `{MODULE}`.    
 >* You can only add a module that is listed on the NUSMods website. 
->* You have to format your commands as shown below for Zoomaster to read it properly.
->You can see the [command format](#command_format) for more information.
 >* Your `DESCRIPTION` must only contain one word (no whitespace inside). 
->See the [command format](#command_format) for more details.
+>You can see the [command format](#command_format) for more details.
 >* Your input `URL` has to start with `www.`, `http://` or `https://`.
 >* The validity of the `URL` you entered cannot be checked. Please ensure that you entered the correct link. 
 >* You have to enter `DAY` input according to the command format else it will not be recognised as a valid date. 
 >The valid inputs are `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, `sun`and `today`. 
 >You can see the [command format](#command_format) for more information.
 >* The period you enter from `{START_TIME}` to `{END_TIME}` cannot cross over midnight. 
->Eg. 23:30 to 00:30 is not a valid period you can enter.
+>E.g., 23:30 to 00:30 is not a valid period you can enter.
 >You can work around this by splitting up your timeslot into two periods, one before midnight and one after.
->Eg. 23:30 to 23:59 and 00:00 to 00:30
+>E.g., 23:30 to 23:59 and 00:00 to 00:30
 
 ```
 Format (adding a module): add {MODULE}
@@ -499,11 +493,13 @@ Format (chaining commands): add {MODULE} {DESCRIPTION} {DAY} {START_TIME} {END_T
 ```  
 
 * Multiple bookmarks can be added to a module and a slot.
+
   * To add another bookmark to an existing module, you have to enter the module code of the 
     existing module in the timetable. 
   * To add another bookmark to an existing slot, you can enter the command with the matching details 
     of the existing slot or use the index number of the slot in the module to access the slot. 
-    The index number of the slot can be found by using the command `show {MODULE}`. 
+    The index number of the slot can be found by using the command `show {MODULE}`.
+
 * Each command works by checking if each of the components (module, slot, bookmark) 
   exists or is valid from left to right of the input before adding them.
   * In the command `add cs2113t lecture fri 16:00 18:00`, if `cs2113t` module already exists, 
@@ -513,7 +509,7 @@ Format (chaining commands): add {MODULE} {DESCRIPTION} {DAY} {START_TIME} {END_T
 
 Example of usage:   
 
->* **Adding a module**  
+>**Adding a module**
 >  * Input: `add CS2113T`  
 >  * Output:  
 >![](images/addSlotCommand/addmoduleoutput.PNG)  
@@ -561,9 +557,9 @@ More examples:
 #### 3.3.4. Delete module, time slot and bookmarks: `delete` (Xing Rong)
 Deletes module, time slot or their bookmarks.
 
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* You can only delete a module that is listed on the NUSMods website. 
-> You can see the [command format](#command_format) for more information.
+>You can see the [command format](#command_format) for more information.
+>* Deleting bookmarks will delete all bookmarks associated with the module or slot.
 
 ```
 Format (deleting a module): delete {MODULE}
@@ -574,8 +570,6 @@ Format (deleting bookmarks of a module): delete {MODULE} bookmarks
 
 Format (deleting bookmarks of a slot of a module): delete {MODULE} {INDEX} bookmarks 
 ```
-
-* Deleting bookmarks will delete all bookmarks associated with the module or slot.
 
 Example of usage:   
 >* `delete CS2113T` 
@@ -590,7 +584,7 @@ Example of usage:
 #### 3.3.5. Edit slot's module, title, time: `edit`  (Francisco) 
 Edits the module, title or time for a specific slot.
 
->* You can only edit a module that is listed on the NUSMods website. 
+>You can only edit a module that is listed on the NUSMods website. 
 >You can see the [command format](#command_format) for more information. 
 
 ```
@@ -625,8 +619,7 @@ The second `DAY` parameter is for the new day of the week you wish to set your s
 #### 5.3.6 Launch bookmarks from module, slot: `launch` (Xing Rong)  
 Launches the bookmarks of slots or the bookmarks of a module
 
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
->* You can only launch a module that is listed on the NUSMods website. 
+>You can only launch a module that is listed on the NUSMods website. 
 >You can see the [command format](#command_format) for more information.
 
 ```
@@ -638,8 +631,7 @@ Format (launch slot bookmarks): launch {MODULE} {INDEX}
 * Obtain the `INDEX` of the slot to be launched using the `show {MODULE}` command.
 * `launch {MODULE}` launches the bookmarks tagged to the module itself, for example, the module website
 * `launch {MODULE} {INDEX}` launches the bookmarks tagged to the second slot of the module, 
-for example, the zoom link for tutorial
-<br/><br/> 
+for example, the zoom link for tutorial. 
 
 Example of usage:   
 * `launch CS2113`  
