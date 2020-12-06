@@ -9,7 +9,7 @@ function on your browser. This user guide will walk you through the features of 
 how to input the commands.
 
 ### Table of Contents
-* [1. Quick Start](#quick-start)
+* [1. Quick Start](#quickstart)
 * [2. About This Document](#about)
 * [3. Features](#features)
   * [3.1 Global](#global)
@@ -40,11 +40,18 @@ how to input the commands.
     * [3.4.3. Show Planner:](#showplanner) **show**
     * [3.4.4. Save Planner:](#saveplanner) **save**
 * [4. FAQ](#faq)
-* [5. Command Summary](#command-summary)
+* [5. Command Summary](#commandsummary)
+    * [5.1. Global Commands:](#globalcommands) **global**
+    * [5.2. Bookmark Mode Commands:](#bookmarkcommands) **bookmark mode**
+    * [5.3. Timetable Mode Commands:](#timetablecommands) **timetable mode**
+    * [5.4. Planner Mode Commands:](#plannercommands) **planner mode**
+    
+    
+    
 
 <br>
 
-<a name="quick-start"></a>
+<a name="quickstart"></a>
 ## 1. Quick Start  
   
 1. Ensure that you have Java 11 or above installed.
@@ -726,6 +733,7 @@ Format: save
 My Zoomaster logo looks weird! Is there something wrong with my program?   
   
 **A:**
+
 Some users might encounter a start-up screen that looks like this.
 
 ![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/buglogo.png)
@@ -762,9 +770,11 @@ on a new line and save the txt file. You can now add the module in Zoomaster.
 <br>
 <br>
 
+<a name="commandsummary"></a>
 ## 5. Command Summary
 
-**Global** 
+<a name="globalcommands"></a>
+**5.1. Global Commands** 
 
 **Action** | **Format, Examples**
 ---------- | --------------------
@@ -776,7 +786,8 @@ on a new line and save the txt file. You can now add the module in Zoomaster.
 **set a setting** | `set {SETTING_NAME} {NEW_OPTION}`
 **exit** | `exit`
 
-**Bookmark Mode**
+<a name="bookmarkcommands"></a>
+**5.2. Bookmark Mode Commands**
 
 **Action** | **Format, Examples**
 ---------- | --------------------
@@ -787,8 +798,8 @@ on a new line and save the txt file. You can now add the module in Zoomaster.
 **find** | `find {MODULE} {DESCRIPTION(optional)}` <br> example: `find CS2113 tutorial`
 **launch** | `launch {MODULE} {DESCRIPTION(optional)}` <br> example: `launch CS2113`
 
-
-**Timetable Mode**
+<a name="timetablecommands"></a>
+**5.3. Timetable Mode Commands**
 
 **Action** | **Format, Examples**
 ---------- | --------------------
@@ -799,8 +810,8 @@ on a new line and save the txt file. You can now add the module in Zoomaster.
 **edit** | `edit module {DAY} {INDEX} {new MODULE}` <br> example: `edit module fri 2 CS1010` <br/><br/> `edit title {DAY} {INDEX} {new TITLE}`<br> example: `edit title fri 2 tutorial` <br/><br/>`edit time {DAY} {INDEX} {new START_TIME} {new END_TIME}` <br> example: `edit time fri 2 16:00 18:00`
 **launch** |`launch {MODULE}` <br> example: `launch CS2113` <br/><br/> `launch {MODULE} {INDEX}` <br> example: `launch CS2113 1` 
 
-
-**Planner Mode**
+<a name="plannercommands"></a>
+**5.4. Planner Mode Commands**
 
 **Action** | **Format, Examples**
 ---------- | --------------------
