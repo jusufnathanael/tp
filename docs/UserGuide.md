@@ -356,7 +356,7 @@ Example of usage:
 
 >You should see a message similar to the screenshot below when a successful match is found.  
 >
->![](images/findBookmarkoutput.PNG)
+>![](./images/findBookmarkoutput.PNG)
 >
 >Else you should see the following message:
 >
@@ -450,11 +450,11 @@ Format (show module details): show {MODULE} bookmarks(optional)
 Example of usage:   
 >`show CS2113T`  
 >
->![](images/showTimetableCommand/showmoduleoutput.PNG)  
+>![](./images/showTimetableCommand/showmoduleoutput.PNG)  
 >
 >`show CS2113T bookmarks`  
 >
->![](images/showTimetableCommand/showmodulebookmarksoutput.PNG)
+>![](./images/showTimetableCommand/showmodulebookmarksoutput.PNG)
 
 <br>
 
@@ -463,7 +463,6 @@ Example of usage:
 You can add modules, time slots and bookmarks using this feature.
 You can also chain commands when adding multiple slots and bookmarks to a module by using `,` as a separator.
 
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/bangbang.png)
 >* You are required to insert **a space** between each parameter.
 >* The chaining of commands only performs on **one module** which is `{MODULE}`.    
 >* You can only add a module that is listed on the NUSMods website. 
@@ -506,42 +505,45 @@ Format (chaining commands): add {MODULE} {DESCRIPTION} {DAY} {START_TIME} {END_T
     then it will not be added into the timetable. The slot `lecture fri 16:00 18:00` 
     will then be added to the existing `cs2113t` module.
 
+<br>
 
-Example of usage:   
+Example of usage: 
 
->**Adding a module**
->  * Input: `add CS2113T`  
->  * Output:  
->![](images/addSlotCommand/addmoduleoutput.PNG)  
+**Adding a module**
+>`add CS2113T`
 >
->* **Adding a slot to a module**  
->  * Input: `add CS2102 tutorial fri 10:00 12:00`  
->  * Output:  
->![](images/addSlotCommand/addslottomoduleoutput.PNG)  
+>![](./images/addSlotCommand/addmoduleoutput.PNG)
+
+**Adding a slot to a module**
+>`add CS2102 tutorial fri 10:00 12:00`
 >
->* **Adding a bookmark to a module**  
->  * Input: `add CS2113T module-website https://nus-cs2113-ay2021s1.github.io/website/index.html`  
->  * Output:  
->![](images/addSlotCommand/addbookmarktomoduleoutput.PNG)  
+>![](./images/addSlotCommand/addslottomoduleoutput.PNG)
+
+**Adding a bookmark to a module**
+>`add CS2113T module-website https://nus-cs2113-ay2021s1.github.io/website/index.html`
 >
->* **Adding a bookmark to a slot**  
->  * Input: `add CS2102 tutorial fri 10:00 12:00 www.google.com`   
->  * Output:  
->![](images/addSlotCommand/addbookmarktoslotoutput.PNG)  
+>![](./images/addSlotCommand/addbookmarktomoduleoutput.PNG)
+
+**Adding a bookmark to a slot**
+>`add CS2102 tutorial fri 10:00 12:00 www.google.com`
 >
->* **Chaining commands**  
->  * Input: `add CG2271 tutorial thu 11:00 12:00, lecture wed 09:00 11:00 www.yahoo.com, example-bookmark https://www.youtube.com`  
->  * Output:  
->(The indentation of each line of the output shows the relationships between the components.
+>![](./images/addSlotCommand/addbookmarktoslotoutput.PNG)
+
+**Chaining commands**
+>`add CG2271 tutorial thu 11:00 12:00, lecture wed 09:00 11:00 www.yahoo.com, example-bookmark https://www.youtube.com`
+>
+>![](./images/addSlotCommand/addchaincommandoutput.PNG)
+>
+>*The indentation of each line of the output shows the relationships between the components.
 >In the output shown below, `bookmarks added to CG2271 lecture` is one level of indentation 
 >higher than the previous line. This means that the bookmark is added to that lecture slot.
 >Similarly, `bookmark added to module` is one level of indentation higher than `CG2271 added`, 
->which suggests that the bookmark is added to the module CG2271.)  
->![](images/addSlotCommand/addchaincommandoutput.PNG)  
->  * Result:  
->![](images/addSlotCommand/addresult.PNG)
-  
+>which suggests that the bookmark is added to the module CG2271.*
 
+**Showing the result**
+>`show CG2271 bookmarks`
+>
+>![](./images/addSlotCommand/addresult.PNG)
 
 More examples:
 * `add cs2113t`  
@@ -696,9 +698,9 @@ Example of usage:
 * `show wed`
 * `show today`
 
-Output:
-
-<img src="./images/showplannercommand.PNG" width="308" height="328" />
+>This is the output if you type `show` after initialisation in planner mode:
+>
+><img src="./images/showplannercommand.PNG" width="400" height="426" />
 
 <br>
 
