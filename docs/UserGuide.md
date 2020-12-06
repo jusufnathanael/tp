@@ -44,6 +44,7 @@ how to input the commands.
 
 <br>
 
+<a name="quick-start"></a>
 ## 1. Quick Start  
   
 1. Ensure that you have Java 11 or above installed.
@@ -716,11 +717,12 @@ Format: save
 
 
 <!-- @@author Speedweener -->
+<a name="faq"></a>
 ## 4. FAQ  
 
-**Q** &nbsp; &nbsp; : My Zoomaster logo looks weird! Is there something wrong with my program?   
+**Q** &nbsp; : My Zoomaster logo looks weird! Is there something wrong with my program?   
   
-**A** &nbsp; &nbsp; : Some users might encounter a start-up screen that looks like this.
+**A** &nbsp; : Some users might encounter a start-up screen that looks like this.
 
 &nbsp; &nbsp; &nbsp; &nbsp; ![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/buglogo.png)
 
@@ -729,9 +731,9 @@ need to worry!
 
 <br>
   
-**Q** &nbsp; &nbsp; : How do I transfer my data to another computer?   
+**Q** &nbsp; : How do I transfer my data to another computer?   
   
-**A** &nbsp; &nbsp; : Simply copy the `data/bookmarks.txt` and `data/slots.txt` file to the **data** directory.<br>
+**A** &nbsp; : Simply copy the `data/bookmarks.txt` and `data/slots.txt` file to the **data** directory.<br>
 &nbsp; &nbsp; &nbsp; &nbsp; This directory should be in the same location where you have stored the `jar` file.
 
 &nbsp; &nbsp; &nbsp; &nbsp; ![](https://raw.githubusercontent.com/Speedweener/ip/master/docs/images/directory.png)
@@ -740,9 +742,9 @@ need to worry!
 
 <br>
 
-**Q**: Can I add a module not from NUS?   
+**Q** &nbsp; : Can I add a module not from NUS?   
   
-**A**: Yes you can! <br>
+**A** &nbsp; : Yes you can! <br>
 &nbsp; &nbsp; &nbsp; &nbsp; In the **data** directory locate the  `modulelist.txt` file. Add the new module on a new line
 and save the txt file. You can now add the module in Zoomaster.
 
