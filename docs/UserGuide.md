@@ -521,27 +521,27 @@ Example of usage:
 **Adding a module**
 >`add CS2113T`
 >
->![](./images/addSlotCommand/addmoduleoutput.PNG)
+>![](./images/timetable/addModule.PNG)
 
 **Adding a slot to a module**
 >`add CS2102 tutorial fri 10:00 12:00`
 >
->![](./images/addSlotCommand/addslottomoduleoutput.PNG)
+>![](./images/timetable/addSlotToModule.PNG)
 
 **Adding a bookmark to a module**
 >`add CS2113T module-website https://nus-cs2113-ay2021s1.github.io/website/index.html`
 >
->![](./images/addSlotCommand/addbookmarktomoduleoutput.PNG)
+>![](./images/timetable/addBookmarkToModule.PNG)
 
 **Adding a bookmark to a slot**
 >`add CS2102 tutorial fri 10:00 12:00 www.google.com`
 >
->![](./images/addSlotCommand/addbookmarktoslotoutput.PNG)
+>![](./images/timetable/addBookmarkToSlot.PNG)
 
 **Chaining commands**
 >`add CG2271 tutorial thu 11:00 12:00, lecture wed 09:00 11:00 www.yahoo.com, example-bookmark https://www.youtube.com`
 >
->![](./images/addSlotCommand/addchaincommandoutput.PNG)
+>![](./images/timetable/addChainingCommand.PNG)
 >
 >*The indentation of each line of the output shows the relationships between the components.
 >In the output shown below, `bookmarks added to CG2271 lecture` is one level of indentation 
@@ -552,7 +552,7 @@ Example of usage:
 **Showing the result**
 >`show CG2271 bookmarks`
 >
->![](./images/addSlotCommand/addresult.PNG)
+>![](./images/timetable/addResult.PNG)
 
 More examples:
 * `add cs2113t`  
