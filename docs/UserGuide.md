@@ -618,7 +618,7 @@ The second `DAY` parameter is for the new day of the week you wish to set your s
 > If you want to change the title of the second slot to "tutorial", you can simply type `edit title wed 2 tutorial`.
 > You should then see a message as shown below:
 >
-> ![](./images/timetable/editSlot_message.png)
+> `Slot title changed to tutorial`
 
 More examples:   
 * `edit module mon 1 CS1010`  
