@@ -600,23 +600,25 @@ Format (editing the time of a slot): edit time {DAY} {INDEX} {DAY} {new START_TI
 The second `DAY` parameter is for the new day of the week you wish to set your slot.
 
 <!-- @@author fchensan -->
-> For example, let's say that you have these two slots on Wednesday: <br>
+> For example, let's say that you have these two slots on Wednesday:
+>
 > ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/editslotcontext.png)
 >
 > If you want to change the title of the second slot to "tutorial", you can simply type `edit title wed 2 tutorial`.
-> You should then see a message as shown below: <br>
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/editslot.png)
+> You should then see a message as shown below:
 >
-> More examples of usage:   
->* `edit module mon 1 CS1010`  
->* `edit title mon 1 lecture`
->* `edit time mon 1 fri 10:00 12:00`
+> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/editslot.png)
+
+More examples:   
+* `edit module mon 1 CS1010`  
+* `edit title mon 1 lecture`
+* `edit time mon 1 fri 10:00 12:00`
 
 <br>
 
 <!-- @@author xingrong123-->
 <a name="launchtimeslot"></a>
-#### 5.3.6 Launch bookmarks from module, slot: `launch` (Xing Rong)  
+#### 3.3.6. Launch bookmarks from module, slot: `launch` (Xing Rong)  
 Launches the bookmarks of slots or the bookmarks of a module
 
 >You can only launch a module that is listed on the NUSMods website. 
@@ -644,10 +646,10 @@ Example of usage:
 <!-- @@author jusufnathanael -->
 
 <a name="plannermode"></a>  
-### 5.4. Planner Mode (Jusuf)
+### 3.4. Planner Mode (Jusuf)
 
 <a name="loadplanner"></a>  
-#### 5.4.1. Load planner: `load`  
+#### 3.4.1. Load planner: `load`  
 Loads all the timetables from the `planner` folder and helps you find some common empty slots.
 
 ```
@@ -661,7 +663,7 @@ You can try to download some timetable samples from [here](https://github.com/AY
 <br>
 
 <a name="addmeeting"></a>  
-#### 5.4.2. Add meeting: `add`  
+#### 3.4.2. Add meeting: `add`  
 You can add modules, time slots, and bookmarks using this feature.
 You can also chain commands when adding multiple slots and bookmarks to a module by using `,` as a separator.
 
@@ -674,7 +676,7 @@ Format: same as [add time slots](#addtimeslot) command.
 <br>
 
 <a name="showplanner"></a>  
-#### 5.4.3. Show planner: `show`
+#### 3.4.3. Show planner: `show`
 You will be able to see the empty time slots for a certain day or the whole week.
 
 If your selected timetable is the current day, you should be able to see a 
@@ -701,18 +703,20 @@ Output:
 <br>
 
 <a name="saveplanner"></a>  
-#### 5.4.4. Save planner: `save`  
+#### 3.4.4. Save planner: `save`  
 Saves the newly added slot(s) to each individual timetable.
 ```
 Format: save
 ```
-<!-- @@author Speedweener -->
 
-<br/><br/> 
+<br>
+<br>
+
+
+<!-- @@author Speedweener -->
 ## 4. FAQ  
 
-**Q**: My Zoomaster logo looks weird! Is there something wrong with my program?   
-
+**Q** &nbsp; &nbsp; : My Zoomaster logo looks weird! Is there something wrong with my program?   
   
 **A**: Some users might encounter a start-up screen that looks like this. <br></br>
 ![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/buglogo.png)
