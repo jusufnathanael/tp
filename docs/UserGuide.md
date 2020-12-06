@@ -553,7 +553,7 @@ More examples:
 * `add cs2113t 1 www.yahoo.com`
 * `add cs2113t lecture fri 16:00 18:00 www.google.com, notes www.google.com, tutorial fri 10:00 12:00`
 
-<br>
+<br><br>
 
 <a name="deletetimeslot"></a>
 #### 3.3.4. Delete module, time slot and bookmarks: `delete` (Xing Rong)
@@ -720,30 +720,35 @@ Format: save
 
 **Q** &nbsp; &nbsp; : My Zoomaster logo looks weird! Is there something wrong with my program?   
   
-**A**: Some users might encounter a start-up screen that looks like this. <br></br>
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/buglogo.png)
+**A** &nbsp; &nbsp; : Some users might encounter a start-up screen that looks like this.
 
-This is only a visual bug. Other than the weird-looking logo, Zoomaster will work as per normal. No
+&nbsp; &nbsp; &nbsp; &nbsp; ![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/buglogo.png)
+
+&nbsp; &nbsp; &nbsp; &nbsp; This is only a visual bug. Other than the weird-looking logo, Zoomaster will work as per normal. No
 need to worry!
-<br/><br/> 
 
+<br>
   
-**Q**: How do I transfer my data to another computer?   
+**Q** &nbsp; &nbsp; : How do I transfer my data to another computer?   
   
-**A**: Simply copy the `data/bookmarks.txt` and `data/slots.txt` file to the **data** directory. This directory should be
- in the same location where you have stored the `jar` file. <br></br>
-![](https://raw.githubusercontent.com/Speedweener/ip/master/docs/images/directory.png)
+**A** &nbsp; &nbsp; : Simply copy the `data/bookmarks.txt` and `data/slots.txt` file to the **data** directory.<br>
+&nbsp; &nbsp; &nbsp; &nbsp; This directory should be in the same location where you have stored the `jar` file.
 
-Start the application and all the data should be loaded.
-<br/><br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; ![](https://raw.githubusercontent.com/Speedweener/ip/master/docs/images/directory.png)
+
+&nbsp; &nbsp; &nbsp; &nbsp; Start the application and all the data should be loaded.
+
+<br>
 
 **Q**: Can I add a module not from NUS?   
   
-**A**: Yes you can! <br> In the **data** directory locate the  `modulelist.txt` file. Add the new module on a new line
+**A**: Yes you can! <br>
+&nbsp; &nbsp; &nbsp; &nbsp; In the **data** directory locate the  `modulelist.txt` file. Add the new module on a new line
 and save the txt file. You can now add the module in Zoomaster.
 
+<br>
+<br>
 
-<br/></br>
 ## 5. Command Summary
 
 **Global** 
