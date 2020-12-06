@@ -365,7 +365,7 @@ Example of usage:
 
 >You should see a message similar to the screenshot below when a successful match is found.  
 >
->![](./images/bookmark/findBookmark_output.png)
+>![](./images/bookmark/findBookmark_output.PNG)
 >
 >Else you should see the following message:
 >
