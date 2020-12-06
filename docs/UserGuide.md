@@ -244,7 +244,7 @@ Format: clear
 
 <!-- @@author -->
 <a name="exit"></a>  
-#### 5.1.7 Exit the app: `exit`  
+#### 3.1.7. Exit the app: `exit`  
 You can exit the application by using the exit command.  
 ```
 Format: exit
@@ -269,11 +269,11 @@ Format: show
 ```
 >Example of a printed out bookmark list.  
 >
->![](images/showOutput.PNG)
-
+>![](./images/showOutput.PNG)
+>
 >If your bookmark list is empty, you will get the message shown in the screenshot below.  
 >
->![](images/showEmptyBookmarks.PNG)
+>![](./images/showEmptyBookmarks.PNG)
 
 <br>
 
@@ -313,7 +313,7 @@ Example of usage:
 
 >You should see a message similar to the screenshot below.  
 >
->![](images/deletebookmarksoutput.PNG)
+>![](./images/deletebookmarksoutput.PNG)
 
 <br>
 
@@ -332,8 +332,9 @@ You should enter a `desc` or `url` depending on which one you want to edit.
 
 > For example, let's say that you have `[news] www.straitstimes.com` as your third bookmark on the list.
 > You can type in `edit desc 3 straitstimes` to change the description to "straitstimes". The following message will 
-> appear:  
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/editbookmark.png)
+> appear:
+>
+>`Bookmark description updated!`
 
 <br>
 
@@ -342,7 +343,7 @@ You should enter a `desc` or `url` depending on which one you want to edit.
 #### 3.2.5. Find bookmarks: `find` (Zhan Hao) 
 You can use this command to find bookmarks with matching description.
 
->* Your `DESCRIPTION` must only contain one word (no whitespace inside). 
+>Your `DESCRIPTION` must only contain one word (no whitespace inside). 
 >See the [command format](#command_format) for more details.
 
 ```
@@ -356,8 +357,10 @@ Example of usage:
 >You should see a message similar to the screenshot below when a successful match is found.  
 >
 >![](images/findBookmarkoutput.PNG)
-
-Else you should see "No bookmarks contain the specified keyword!".
+>
+>Else you should see:
+>
+>`No bookmarks contain the specified keyword!`
 
 <br>
 
@@ -369,7 +372,7 @@ Your selection of bookmark(s) can be via _index_ or _matching description_.
 The index will correspond to the index of that bookmark in the list. 
 You can do a `show` command to check the bookmark indexes.  
 
->* Your `DESCRIPTION` must only contain one word (no whitespace inside). 
+>Your `DESCRIPTION` must only contain one word (no whitespace inside). 
 >See the [command format](#command_format) for more details.
 
 ```
@@ -381,7 +384,8 @@ Example of usage:
 * `launch cs2113t-website`  
 * `launch abc`  
 
-<br><br>
+<br>
+<br>
 
 <a name="timetablemode"></a>  
 ### 5.3 Timetable mode    
