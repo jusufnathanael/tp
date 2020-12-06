@@ -128,11 +128,11 @@ Format: help {COMMAND(optional)}
 >
 >Then, you should see the following message to guide you with the relevant commands.
 >
->![](./images/showhelpcommand%20main%20menu.png?raw=true)
+>![](./images/showhelpcommand_mainmenu.png)
 >
 >Typing `help` in bookmark mode will show these commands.
 >
->![](./images/showhelpcommand%20bookmark.png?raw=true)
+>![](./images/showhelpcommand_bookmark.png)
 
 <br>
 
@@ -145,14 +145,15 @@ Example of usage:
 
 >You should see the following message if you enter `help add` in timetable mode.
 >
->![](https://github.com/TYS0n1/tp/blob/team-Branch2/docs/diagrams/help%20add%20msg.png?raw=true)
+>![](./images/showhelpcommand_add.png)
 
 <br>
 
 <!-- @@author TYS0n1 -->
 <a name="mode"></a>  
 #### 3.1.2. Switch mode: `mode` (Yu Shing)
-There are three modes in Zoomaster: **bookmark**, **timetable** and **planner** modes and you can switch between them. Depending on the mode you select, the behaviour of the commands below changes.
+There are three modes in Zoomaster: **bookmark**, **timetable** and **planner** modes and you can switch between them. 
+Depending on the mode you select, the behaviour of the commands below changes.
 
 There are three modes for Zoomaster., Bookmark, Timetable and Planner modes.
 ```
@@ -166,7 +167,7 @@ Example of usage:
 
 >Here is an example of switching from the main menu of Zoomaster to the bookmark modes.
 >
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/changemodecommand%20main%20menu%20to%20bookmarks.png?raw=true)
+>![](./images/changemodecommand.png)
 >
 >For the other modes, you should see a similar message like "changing to timetable/planner mode".
 
@@ -225,7 +226,7 @@ For example, let's say that you want Zoomaster to enter `bookmark` mode when you
 
 >You can type in `set def_mode bookmark` and Zoomaster will change your settings, as shown below.  
 >
->![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/setsettings.png)
+>![](./images/setsettingscommand.png)
 
 The next time you run Zoomaster, you will automatically enter `bookmark` mode.
 
@@ -246,7 +247,7 @@ Format: clear
 
 >Here is an example of clearing the screen using the clear command.
 >
->![](./images/clear.png)
+>![](./images/clearcommand.png)
 
 <br>
 
