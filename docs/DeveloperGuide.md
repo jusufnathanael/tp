@@ -1,11 +1,11 @@
-# **Developer Guide**
+# Developer Guide
 
+## Introduction
 
-## **Introduction**
- ![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/zoomasterwhitebg.png) <br/><br/>
-### Introduction to Zoomaster
+![](./images/zoomasterWhite.png)
+
 Zoomaster is a Java application for the Command Line. It provides a simple and intuitive way to store Zoom links for 
-online classes and other useful links for the lesson at hand.<br/>
+online classes and other useful links for the lesson at hand.
 
 Zoomaster can also intelligently determine the current lesson users are having, allowing them to launch the correct 
 links quickly and elegantly from the command line.
@@ -13,24 +13,28 @@ links quickly and elegantly from the command line.
 ### Target audience
 This developer guide is for experienced programmers with knowledge of object oriented programming.
 
-
 ### Purpose
 This guide seeks to introduce to you the design and implementation of Zoomaster features. It will share our reasoning 
 behind the way we implemented different features and its logic flow. With this, you would be able to tweak and further 
 develop Zoomaster without confusion or introduce unwanted bugs to the App.
 
 ### Scope
-First, the guide will help you set up Zoomaster in its current iteration so that you can familiarise yourself with it. <br/> 
-Secondly, the guide will explain the design of Zoomaster and its various components. <br/>
-Next, the guide will showcase how we implement various features into Zoomaster with 
-step by step explanations and diagram. <br/>
+First, the guide will help you set up Zoomaster in its current iteration so that you can familiarise yourself with it.
+
+Second, the guide will explain the design of Zoomaster and its various components.
+
+Next, the guide will showcase how we implement various features into Zoomaster with step by step explanations and diagram.
+
 Finally, the guide has several appendixes explaining the scope of the product, user stories, non-function requirements, 
 glossary and instructions for manual testing.
 
 ### Navigation
-You can navigate the guide via the table of contents below. <br/>
+You can navigate the guide via the table of contents below.
+
 Otherwise, each major section is distinguished by a bold header and underline. Sub-sections are of a smaller font than 
 major sections but still larger than normal paragraphs to distinguish them.
+
+<br>
 
 ### Table of contents
 * [Getting Started](#getting-started)
@@ -61,15 +65,17 @@ major sections but still larger than normal paragraphs to distinguish them.
   * [Basics](#appendix-e-basic)
   * [Advanced](#appendix-e-advanced)
 
+<br>
+<br>
+
 <a name="getting-started"></a>
 ## **Getting Started**
-First, download the source code and jar file of Zoomaster [here](https://github.com/AY2021S1-CS2113T-W11-1/tp/releases).
-
-Next, follow the startup procedures as stated in the 
-[User Guide](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/UserGuide.md) and familiarize yourself with 
+1. Download the source code and jar file of Zoomaster [here](https://github.com/AY2021S1-CS2113T-W11-1/tp/releases).
+2. Next, follow the startup procedures as stated in the [User Guide](./UserGuide.md) and familiarize yourself with 
 Zoomaster's features.
+3. Now, you can dive into the source code and explore the inner workings of Zoomaster with this guide.
 
-Now, you can dive into the source code and explore the inner workings of Zoomaster with this guide.
+<br>
 
 <a name="design"></a>
 ## **Design**
@@ -79,12 +85,14 @@ then its various components.
 
 <a name="architecture"></a>
 ### Architecture
+The figure below shows a high-level design for the architecture of Zoomaster.
 
-The figure below shows a high-level design for the architecture of Zoomaster. <br/></br>
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/architecture.png) <br/></br>
-*<center/> Figure 1.1 Architecture diagram of Zoomaster </center> <br/></br>*
+<div align="center">
+<img src="./diagrams/architecture.png" width=400 height=548><br>
+<i> Figure 1.1 Architecture diagram of Zoomaster </i><br>
+</div>
 
-Our Program can be split up into 7 components
+Our Program can be split into 7 components:
 * Initialization
 * User Interface
 * Parser
@@ -93,8 +101,7 @@ Our Program can be split up into 7 components
 * Storage
 * Local Files
 
-
-These components interact with each other as shown in Figure 1.1 to execute the functionalities of Zoomaster.
+These components interact with each other as shown in *Figure 1.1* to execute the functionalities of Zoomaster.
 
 <a name="initialization"></a>
 ### Initialization
@@ -816,6 +823,9 @@ Hence, Zoomaster helps to organise students’ Zoom links for easy access to the
 
 ### Mainstream OS
 > Windows, Linux, Unix, OS-X
+
+<br>
+<br>
 
 <a name="appendix-e"></a>
 ## **Appendix E: Instructions for manual testing**
