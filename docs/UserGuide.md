@@ -128,11 +128,11 @@ Format: help {COMMAND(optional)}
 >
 >Then, you should see the following message to guide you with the relevant commands.
 >
->![](./images/showhelpcommand_mainmenu.png)
+>![](./images/global/showHelp_mainMenu.png)
 >
 >Typing `help` in bookmark mode will show these commands.
 >
->![](./images/showhelpcommand_bookmark.png)
+>![](./images/global/showHelp_bookmark.png)
 
 <br>
 
@@ -145,7 +145,7 @@ Example of usage:
 
 >You should see the following message if you enter `help add` in timetable mode.
 >
->![](./images/showhelpcommand_add.png)
+>![](./images/global/showHelp_add.png)
 
 <br>
 
@@ -167,7 +167,7 @@ Example of usage:
 
 >Here is an example of switching from the main menu of Zoomaster to the bookmark modes.
 >
->![](./images/changemodecommand.png)
+>![](./images/global/changeMode.png)
 >
 >For the other modes, you should see a similar message like "changing to timetable/planner mode".
 
@@ -187,7 +187,7 @@ Format: launch now
 >Here is an example of launching the bookmark of the current lesson. In this case, the URL attached to the slot
 >is www.google.com.
 >
->![](./images/launchnow.png)
+>![](./images/global/launchNow.png)
 
 You should expect to see the urls of the current or 5 minutes advance lesson slot launching
 in your native browser. Otherwise, you should see the message `no lesson now`.
@@ -226,7 +226,7 @@ For example, let's say that you want Zoomaster to enter `bookmark` mode when you
 
 >You can type in `set def_mode bookmark` and Zoomaster will change your settings, as shown below.  
 >
->![](./images/setsettingscommand.png)
+>![](./images/global/setSettings.png)
 
 The next time you run Zoomaster, you will automatically enter `bookmark` mode.
 
@@ -247,7 +247,7 @@ Format: clear
 
 >Here is an example of clearing the screen using the clear command.
 >
->![](./images/clearcommand.png)
+>![](./images/global/clearScreen.png)
 
 <br>
 
@@ -278,11 +278,11 @@ Format: show
 ```
 >Example of a printed out bookmark list.  
 >
->![](./images/showOutput.PNG)
+>![](./images/bookmark/showBookmark_output.png)
 >
 >If your bookmark list is empty, you will get the message shown in the screenshot below.  
 >
->![](./images/showEmptyBookmarks.PNG)
+>![](./images/bookmark/showBookmark_empty.png)
 
 <br>
 
@@ -322,7 +322,7 @@ Example of usage:
 
 >You should see a message similar to the screenshot below.  
 >
->![](./images/deletebookmarksoutput.PNG)
+>![](./images/bookmark/deleteBookmark_output.PNG)
 
 <br>
 
@@ -365,7 +365,7 @@ Example of usage:
 
 >You should see a message similar to the screenshot below when a successful match is found.  
 >
->![](./images/findBookmarkoutput.PNG)
+>![](./images/bookmark/findBookmark_output.png)
 >
 >Else you should see the following message:
 >
@@ -429,15 +429,15 @@ Here are some examples of outcomes you will see on the command line interface.
 
 >You will see an empty list message if your timetable is empty.
 >
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20empty%20timetable.png?raw=true)
+>![](./images/timetable/showTimetable_empty.png)
 >
 >You will see your entire timetable if you use `show` input.
 >
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20all%20timetable.png?raw=true)
+>![](./images/timetable/showTimetable_all.png)
 >
 >You will see the timetable of your selected day if you use `show {day}` input.
 >
->![](https://github.com/TYS0n1/tp/blob/master/docs/images/showtimetablecommand%20today%20timetable.png?raw=true)
+>![](./images/timetable/showTimetable_today.png)
 
 <br>
 
@@ -459,11 +459,11 @@ Format (show module details): show {MODULE} bookmarks(optional)
 Example of usage:   
 >`show CS2113T`  
 >
->![](./images/showTimetableCommand/showmoduleoutput.PNG)  
+>![](./images/timetable/showModule_output.png)  
 >
 >`show CS2113T bookmarks`  
 >
->![](./images/showTimetableCommand/showmodulebookmarksoutput.PNG)
+>![](./images/timetable/showModuleBookmarks_output.png)
 
 <br>
 
@@ -613,12 +613,12 @@ The second `DAY` parameter is for the new day of the week you wish to set your s
 <!-- @@author fchensan -->
 > For example, let's say that you have these two slots on Wednesday:
 >
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/editslotcontext.png)
+> ![](./images/timetable/editSlot_show.png)
 >
 > If you want to change the title of the second slot to "tutorial", you can simply type `edit title wed 2 tutorial`.
 > You should then see a message as shown below:
 >
-> ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/editslot.png)
+> ![](./images/timetable/editSlot_message.png)
 
 More examples:   
 * `edit module mon 1 CS1010`  
@@ -669,7 +669,7 @@ Format: load
 * You need to copy the different .txt files manually to the planner folder before entering this command.
 * This command only displays the common empty time slots between.
 
-You can try to download some timetable samples from [here](https://github.com/AY2021S1-CS2113T-W11-1/tp/tree/master/docs/timetable_samples).
+You can try to download some timetable samples from [here](https://github.com/jusufnathanael/tp/tree/master/docs/timetable_samples).
 
 <br>
 
@@ -702,14 +702,14 @@ Format: show {DAY(optional)}
 * You have to enter `DAY` input according to the command format else it will not be recognised as a valid date. 
 * You can see the [command format](#command_format) for more information.
 
-Example of usage:   
+Example of usage:
 * `show`
 * `show wed`
 * `show today`
 
 >This is the output if you type `show` after initialisation in planner mode:
 >
-><img src="./images/showplannercommand.PNG" width="400" height="426" />
+><img src="./images/planner/showPlanner.png" width="400" height="426" />
 
 <br>
 
@@ -736,7 +736,7 @@ My Zoomaster logo looks weird! Is there something wrong with my program?
 
 Some users might encounter a start-up screen that looks like this.
 
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/buglogo.png)
+![](./images/buglogo.png)
 
 This is only a visual bug. Other than the weird-looking logo, Zoomaster will work as per normal. 
 No need to worry!
@@ -752,7 +752,7 @@ How do I transfer my data to another computer?
 Simply copy the `data/bookmarks.txt` and `data/slots.txt` file to the **data** directory. 
 This directory should be in the same location where you have stored the `jar` file.
 
-![](https://raw.githubusercontent.com/Speedweener/ip/master/docs/images/directory.png)
+![](./images/directory.png)
 
 Start the application and all the data should be loaded.
 
