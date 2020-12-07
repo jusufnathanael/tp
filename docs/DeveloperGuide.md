@@ -313,7 +313,9 @@ user the valid modes of Zoomaster.
 
 <br>
 
-**Design consideration:** How to store programMode variable for security?
+**Design Consideration**
+
+**Aspect:** How to store programMode variable for security?
 
 * **Alternative 1 (current choice):** No security
 
@@ -410,7 +412,9 @@ Hence, it sets **day** variable as the day of the current system time and moves 
 
 <br>
 
-**Design consideration:** What keyword for the user to input to get show timetable feature?
+**Design Consideration**
+
+**Aspect:** What keyword for the user to input to get show timetable feature?
 
 * **Alternative 1 (current choice):** Using `show` keyword and a valid `DAY(optional)` input.
 
@@ -459,13 +463,13 @@ Given below is a sequence diagram of how the feature works.
 "Get module if it exist, else create a new module" Block</i><br><br><br>
 <img src="./diagrams/addSlotCommand/addSlotSequenceDiagram3.png"><br>
 <i>Figure 2.10 Sequence diagram for 
-"Create bookmark for module" Block</i><br><br>
+"Create bookmark for module" Block</i><br><br><br>
 <img src="./diagrams/addSlotCommand/addSlotSequenceDiagram4.png"><br>
 <i>Figure 2.11 Sequence diagram for 
-"Create bookmark for existing slot based on its index" Block</i><br><br>
+"Create bookmark for existing slot based on its index" Block</i><br><br><br>
 <img src="./diagrams/addSlotCommand/addSlotSequenceDiagram5.png"><br>
 <i>Figure 2.12 Sequence diagram for 
-"Get slot if it exist, else create a new slot" Block</i><br><br>
+"Get slot if it exist, else create a new slot" Block</i><br><br><br>
 <img src="./diagrams/addSlotCommand/addSlotSequenceDiagram6.png"><br>
 <i>Figure 2.13 Sequence diagram for 
 "Create bookmark for slot" Block</i><br><br>
@@ -487,7 +491,9 @@ If there is one, then the bookmark will be added to the lesson slot.
 
 <br>
 
-**Design consideration:** How to enable fast typing users to add modules, slots and related bookmarks faster?
+**Design consideration**
+
+**Aspect:** How to enable fast typing users to add modules, slots and related bookmarks faster?
 
 * **Alternative 1 (Current choice):** allow one-shot command to add slots and bookmarks to a module
 
@@ -556,10 +562,10 @@ The application will then convert the JSON file to an ArrayList of modules, whic
 modules entered by the user. The ArrayList is then stored locally so that subsequent runs of the application
 will be able to read from the local file instead, which allows the application to be loaded faster. 
 Below is a sequence diagram of the process of retrieving the module list. Note that the alt block is informally used 
-to illustrate the try-catch block. 
+to illustrate the try-catch block.
 
-<div align="center">
-<img src="./diagrams/loadModuleList/getModuleList.png" width=500><br>
+<br><div align="center">
+<img src="./diagrams/loadModuleList/getModuleList.png" width=600><br>
 <i>Figure 2.19 Sequence diagram for retrieving module list</i><br><br>
 </div>
 
@@ -584,7 +590,9 @@ return true. This is to allow the application to still be usable, although witho
 
 <br>
 
-**Design consideration:** How to allow the validation to be useful in most scenarios?
+**Design consideration**
+
+**Aspect:** How to allow the validation to be useful in most scenarios?
 
 * **Alternative 1 (Current choice):** Connection is needed once, to retrieve module list for the current year.
 
@@ -599,16 +607,21 @@ return true. This is to allow the application to still be usable, although witho
 Since the application is primarily based on launching URLs, having an internet connection is a general requirement for the rest of the 
 application to function. Hence, the cons of the first alternative is not significant.
 
-##### Aspect: How to increase usability among different users
+**Aspect:** How to increase usability among different users?
+
 * **Alternative 1 (Current choice):** Module list is saved as a editable txt file
+
     * Pros: Allows for editing of module list to include non-NUS modules
     * Cons: App start up takes a longer time as module list has to be loaded .
+    
 * **Alternative 2:** Store the module list within the jar file file itself.
+
     * Pros: Faster start up of app
     * Cons: Module list cannot be edited, preventing users from other universities taking other modules from adding their modules.
 
 Since the start up time for the app after loading the module list from online is still very fast, it should not affect most users.
-<br></br>
+
+<br>
 
 <a name="extendedhelpcommand"></a>
 ### Extended HelpCommand Feature (Zhan Hao)
@@ -654,10 +667,9 @@ CLEAR_KW or EXIT_KW and print accordingly. If the details do not match any, the 
 5. The different print with colour methods utilise the JAnsi library to print to the Command Prompt in colour.
 
 <br></br>
-<!-- @@author -->
+
 
 <!-- @@author fchensan -->
-
 <a name="edit-slot"></a>
 ### Edit Slot feature (Francisco)
 
