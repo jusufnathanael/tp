@@ -57,7 +57,7 @@ major sections but still larger than normal paragraphs to distinguish them.
 * [Appendix B: User Stories](#appendix-b)
 * [Appendix C: Non-Functional Requirements](#appendix-c)
 * [Appendix D: Glossary](#appendix-d)
-* [Appendix E: Instructions for manual testing](#appendix-e)
+* [Appendix E: Instructions for Manual Testing](#appendix-e)
   * [Basics](#appendix-e-basic)
   * [Advanced](#appendix-e-advanced)
 
@@ -867,7 +867,7 @@ Hence, Zoomaster helps to organise students’ Zoom links for easy access to the
 <br>
 
 <a name="appendix-e"></a>
-## **Appendix E: Instructions for manual testing**
+## **Appendix E: Instructions for Manual Testing**
 
 <a name="appendix-e-basic"></a>
 ### Basics
