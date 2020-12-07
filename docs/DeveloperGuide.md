@@ -313,7 +313,7 @@ user the valid modes of Zoomaster.
 
 <br>
 
-**Design consideration:** ways to store programMode variable for security**
+**Design consideration:** How to store programMode variable for security?
 
 * **Alternative 1 (current choice):** No security
 
@@ -331,7 +331,7 @@ user the valid modes of Zoomaster.
 ### Show Timetable Feature (Tan Yu Shing)
 Users can see the timetable they have created in the App using the **show** command. 
 They can see the complete timetable from monday to sunday, the timetable of a specified day of the week or the timetable today. 
-The commands for these are **show**, **show {DAY}** eg. **show mon**, **show tue** and **show today**. <br></br>
+The commands for these are **show**, **show {DAY}** eg. **show mon**, **show tue** and **show today**.
 
 In this section:
 * *input command* refers to the string of characters the user has typed into the command line and entered into the program, e.g. "show today".
@@ -357,75 +357,82 @@ It uses SlotContainer class sortSlotsByTime method to help sort the list of less
 * hasLessonNow(Slot **slot**):
   * checks if a **slot** timing is overlapping with the current system time. Returns a **boolean** true or false based on the check.
   
-* getIndicatorMessage() - Returns a **String** containing an indicator with the current system time.
-* getHighlighBoxUpperMessage() - Returns a **String** containing an indicator with a message "lesson now".
-* getHighlighBoxLowerMessage() - Returns a **String** containing a indicator.
+* getIndicatorMessage() - returns a **String** containing an indicator with the current system time.
+* getHighlighBoxUpperMessage() - returns a **String** containing an indicator with a message "lesson now".
+* getHighlighBoxLowerMessage() - returns a **String** containing a indicator.
 
 <br>
 
 Given below is a sequence diagram of how printing the timetable occurs.
 
 <div align="center">
-<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_1.png"><br><br>
-<i>Figure 2.3 Sequence diagram for ShowTimetableCommand</i><br>
-<div>
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_1.png"><br>
+<i>Figure 2.3 Sequence diagram for ShowTimetableCommand</i><br><br>
+</div>
 
-![](./diagrams/showTimetableCommand/showTimetableCommand_seq_2.png)
-*<center/>Figure 2.04 sequence diagram for "Initialise ShowTimetableCommand" Block</center> <br/></br>*
+<div align="center">
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_2.png"><br>
+<i>Figure 2.4 Sequence diagram for "Initialise ShowTimetableCommand" Block</i><br><br>
+</div>
 
-![](./diagrams/showTimetableCommand/showTimetableCommand_seq_3.png) <br/></br>
-*<center/>Figure 2.05 sequence diagram for "Execute ShowTimetableCommand" Block</center> <br/></br>*
+<div align="center">
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_3.png"><br>
+<i>Figure 2.5 Sequence diagram for "Execute ShowTimetableCommand" Block</i><br><br>
+</div>
 
 1. When Zoomaster gets a command from the user to show the timetable, a new ShowTimetableCommand object is created.
-
 2. The ShowTimetableCommand decodes the input command to retrieve the way the user wishes to view the timetable.
+3. If an invalid input day is entered by the user, the input day will be set as `NULL`.
+4. Zoomaster now executes the command and displays the timetable in the requested mode.
+5. If the input day is `NULL``, no timetable will be printed out. Instead, the program checks for does checks for Show Lesson Bookmarks feature.
 
-3. If an invalid input day is entered by the user, the input day will be set as **null**.
+The following activity diagram summarizes what happens when a user executes a new command:
 
-4. Zoomaster now executes the command and displays the timetable in the requested mode. 
-
-5. If the input day is **null**, no timetable will be printed out. Instead, the program checks for does checks for Show Lesson Bookmarks feature.
-
-The following activity diagram summarizes what happens when a user executes a new command: <br/></br>
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/activity%20diagram%20show%20timetable%20command.png?raw=true) <br/></br>
-*<center/>Figure 2.06 Activity diagram for ShowTimetableCommand</center> <br/></br>*
+<div align="center">
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_activity.png"><br>
+<i>Figure 2.6 Activity diagram for ShowTimetableCommand</i><br><br>
+</div>
 
 1. First, the program checks if the input command is just "show". This corresponds to the user requesting the full timetable.
 Hence, it sets **day** variable as "ALL" and moves on to the Execute step, step 6. Else it continues to decode the input command.
 
-2. Secondly, the program checks for spacing error in the command. Show command requires a space after "show" help decode the input command.
+2. Second, the program checks for spacing error in the command. Show command requires a space after "show" help decode the input command.
 Hence, if there is no space after "show", the program throws an Unknown Input ZoomasterException and shows the list of valid commands.
 
 3. Next, the program checks if the input parameter is "today". This corresponds to the user requesting the timetable on the day of the current system time.
 Hence, it sets **day** variable as the day of the current system time and moves on to the Execute step, step 6. Else it continues to further check the input command.
 
-4. Afterwards, the program checks if the input parameter corresponds to a valid day of the week in its three-letter abbreviation.
-If so, it sets **day** variable as that of input parameter and moves on to the Execute step, step 6.
+4. Afterwards, the program checks if the input parameter corresponds to a valid day of the week in its three-letter abbreviation. If yes, it sets **day** variable as that of input parameter and moves on to the Execute step, step 6. Otherwise, the program sets **day** variable as `NULL`.
 
-5. Else, if the input parameter does not correspond to any of the valid inputs. The program sets **day** variable as "NULL".
+6. Now, the program executes. If the **day** variable is not `NULL`, it prints the corresponding timetable the user wants.
 
-6. Now, the program executes. If the **day** variable is not "NULL", it prints the corresponding timetable the user wants.
+7. If the **day** variable is `NULL`, the program moves on to the Show Lesson Bookmarks feature.
 
-7. If the **day** variable is "NULL", the program moves on to the Show Lesson Bookmarks feature.
+<br>
 
-#### Design consideration:
+**Design consideration:** What keyword for the user to input to get show timetable feature?
 
-##### Aspect: What keyword for the user to input to get show timetable feature.
+* **Alternative 1 (current choice):** Using `show` keyword and a valid `DAY(optional)` input.
 
-* **Alternative 1 (Current choice):** Using `show` keyword and a valid `DAY(optional)` input.
     * Pros: Able to use `show` keyword for the show module and slot details feature too.
     * Cons: Unable to show error message for an invalid `DAY(optional)` input 
     as the program reads the input as a `MODULE` input instead. Users have to use `help` command or
     to refer to the User Guide to receive help.
+    
 * **Alternative 2:** Using `list` keyword and a valid `DAY(optional)` input.
+
     * Pros: Easier to create code. No need to have an algorithm figure out if user wants to access show timetable
     feature or show module and slot details feature.
     * Cons: Less user-friendly. Users have to remember another keyword for showing data from Zoomaster.
+    
 * **Alternative 3:** Using `show timetable` keyword and a valid `DAY(optional)` input.
+
     * Pros: Less complex code. An additional keyword allows program to easily recognise show timetable feature.
     * Cons: Less user-friendly. Users have to type an additional phrase to show their timetable. Experienced users
     who can memorise the command would not encounter the error message of Alternative 1, thus would find typing the
     additional keyword troublesome.
+
+<br>
 
 <!-- @@author -->
 <!-- @@author xingrong123-->
