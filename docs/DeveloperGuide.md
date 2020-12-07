@@ -719,7 +719,7 @@ The sequence diagram below explains how this feature is executed:
 
 <div align="center">
 <img src="./diagrams/setSettingsCommand.png"><br>
-<i>Figure 2.25 Sequence diagram for SetSettingsCommand </i><br><br>
+<i>Figure 2.25 Sequence diagram for SetSettingsCommand </i><br>
 </div>
 
 #### Design Consideration:
