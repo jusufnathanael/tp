@@ -7,4 +7,5 @@ Zoomaster can also intelligently determine the current lesson users are having, 
 ### Useful links:
 * [User Guide](UserGuide.md)
 * [Developer Guide](DeveloperGuide.md)
+* [Setting Up](SettingUp.md)
 * [About Us](AboutUs.md)
