@@ -81,7 +81,7 @@ then its various components.
 The figure below shows a high-level design for the architecture of Zoomaster.
 
 <div align="center">
-<img src="./diagrams/architecture.png"><br>
+<img src="./diagrams/architecture.png"><br><br>
 <i>Figure 1.1 Architecture diagram of Zoomaster</i>
 </div><br>
 
@@ -102,9 +102,10 @@ These components interact with each other as shown in Figure 1.1 to execute the 
 ### Initialisation
 The diagram below shows a class-level diagram for Zoomaster.
 
-![](./diagrams/initialisation.png)
-
-<div align="center"><i>Figure 1.2 Class diagram of Initialisation</i></div><br>
+<div align="center">
+<img src="./diagrams/initialisation.png"><br><br>
+<i>Figure 1.2 Class diagram of Initialisation</i></div>
+<br>
 
 **API**: `Zoomaster.java`
 
@@ -143,9 +144,10 @@ Its main roles:
 <a name="parser"></a>
 ### Parser Component
 
-![](./diagrams/parser/parser.png)
-
-<div align="center"><i>Figure 1.3 Class diagram of Parser</i></div><br>
+<div align="center">
+<img src="./diagrams/parser/parser.png"><br><br>
+<i>Figure 1.3 Class diagram of Parser</i>
+</div><br>
 
 The Parser component is responsible for decoding the user's input and telling the Main function 
 which command to execute. It consists of `Parser` and `Command` interface classes.
@@ -173,21 +175,25 @@ The diagrams are colour coded as such:
 * Blue -> Timetable Mode
 * Red -> Planner Mode
 
-<br>![](./diagrams/parser/mode0.png)
+<br><div align="center">
+<img src="./diagrams/parser/mode0.png"><br><br>
+<i>Figure 1.4 Class diagram of commands valid in all modes</i>
+</div>
 
-<div align="center"><i>Figure 1.4 Class diagram of commands valid in all modes</i></div>
+<br><br><div align="center">
+<img src="./diagrams/parser/mode1.png"><br><br>
+<i>Figure 1.5 Class diagram of commands valid in bookmark mode</i>
+</div>
 
-<br><br>![](./diagrams/parser/mode1.png)
+<br><br><div align="center">
+<img src="./diagrams/parser/mode2.png"><br><br>
+<i>Figure 1.6 Class diagram of commands valid in timetable mode</i>
+</div>
 
-<div align="center"><i>Figure 1.5 Class diagram of commands valid in bookmark mode</i></div>
-
-<br><br>![](./diagrams/parser/mode2.png)
-
-<div align="center"><i>Figure 1.6 Class diagram of commands valid in timetable mode</i></div>
-
-<br><br>![](./diagrams/parser/mode3.png)
-
-<div align="center"><i>Figure 1.7 Class diagram of commands valid in planner mode</i></div><br><br>
+<br><br><div align="center">
+<img src="./diagrams/parser/mode3.png"><br><br>
+<i>Figure 1.7 Class diagram of commands valid in planner mode</i>
+</div><br><br>
 
 
 The Command component is responsible for carrying out the functions of Zoomaster.
@@ -277,7 +283,7 @@ This feature extends Command class with a way to toggle between different modes 
 Given below is a sequence diagram of how changing between modes occur.
 
 <div align="center">
-<img align="center" src="./diagrams/changeModeCommand_seq.png"><br>
+<img align="center" src="./diagrams/changeModeCommand_seq.png"><br><br>
 <i>Figure 2.1 Sequence diagram for ChangeModeCommand</i>
 </div><br>
 
@@ -289,9 +295,10 @@ Given below is a sequence diagram of how changing between modes occur.
 
 The following activity diagram summarizes what happens when a user executes a new command:
 
-![](./diagrams/changeModeCommand_activity.png)
-
-<div align="center"><i>Figure 2.2 Activity diagram for ChangeModeCommand</i></div><br>
+<div align="center">
+<img src="./diagrams/changeModeCommand_activity.png"><br><br>
+<i>Figure 2.2 Activity diagram for ChangeModeCommand</i></div>
+<br>
 
 1. First, the program checks if the length of the input command is more than 5. Any input command of length less than 5 is
 an invalid mode command. This is because mode command requires an input parameter separated by a space hence "mode " or "mode1"
@@ -307,9 +314,9 @@ user the valid modes of Zoomaster.
 
 <br>
 
-**Design consideration: ways to store programMode variable for security**
+**Design consideration:** ways to store programMode variable for security**
 
-* **Alternative 1 (Current choice):** No security
+* **Alternative 1 (current choice):** No security
 
     * Pros: Easy to implement
     * Cons: May introduce errors to the App if the variable is changed outside of ChangeModeCommand class objects.
