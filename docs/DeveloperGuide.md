@@ -80,8 +80,10 @@ then its various components.
 ### Architecture
 The figure below shows a high-level design for the architecture of Zoomaster.
 
-![](./diagrams/architecture.png)
-<div align="center"><i>Figure 1.1 Architecture diagram of Zoomaster</i></div><br>
+<div align="center">
+<img src="./diagrams/architecture.png"><br><br>
+<i>Figure 1.1 Architecture diagram of Zoomaster</i>
+</div><br>
 
 Our Program can be split into 7 components:
 * Initialisation
@@ -100,9 +102,10 @@ These components interact with each other as shown in Figure 1.1 to execute the 
 ### Initialisation
 The diagram below shows a class-level diagram for Zoomaster.
 
-![](./diagrams/initialisation.png)
-
-<div align="center"><i>Figure 1.2 Class diagram of Initialisation</i></div><br>
+<div align="center">
+<img src="./diagrams/initialisation.png"><br><br>
+<i>Figure 1.2 Class diagram of Initialisation</i></div>
+<br>
 
 **API**: `Zoomaster.java`
 
@@ -141,9 +144,10 @@ Its main roles:
 <a name="parser"></a>
 ### Parser Component
 
-![](./diagrams/parser/parser.png)
-
-<div align="center"><i>Figure 1.3 Class diagram of Parser</i></div><br>
+<div align="center">
+<img src="./diagrams/parser/parser.png"><br><br>
+<i>Figure 1.3 Class diagram of Parser</i>
+</div><br>
 
 The Parser component is responsible for decoding the user's input and telling the Main function 
 which command to execute. It consists of `Parser` and `Command` interface classes.
@@ -171,21 +175,25 @@ The diagrams are colour coded as such:
 * Blue -> Timetable Mode
 * Red -> Planner Mode
 
-<br>![](./diagrams/parser/mode0.png)
+<br><div align="center">
+<img src="./diagrams/parser/mode0.png"><br><br>
+<i>Figure 1.4 Class diagram of commands valid in all modes</i>
+</div>
 
-<div align="center"><i>Figure 1.4 Class diagram of commands valid in all modes</i></div>
+<br><br><div align="center">
+<img src="./diagrams/parser/mode1.png"><br><br>
+<i>Figure 1.5 Class diagram of commands valid in bookmark mode</i>
+</div>
 
-<br><br>![](./diagrams/parser/mode1.png)
+<br><br><div align="center">
+<img src="./diagrams/parser/mode2.png"><br><br>
+<i>Figure 1.6 Class diagram of commands valid in timetable mode</i>
+</div>
 
-<div align="center"><i>Figure 1.5 Class diagram of commands valid in bookmark mode</i></div>
-
-<br><br>![](./diagrams/parser/mode2.png)
-
-<div align="center"><i>Figure 1.6 Class diagram of commands valid in timetable mode</i></div>
-
-<br><br>![](./diagrams/parser/mode3.png)
-
-<div align="center"><i>Figure 1.7 Class diagram of commands valid in planner mode</i></div><br><br>
+<br><br><div align="center">
+<img src="./diagrams/parser/mode3.png"><br><br>
+<i>Figure 1.7 Class diagram of commands valid in planner mode</i>
+</div><br><br>
 
 
 The Command component is responsible for carrying out the functions of Zoomaster.
@@ -261,10 +269,12 @@ To simplify input commands for users, all lists have the same keywords for addin
 Hence, separating both lists into different modes allows both lists to access the same keywords without causing conflicts when parsing commands.
 
 In this section:
-* *input command* will refer to the string of characters the user has typed into the command line and entered into the program. E.g., "mode bookmark" is an *input command*.
-* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*. E.g. in "mode bookmark", "mode" is the identifier string of the command and "bookmark" is the *input parameter*.
+* *input command* refers to the string of characters the user has typed into the command line and entered into the program, e.g. "mode bookmark".
+* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*, e.g. "bookmark" from the "mode bookmark" input command.
 
-#### Implementation
+<br>
+
+**Implementation**
 
 This feature extends Command class with a way to toggle between different modes of Zoomaster. The integer variable used to control the modes is stored in the Parser class called "programMode". Additionally, it implements the following operation:
 
@@ -272,10 +282,10 @@ This feature extends Command class with a way to toggle between different modes 
 
 Given below is a sequence diagram of how changing between modes occur.
 
-![](./diagrams/changeModeCommand_seq.png)
-
-<div align="center"><i>Figure 2.1 Sequence diagram for ChangeModeCommand</i></div><br>
-
+<div align="center">
+<img align="center" src="./diagrams/changeModeCommand_seq.png"><br><br>
+<i>Figure 2.1 Sequence diagram for ChangeModeCommand</i>
+</div><br>
 
 1. When Zoomaster gets an input command from the user to change modes, a new ChangeModeCommand object is created.
 2. The ChangeModeCommand passes the input command through getModeFromCommand() function to decode the mode the user wishes to change to.
@@ -284,9 +294,10 @@ Given below is a sequence diagram of how changing between modes occur.
 
 The following activity diagram summarizes what happens when a user executes a new command:
 
-![](./diagrams/changeModeCommand_activity.png)
-
-<div align="center"><i>Figure 2.2 Activity diagram for ChangeModeCommand</i></div><br/></br>
+<div align="center">
+<img src="./diagrams/changeModeCommand_activity.png"><br><br>
+<i>Figure 2.2 Activity diagram for ChangeModeCommand</i></div>
+<br>
 
 1. First, the program checks if the length of the input command is more than 5. Any input command of length less than 5 is
 an invalid mode command. This is because mode command requires an input parameter separated by a space hence "mode " or "mode1"
@@ -300,48 +311,69 @@ user the valid modes of Zoomaster. Else, it continues to the next step.
    * If the input parameter does not correspond to any of the valid modes of Zoomaster, it throws an invalid mode message to tell the
 user the valid modes of Zoomaster.
 
-#### Design consideration:
+<br>
 
-##### Aspect: How to store programMode variable for security
+**Design consideration:** ways to store programMode variable for security**
 
-* **Alternative 1 (Current choice):** No security
+* **Alternative 1 (current choice):** No security
+
     * Pros: Easy to implement
     * Cons: May introduce errors to the App if the variable is changed outside of ChangeModeCommand class objects.
+    
 * **Alternative 2:** Private variable and implement mode changing inside Parser class
+
     * Pros: Ensure the App does not change modes outside commands to change modes.
     * Cons: Reduces OOP standard of code by decoupling ChangeModeCommand from Command class and increases code complexity.
 
+<br>
+
 <a name="show-timetable"></a>
-### Show timetable feature (Tan Yu Shing)
+### Show Timetable Feature (Tan Yu Shing)
 Users can see the timetable they have created in the App using the **show** command. 
 They can see the complete timetable from monday to sunday, the timetable of a specified day of the week or the timetable today. 
 The commands for these are **show**, **show {DAY}** eg. **show mon**, **show tue** and **show today**. <br></br>
 
-In this section, I will refer to *input command* and *input parameter*. <br></br>
-* *input command* refers to the string of characters the user has typed into the command line and entered into the program. 
-Eg. "show today" is an *input command* <br></br>
-* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*. 
-Eg. "show sun", "show" is the identifier string of the command and "sun" is the *input parameter*.
+In this section:
+* *input command* refers to the string of characters the user has typed into the command line and entered into the program, e.g. "show today".
+* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*, e.g. "sun" from "show sun" input command.
 
-#### Implementation
-This feature extends the command class. It is a simple retrieval algorithm which firstly gets data from the Timetable class. Then sorts it by timing and add additional indicators for the users. And finally, prints it out using the User Interface. </br> It uses SlotContainer class sortSlotsByTime method to help sort the list of lessons and it's module code by timing. </br>
-Additionally, it implements the following operations:
-* getMessageSlotsInADay(List<Module> **modules**, List<Slot> **slots**, String **day**) - Retrieves all the lesson **slots** and it's respective **module** code on the **day** specified. It then sorts the lessons by timing and returns it as a **message string**. </br> If valid, additional formatting such as current lesson indicator or current time indicator is added to the **message string**.
-* getMessageTimetable(List<Module> **modules**, List<Slot> **slots**) - Retrieves all the lesson **slots** and it's respective **module** code for the whole week. It then sorts the lessons by timing and returns it as a **message string**.  </br> If valid, additional formatting such as current lesson indicator or current time indicator is added to the **message string**.
-* getMessageLessonAtTime(List<Module> **modules**, List<Slot> **slots**, String **dayInput**) - Decodes the mode the user wants the timetable to be printed out in using **dayInput**. </br> Then calls the appropriate methods such as getMessageSlotsInADay and getMessageTimetable to get the **message string** which is then returned to the execute function to be printed out by the User Interface. If the timetable is empty or an invalid **dayInput** is given, an **exception** is thrown to tell users their mistake.
-* hasLessonNow(Slot **slot**) - Checks if a **slot** timing is overlapping with the current system time. Returns a **boolean** true or false based on the check.
+<br>
+
+**Implementation**
+
+This feature is a simple retrieval algorithm which extends the Command class. It gets data from the Timetable class, sorts the data by timing and add additional indicators for the users, and finally prints out the data using the User Interface.
+
+It uses SlotContainer class sortSlotsByTime method to help sort the list of lessons and it's module code by timing. Additionally, it implements the following operations:
+
+* getMessageSlotsInADay(List<Module> **modules**, List<Slot> **slots**, String **day**):
+  * retrieves all the lesson **slots** and it's respective **module** code on the **day** specified and then sorts the lessons by timing and returns it as a **message string**. If valid, additional formatting such as current lesson indicator or current time indicator is added to the **message string**.
+ 
+* getMessageTimetable(List<Module> **modules**, List<Slot> **slots**):
+  * retrieves all the lesson **slots** and it's respective **module** code for the whole week and then sorts the lessons by timing and returns it as a **message string**. If valid, additional formatting such as current lesson indicator or current time indicator is added to the **message string**.
+ 
+* getMessageLessonAtTime(List<Module> **modules**, List<Slot> **slots**, String **dayInput**):
+  * decodes the mode the user wants the timetable to be printed out in using **dayInput** and then calls the appropriate methods, such as getMessageSlotsInADay and getMessageTimetable to return the **message string**. If the timetable is empty or an invalid **dayInput** is given, an **exception** is thrown to tell users their mistake.
+ 
+* hasLessonNow(Slot **slot**):
+  * checks if a **slot** timing is overlapping with the current system time. Returns a **boolean** true or false based on the check.
+  
 * getIndicatorMessage() - Returns a **String** containing an indicator with the current system time.
 * getHighlighBoxUpperMessage() - Returns a **String** containing an indicator with a message "lesson now".
 * getHighlighBoxLowerMessage() - Returns a **String** containing a indicator.
 
-Given below is a sequence diagram of how printing the timetable occurs. <br/></br>
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ShowTimetableCommand%20seq%20dia%201%20new2.png?raw=true) <br/></br>
-*<center/>Figure 2.03 sequence diagram for ShowTimetableCommand</center> <br/></br>*
+<br>
 
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ShowTimetableCommand%20seq%20dia%202%20new2.png?raw=true) <br/></br>
+Given below is a sequence diagram of how printing the timetable occurs.
+
+<div align="center">
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_1.png"><br><br>
+<i>Figure 2.3 Sequence diagram for ShowTimetableCommand</i><br>
+<div>
+
+![](./diagrams/showTimetableCommand/showTimetableCommand_seq_2.png)
 *<center/>Figure 2.04 sequence diagram for "Initialise ShowTimetableCommand" Block</center> <br/></br>*
 
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ShowTimetableCommand%20seq%20dia%203%20new3.png?raw=true) <br/></br>
+![](./diagrams/showTimetableCommand/showTimetableCommand_seq_3.png) <br/></br>
 *<center/>Figure 2.05 sequence diagram for "Execute ShowTimetableCommand" Block</center> <br/></br>*
 
 1. When Zoomaster gets a command from the user to show the timetable, a new ShowTimetableCommand object is created.
