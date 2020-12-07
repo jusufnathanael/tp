@@ -175,25 +175,25 @@ The diagrams are colour coded as such:
 * Blue -> Timetable Mode
 * Red -> Planner Mode
 
-<br><div align="center">
+<div align="center">
 <img src="./diagrams/parser/mode0.png"><br><br>
 <i>Figure 1.4 Class diagram of commands valid in all modes</i>
 </div>
 
-<br><br><div align="center">
+<br><div align="center">
 <img src="./diagrams/parser/mode1.png"><br><br>
 <i>Figure 1.5 Class diagram of commands valid in bookmark mode</i>
 </div>
 
-<br><br><div align="center">
+<br><div align="center">
 <img src="./diagrams/parser/mode2.png"><br><br>
 <i>Figure 1.6 Class diagram of commands valid in timetable mode</i>
 </div>
 
-<br><br><div align="center">
+<br><div align="center">
 <img src="./diagrams/parser/mode3.png"><br><br>
 <i>Figure 1.7 Class diagram of commands valid in planner mode</i>
-</div><br><br>
+</div><br>
 
 
 The Command component is responsible for carrying out the functions of Zoomaster.
@@ -218,6 +218,8 @@ The Temporary List component is responsible for holding on to temporary data of 
 It consists of `BookmarkList`, `SlotList`, `Module` and `Timetable` classes.
 
 Its main role is to hold on to temporary data about Zoomaster.
+
+<br>
 
 <a name="storage"></a>
 ### Storage Component
@@ -274,7 +276,7 @@ In this section:
 
 <br>
 
-**Implementation**
+#### Implementation
 
 This feature extends Command class with a way to toggle between different modes of Zoomaster. The integer variable used to control the modes is stored in the Parser class called "programMode". Additionally, it implements the following operation:
 
@@ -313,17 +315,15 @@ user the valid modes of Zoomaster.
 
 <br>
 
-**Design Consideration**
+## Design Consideration
 
 **Aspect:** How to store programMode variable for security?
 
 * **Alternative 1 (current choice):** No security
-
     * Pros: Easy to implement
     * Cons: May introduce errors to the App if the variable is changed outside of ChangeModeCommand class objects.
     
 * **Alternative 2:** Private variable and implement mode changing inside Parser class
-
     * Pros: Ensure the App does not change modes outside commands to change modes.
     * Cons: Reduces OOP standard of code by decoupling ChangeModeCommand from Command class and increases code complexity.
 
@@ -341,7 +341,7 @@ In this section:
 
 <br>
 
-**Implementation**
+#### Implementation
 
 This feature is a simple retrieval algorithm which extends the Command class. It gets data from the Timetable class, sorts the data by timing and add additional indicators for the users, and finally prints out the data using the User Interface.
 
@@ -412,25 +412,22 @@ Hence, it sets **day** variable as the day of the current system time and moves 
 
 <br>
 
-**Design Consideration**
+#### Design Consideration
 
 **Aspect:** What keyword for the user to input to get show timetable feature?
 
 * **Alternative 1 (current choice):** Using `show` keyword and a valid `DAY(optional)` input.
-
     * Pros: Able to use `show` keyword for the show module and slot details feature too.
     * Cons: Unable to show error message for an invalid `DAY(optional)` input 
     as the program reads the input as a `MODULE` input instead. Users have to use `help` command or
     to refer to the User Guide to receive help.
     
 * **Alternative 2:** Using `list` keyword and a valid `DAY(optional)` input.
-
     * Pros: Easier to create code. No need to have an algorithm figure out if user wants to access show timetable
     feature or show module and slot details feature.
     * Cons: Less user-friendly. Users have to remember another keyword for showing data from Zoomaster.
     
 * **Alternative 3:** Using `show timetable` keyword and a valid `DAY(optional)` input.
-
     * Pros: Less complex code. An additional keyword allows program to easily recognise show timetable feature.
     * Cons: Less user-friendly. Users have to type an additional phrase to show their timetable. Experienced users
     who can memorise the command would not encounter the error message of Alternative 1, thus would find typing the
@@ -491,17 +488,15 @@ If there is one, then the bookmark will be added to the lesson slot.
 
 <br>
 
-**Design consideration**
+#### Design consideration
 
 **Aspect:** How to enable fast typing users to add modules, slots and related bookmarks faster?
 
-* **Alternative 1 (Current choice):** allow one-shot command to add slots and bookmarks to a module
-
+* **Alternative 1 (current choice):** allow one-shot command to add slots and bookmarks to a module
     * Pros: Fast typers can input faster
     * Cons: Difficult to implement
     
 * **Alternative 2:** separate adding of modules, lesson slots and related bookmarks into different commands
-
     * Pros: Easy to implement
     * Pros: Lower chance of error
     * Cons: User has to enter multiple commands each at a time to perform the functions, which takes up more time.
@@ -524,7 +519,7 @@ Given below is a sequence diagram of how the feature works.
 <img src="./diagrams/deleteSlotCommand/deleteSlotSequenceDiagram4.png"><br>
 <i>Figure 2.17 Sequence diagram for "delete module bookmarks" Block</i><br><br><br>
 <img src="./diagrams/deleteSlotCommand/deleteSlotSequenceDiagram5.png"><br>
-<i>Figure 2.18 Sequence diagram for "delete slot bookmarks" Block</i><br><br><br>
+<i>Figure 2.18 Sequence diagram for "delete slot bookmarks" Block</i><br><br>
 </div>
 
 1. There will be a check if the module associated with the deleted object exists. 
@@ -584,11 +579,11 @@ return true. This is to allow the application to still be usable, although witho
 
 <br>
 
-**Design consideration**
+#### Design Consideration
 
 **Aspect:** How to allow the validation to be useful in most scenarios?
 
-* **Alternative 1 (Current choice):** Connection is needed once, to retrieve module list for the current year.
+* **Alternative 1 (current choice):** Connection is needed once, to retrieve module list for the current year.
     * Pros: Allows for updated list of modules based on current year
     * Cons: Module validation will not work without initial internet connection
     
@@ -601,13 +596,11 @@ application to function. Hence, the cons of the first alternative is not signifi
 
 **Aspect:** How to increase usability among different users?
 
-* **Alternative 1 (Current choice):** Module list is saved as a editable txt file
-
+* **Alternative 1 (current choice):** Module list is saved as a editable txt file
     * Pros: Allows for editing of module list to include non-NUS modules
     * Cons: App start up takes a longer time as module list has to be loaded .
     
 * **Alternative 2:** Store the module list within the jar file file itself.
-
     * Pros: Faster start up of app
     * Cons: Module list cannot be edited, preventing users from other universities taking other modules from adding their modules.
 
@@ -682,7 +675,7 @@ The sequence diagram below explains how this feature is executed:
 
 **Aspect:** What part of a slot should the user be able to edit?
 
-* **Alternative 1 (Current choice):** The user can choose to edit the slot's module, title, or time.
+* **Alternative 1 (current choice):** The user can choose to edit the slot's module, title, or time.
     * Pros: Allows for quicker edits.
     * Cons: Harder to implement.
     
@@ -693,7 +686,7 @@ The sequence diagram below explains how this feature is executed:
 <br>
 
 <a name="showsettings"></a>
-### Show settings feature (Francisco)
+### Show Settings Feature (Francisco)
 
 This feature allows more experienced users to view Zoomaster's settings. 
 
@@ -709,11 +702,15 @@ the UserSettings object in the main Zoomaster class. It will then convert them i
 
 The sequence diagram below explains how this feature is executed:
 
- ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/showsettingssequence.png)
-*<center/> Figure 2.24 Sequence diagram for ShowSettingsCommand </center> <br/></br>*
+<div align="center">
+<img src="./diagrams/showSettingsCommand.png">
+<i>Figure 2.24 Sequence diagram for ShowSettingsCommand</i><br><br>
+</div>
+
+<br>
 
 <a name="setsettings"></a>
-### Set settings feature (Francisco)
+### Set Settings Feature (Francisco)
 
 This feature allows users to change settings as shown from the `showsettings` command. 
 
@@ -727,15 +724,19 @@ Given below is an example usage scenario and how the `set` command works.
 
 The sequence diagram below explains how this feature is executed:
 
- ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/setsettingssequence.png)
-*<center/> Figure 2.25 Sequence diagram for SetSettingsCommand </center> <br/></br>*
+<div align="center">
+<img src="./diagrams/setSettingsCommand.png">
+<i>Figure 2.25 Sequence diagram for SetSettingsCommand </i><br><br>
+</div>
 
 #### Design Consideration:
 
-##### Aspect: How should the user specify which setting to change
-* **Alternative 1 (Current choice):** The settings all have a name associated with each of them.
+**Aspect:** How should the user specify which setting to change?
+
+* **Alternative 1 (current choice):** The settings all have a name associated with each of them.
     * Pros: Allows for more expressive commands (e.g. `set autosave on` vs. `set 2 on`).
     * Cons: Harder to implement.
+    
 * **Alternative 2:** The user selects a setting to change by its index number.
     * Pros: Easier to implement.
     * Cons: The user needs to type in `show` to know the index number.
@@ -773,8 +774,6 @@ The sequence diagram below explains how the load planner command is executed:
 <i>Figure 2.26 Sequence diagram for LoadPlannerCommand</i><br><br>
 </div>
 
-<br>
-
 The general flow of the saving process is as below:
 1. First, we store the file paths of the individual timetables to an array of files. 
 2. For each file, the command will load the timetable and add the newly added meeting to the timetable.
@@ -784,14 +783,14 @@ The sequence diagram below explains how the load planner command is executed:
 
 <div align="center">
 <img src="./diagrams/plannerCommand/save_planner.png"><br>
-<i>Figure 2.27 Sequence diagram for SavePlannerCommand</i><br><br>
+<i>Figure 2.27 Sequence diagram for SavePlannerCommand</i><br>
 </div>
 
 #### Design Consideration
 
 **Aspect:** How to load and save the group meeting to the timetables?
 
-* **Alternative 1 (Current choice):** Manually load the individual timetables and save the new meetings (slots and bookmarks) to the timetables.
+* **Alternative 1 (current choice):** Manually load the individual timetables and save the new meetings (slots and bookmarks) to the timetables.
     * Pros: User can decide when to save the newly added meetings (still allow some changes).
     * Cons: In case the program crashes, the meeting will not be saved.
     
