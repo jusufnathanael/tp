@@ -409,7 +409,6 @@ Hence, it sets **day** variable as the day of the current system time and moves 
 
 7. If the **day** variable is `NULL`, the program moves on to the Show Lesson Bookmarks feature.
 
-<br>
 
 #### Design Consideration
 
@@ -485,7 +484,6 @@ If there is one, then the bookmark will be added to the lesson slot.
 
 6. Print the message of all commands executed and error messages.
 
-<br>
 
 #### Design consideration
 
@@ -576,7 +574,6 @@ loadModuleList() method.
 8. To be validated, the module to be added must exist in the ArrayList. However, if the ArrayList is null (Failed to Connect), the validation will always 
 return true. This is to allow the application to still be usable, although without the module validation feature.
 
-<br>
 
 #### Design Consideration
 
@@ -642,8 +639,7 @@ CLEAR_KW or EXIT_KW and print accordingly. If the details do not match any, the 
 
 5. The different print with colour methods utilise the JAnsi library to print to the Command Prompt in colour.
 
-<br><br>
-
+<br>
 
 <!-- @@author fchensan -->
 <a name="edit-slot"></a>
@@ -665,10 +661,8 @@ The sequence diagram below explains how this feature is executed:
 
 <div align="center">
 <img src="./diagrams/editSlotCommand.png"><br>
-<i>Figure 2.23 Sequence diagram for EditSlotCommand </i><br><br>
+<i>Figure 2.23 Sequence diagram for EditSlotCommand </i><br>
 </div>
-
-<br>
 
 #### Design Consideration
 
@@ -702,7 +696,7 @@ the UserSettings object in the main Zoomaster class. It will then convert them i
 The sequence diagram below explains how this feature is executed:
 
 <div align="center">
-<img src="./diagrams/showSettingsCommand.png">
+<img src="./diagrams/showSettingsCommand.png"><br>
 <i>Figure 2.24 Sequence diagram for ShowSettingsCommand</i><br><br>
 </div>
 
@@ -724,7 +718,7 @@ Given below is an example usage scenario and how the `set` command works.
 The sequence diagram below explains how this feature is executed:
 
 <div align="center">
-<img src="./diagrams/setSettingsCommand.png">
+<img src="./diagrams/setSettingsCommand.png"><br>
 <i>Figure 2.25 Sequence diagram for SetSettingsCommand </i><br><br>
 </div>
 
