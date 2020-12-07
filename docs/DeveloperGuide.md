@@ -37,12 +37,12 @@ major sections but still larger than normal paragraphs to distinguish them.
 * [Design](#design)
   * [Architecture](#architecture)
   * [Initialisation](#initialisation)
-  * [UI component](#ui-component)
-  * [Parser component](#parser)
-  * [Commands component](#command)
-  * [Temporary list component](#temp-list)
-  * [Storage component](#storage-component)
-  * [Local files component](#local-files)
+  * [UI Component](#ui-component)
+  * [Parser Component](#parser)
+  * [Commands Component](#command)
+  * [Temporary List Component](#temp-list)
+  * [Storage Component](#storage-component)
+  * [Local Files Component](#local-files)
 * [Implementation](#implementation)
   * [Bookmark and Timetable modes feature](#mode)
   * [Show timetable feature](#show-timetable)
@@ -121,18 +121,15 @@ Its main roles:
 
 **API**: `Ui.java`
 
-The UI component is responsible for all visual output to the User from the app. 
-The only class carrying out the component's function is the `Ui` class.
-
-It utilises the `Jansi` library to enable the usage of ANSI escape codes to format the console, 
+The UI component is responsible for all visual output to the User from the app, and 
+the only class carrying out the component's function is the `Ui` class. This component 
+utilises the `Jansi` library to enable the usage of ANSI escape codes to format the console, 
 allowing the app to output in colour.
 
-The UI also receives input from the User using a `Scanner` object. It returns the input as a String 
-to the main function.
-
-In addition, the UI contains the different exceptions and error messages which can be displayed. 
-When a particular exception is thrown (eg. **UNKNOWN_INPUT**), the corresponding method is called in UI to 
-print out the error message (**printUnknownInputMessage()**). 
+The UI receives input from the User using a `Scanner` object. It returns the input as a String 
+to the main function. In addition, the UI contains the different exceptions and error messages
+which can be displayed. When a particular exception is thrown, the corresponding method is called
+in UI to print out an error message.
 
 Its main roles:
 
@@ -142,11 +139,11 @@ Its main roles:
 <br>
 
 <a name="parser"></a>
-### Parser component
+### Parser Component
 
 ![](./diagrams/parser/parser.png)
 
-<div align="center"><i>Figure 1.3 Class diagram of Parser</i></div>
+<div align="center"><i>Figure 1.3 Class diagram of Parser</i></div><br>
 
 The Parser component is responsible for decoding the user's input and telling the Main function 
 which command to execute. It consists of `Parser` and `Command` interface classes.
@@ -165,7 +162,7 @@ The interaction of the Parser component with the Command component is covered in
 <br>
 
 <a name="command"></a>
-### Commands component
+### Commands Component
 Figures 1.4 to 1.7 below show the class-level diagrams for Parser and Command for each different mode. 
 The diagrams are colour coded as such:
 
@@ -174,21 +171,21 @@ The diagrams are colour coded as such:
 * Blue -> Timetable Mode
 * Red -> Planner Mode
 
-![](./diagrams/parser/mode0.png)
+<br>![](./diagrams/parser/mode0.png)
 
 <div align="center"><i>Figure 1.4 Class diagram of commands valid in all modes</i></div>
 
-![](./diagrams/parser/mode1.png)
+<br><br>![](./diagrams/parser/mode1.png)
 
 <div align="center"><i>Figure 1.5 Class diagram of commands valid in bookmark mode</i></div>
 
-![](./diagrams/parser/mode2.png)
+<br><br>![](./diagrams/parser/mode2.png)
 
 <div align="center"><i>Figure 1.6 Class diagram of commands valid in timetable mode</i></div>
 
-![](./diagrams/parser/mode3.png)
+<br><br>![](./diagrams/parser/mode3.png)
 
-<div align="center"><i>Figure 1.7 Class diagram of commands valid in planner mode</i></div>
+<div align="center"><i>Figure 1.7 Class diagram of commands valid in planner mode</i></div><br>
 
 
 The Command component is responsible for carrying out the functions of Zoomaster.
@@ -212,9 +209,9 @@ Its main roles:
 <br>
 
 <a name="temp-list"></a>
-### Lists component
+### Temporary List Component
 
-The Temp List component is responsible for holding on to temporary data of Zoomaster to be used by Commands.
+The Temporary List component is responsible for holding on to temporary data of Zoomaster to be used by Commands.
 
 It consists of `BookmarkList`, `SlotList`, `Module` and `Timetable` classes.
 
@@ -223,34 +220,38 @@ Its main role is to hold on to temporary data about Zoomaster
 <br>
 
 <a name="storage"></a>
-### Storage component
+### Storage Component
 
 The Storage component is responsible for saving and retrieving Zoomaster data to and from an external text file.
+The only class carrying out the component's function is the `Storage` class.
 
 It uses `Gson` library to encode temporary data from Temp List into an HTML format. Then it writes the encoded data to 
 an external text file. On the other hand, it decodes the HTML format from the external text file and updates the 
 Temp List of Zoomaster.
 
-The only class carrying out the component's function is the `Storage` class.
+Its main roles:
 
-Its main roles are:
+* Stores Zoomaster data to an external text file for long term storage.
+* Retrieves Zoomaster data on Initialisation.
+* Returns error messages to the users during extraction or writing.
 
-* Store Zoomaster data to an external text file for long term storage
-* Retrieve Zoomaster data on Initialisation
-* Return error messages to the users during extraction or writing
+<br>
 
 <a name="local-files"></a>
-### Local Files component
+### Local Files Component
 
-The Local Files component is where Zoomaster's long term storage of data is kept
+The Local Files component is where Zoomaster kept its long term data.
+Its main role is to store Zoomaster data.
 
-Its main role is:
+In addition, the file path to the directory containing the jar file is obtained
+by the getJarFilePath() method in `Zoomaster`.
+The files are saved using this file path, allowing them to be saved in the same
+directory as the jar file. This allows for more convenient running of Zoomaster, 
+as the user does not have to switch to the same directory of the jar file when 
+running the application.
 
-* Store Zoomaster data
-
-In addition, the file path to the directory containing the jar file is obtained by the getJarFilePath() method in `Zoomaster`.
-The files are saved using this file path, allowing them to be saved in the same directory as the jar file. This allows for more convenient running of Zoomaster, as the user does not have to switch to the same directory of the jar file when running the application.
-
+<br>
+<br>
 
 ## **Implementation**
 
