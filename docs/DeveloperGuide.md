@@ -791,49 +791,55 @@ The sequence diagram below explains how the load planner command is executed:
     * Cons: Do not allow any further modifications in case the user wants to change the meeting details.
     
 <br>
-
+<br>
 
 <!-- @@author -->
 <a name="appendix-a"></a>
-## **Appendix A: Product scope**
-### Target user profile
+## Appendix A: Product Scope
+### Target User Profile
 
 * NUS students
 * Students with fast typing skills 
 * Students comfortable with using the command line interface
 
-### Value proposition
+### Value Proposition
 
 Zoomaster was developed during the coronavirus pandemic whereby many NUS classes have been transitioned towards online lessons. 
 NUS lessons are mainly conducted on Zoom video conferencing software. 
 However, as Zoom does not store recurring nor past meetings, it is hard for students to easily access their online lessons. 
 Hence, Zoomaster helps to organise students’ Zoom links for easy access to their lessons.
 
-<a name="appendix-b"></a>
-## **Appendix B: User Stories**
+<br>
 
-|Version| As a ... | I want to ... | So that I can ...|
-|--------|----------|---------------|------------------|
-|v1.0|studious NUS student| bookmark important websites from different modules|launch them easily when needed|
-|v1.0|NUS student|label my bookmarks|know quickly the topics of each link|
-|v1.0|busy NUS student|create a timetable within the app which syncs up with the system time|avoid missing my lessons|
-|v1.0|NUS student|take a look at my modules for the day, or the entire week|plan out my day/week|
-|v1.0|new user|see usage instructions|refer to them when I forget how to use the application|
-|v2.0|user|find a to-do item by name|locate a to-do without having to go through the entire list|
-|v2.0|first time user of Zoomaster|be able to see the list commands available|easily navigate through the Zoomaster|
-|v2.0|advanced user|be able to launch multiple links at the same time if the links are grouped together|save time by not doing multiple launching commands|
-|v2.0|advanced user|edit my bookmarks and timetable lists according to changes in my module and timetable|quickly make changes to my lessons|
-|v2.0|busy user|have an indicator telling me the current time|easily check on the time in a hurry|
-|v2.0|fast typer|be able to type a one-shot-command when entering the details of the lessons in my timetable|add the lesson details faster|
-|v2.0|busy NUS student|be able quickly launch my next Zoom lesson|avoid being late for my lessons|
-|v2.0|NUS student|find common empty slots between my teammates|plan my group meetings accordingly and efficiently|
-|v2.0|NUS student|save my group meetings to my timetable|avoid missing my group meetings|
+<a name="appendix-b"></a>
+## Appendix B: User Stories
+
+| Version | As a ... | I want to ... | So that I can ... |
+|---------|----------|---------------|-------------------|
+| v1.0 | studious NUS student | bookmark important websites from different modules | launch them easily when needed |
+| v1.0 | NUS student | label my bookmarks | know quickly the topics of each link |
+| v1.0 | busy NUS student | create a timetable within the app which syncs up with the system time | avoid missing my lessons |
+| v1.0 | NUS student | take a look at my modules for the day, or the entire week | plan out my day/week |
+| v1.0 | new user | see usage instructions | refer to them when I forget how to use the application |
+| v2.0 | user | find a to-do item by name | locate a to-do without having to go through the entire list |
+| v2.0 | first time user of Zoomaster | be able to see the list commands available|easily navigate through the Zoomaster |
+| v2.0 | advanced user | be able to launch multiple links at the same time if the links are grouped together | save time by not doing multiple launching commands |
+| v2.0 | advanced user | edit my bookmarks and timetable lists according to changes in my module and timetable | quickly make changes to my lessons |
+| v2.0 | busy user | have an indicator telling me the current time | easily check on the time in a hurry |
+| v2.0 | fast typer | be able to type a one-shot-command when entering the details of the lessons in my timetable | add the lesson details faster |
+| v2.0 | busy NUS student | be able quickly launch my next Zoom lesson | avoid being late for my lessons |
+| v2.0 | NUS student | find common empty slots between my teammates | plan my group meetings accordingly and efficiently |
+| v2.0 | NUS student | save my group meetings to my timetable | avoid missing my group meetings |
+
+<br>
 
 <a name="appendix-c"></a>
 ## **Appendix C: Non-Functional Requirements**
 
 1. The App should work on any mainstream OS as long as it has Java `11` installed.
 2. A user with above-average typing speed should be able to accomplish most of the tasks faster using commands than using the mouse.
+
+<br>
 
 <a name="appendix-d"></a>
 ## **Appendix D Glossary**
@@ -857,7 +863,6 @@ Hence, Zoomaster helps to organise students’ Zoom links for easy access to the
 > Windows, Linux, Unix, OS-X
 
 <br>
-<br>
 
 <a name="appendix-e"></a>
 ## **Appendix E: Instructions for manual testing**
@@ -868,15 +873,16 @@ Hence, Zoomaster helps to organise students’ Zoom links for easy access to the
     1. Download the jar file and copy it into an empty folder.
     2. Open the command prompt and change directory to the location of the jar file.
     3. Enter `java -jar zoomaster.jar` in the command line. You should expect to see the welcome screen of the application.
+    
 2. Testing
     1. Download the test cases text file from github [here](https://github.com/AY2021S1-CS2113T-W11-1/tp/tree/master/text-ui-test).
     Its name is input.txt. 
-    2. These are some the sample test cases used to test if the program is working as intended. You should get the same results <br></br>
-    as shown in EXPECTED.txt file.
+    2. These are some the sample test cases used to test if the program is working as intended. You should get the same results as shown in EXPECTED.txt file.
     3. You can refer to the [User Guide](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/UserGuide.md) for the full list
     of features and available commands for Zoomaster.
     4. Now you can manually input test cases into Zoomaster and see the results.
     5. Note that the output of the application is dependent on the system time of your machine.
+    
 3. Saving and Loading
     1. Saving and loading of data is done automatically in Zoomaster. 
     2. The application uses the Gson library to convert the java objects in Zoomaster into JSON constructs, then 
@@ -909,7 +915,7 @@ Hence, Zoomaster helps to organise students’ Zoom links for easy access to the
 2. Testing bookmark commands (`add`, `show`, `delete`, `find`, `edit`, `launch`)
     1. Test `add`. Enter `add google www.google.com`, you should see message "Added bookmark: [google] www.google.com".
     2. Test `show`. Enter `show`, if you did not add any other bookmark except that of step 1, you should see message
-    "Here are the bookmarks in your list: 1.[google] www.google.com".
+    "Here are the bookmarks in your list: 1. [google] www.google.com".
     3. Test `find`. Enter `find google`, you should see message "Here are your matching bookmarks 1.[google] www.google.com". 
     4. Test `edit`. 
     Enter `edit desc 1 search`, and then type `show` and you should see that the description is now `[search]`.
