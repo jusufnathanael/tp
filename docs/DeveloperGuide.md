@@ -44,12 +44,12 @@ major sections but still larger than normal paragraphs to distinguish them.
   * [Storage Component](#storage-component)
   * [Local Files Component](#local-files)
 * [Implementation](#implementation)
-  * [Bookmark and Timetable modes feature](#mode)
-  * [Show timetable feature](#show-timetable)
-  * [Add Module and Slot features](#add-module-slot)
-  * [Validate Modules feature](#nusmodulelist)
-  * [Extended HelpCommand feature](#extendedhelpcommand)
-  * [Edit Slot feature](#edit-slot)
+  * [Modes Feature](#mode)
+  * [Show Timetable Feature](#show-timetable)
+  * [Add Module and Slot Features](#add-module-slot)
+  * [Validate Modules Feature](#nusmodulelist)
+  * [Extended HelpCommand Feature](#extendedhelpcommand)
+  * [Edit Slot Feature](#edit-slot)
   * [Show Settings Feature](#showsettings)
   * [Set Settings Feature](#setsettings)
   * [Planner Feature](#planner)
@@ -250,57 +250,54 @@ expected outcomes of each feature and the design considerations.
 
 <!-- @@author TYS0n1 -->
 <a name="mode"></a>
-### Bookmark, Timetable and Planner modes feature (Tan Yu Shing)
+### Modes Feature (Tan Yu Shing)
 
-Zoomaster has three modes for users to interact in. First, bookmark mode has the list of bookmarks with links to online resources. 
-Secondly, timetable mode has a list of timetable slots. Lastly, planner mode which helps users plan their timetable. 
+Zoomaster has three modes for users to interact in.
+* Bookmark mode has the list of bookmarks with links to online resources.
+* Timetable mode has a list of timetable slots.
+* Lastly, planner mode which helps users plan their timetable. 
+
 To simplify input commands for users, all lists have the same keywords for adding, deleting, and showing items in the lists. 
 Hence, separating both lists into different modes allows both lists to access the same keywords without causing conflicts when parsing commands.
 
-In this section, I will refer to *input command* and *input parameter*. <br></br>
-* *input command* refers to the string of characters the user has typed into the command line and entered into the program. Eg. "mode bookmark" is an *input command* <br></br>
-* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*. 
-Eg. "mode bookmark", "mode" is the identifier string of the command and "bookmark" is the *input parameter*.
+In this section:
+* *input command* will refer to the string of characters the user has typed into the command line and entered into the program. E.g., "mode bookmark" is an *input command*.
+* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*. E.g. in "mode bookmark", "mode" is the identifier string of the command and "bookmark" is the *input parameter*.
 
 #### Implementation
 
 This feature extends Command class with a way to toggle between different modes of Zoomaster. The integer variable used to control the modes is stored in the Parser class called "programMode". Additionally, it implements the following operation:
-* getModeFromCommand() - Decodes the command sent by the users to figure out which mode the user wants to move to.
+
+* getModeFromCommand() decodes the command sent by the users to figure out which mode the user wants to move to.
 
 Given below is a sequence diagram of how changing between modes occur.
 
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ChangeModeCommand%20seq%20dia%20new1.png?raw=true) <br/><br/>
+![](./diagrams/changeModeCommand_seq.png)
 
-*<center/>Figure 2.01 sequence diagram for ChangeModeCommand</center> <br/></br>*
+<div align="center"><i>Figure 2.1 Sequence diagram for ChangeModeCommand</i></div><br>
 
 
 1. When Zoomaster gets an input command from the user to change modes, a new ChangeModeCommand object is created.
-
 2. The ChangeModeCommand passes the input command through getModeFromCommand() function to decode the mode the user wishes to change to.
-
 3. Zoomaster now executes the command and changes to the respective mode. 
-
 4. If an invalid mode was given by the user or if the input field was empty, the execute function throws an exception and tells the user valid modes for Zoomaster.
 
 The following activity diagram summarizes what happens when a user executes a new command:
 
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/activity%20diagram%20change%20mode%20command%20new.png?raw=true) <br/></br>
-*<center/> Figure 2.02 Activity diagram for ChangeModeCommand </center> <br/></br>*
+![](./diagrams/changeModeCommand_activity.png)
+
+<div align="center"><i>Figure 2.2 Activity diagram for ChangeModeCommand</i></div><br/></br>
 
 1. First, the program checks if the length of the input command is more than 5. Any input command of length less than 5 is
 an invalid mode command. This is because mode command requires an input parameter separated by a space hence "mode " or "mode1"
 are examples of invalid mode commands with a length of less than 5. If this is so, it throws an invalid mode message to tell the
 user the valid modes of Zoomaster. Else, it continues to the next step.
 
-2. Secondly, the program checks if the input parameter corresponds to a valid mode of Zoomaster.
-
-3. If the input parameter corresponds to "bookmark", the program changes the mode of Zoomaster to the bookmark mode.
-
-4. If the input parameter corresponds to "timetable", the program changes the mode of Zoomaster to the timetable mode.
-
-5. If the input parameter corresponds to "planner", the program changes the mode of Zoomaster to the planner mode.
-
-6. If the input parameter does not correspond to any of the valid modes of Zoomaster, it throws an invalid mode message to tell the
+2. Second, the program checks if the input parameter corresponds to a valid mode of Zoomaster.
+   * If the input parameter corresponds to "bookmark", the program changes the mode of Zoomaster to the bookmark mode.
+   * If the input parameter corresponds to "timetable", the program changes the mode of Zoomaster to the timetable mode.
+   * If the input parameter corresponds to "planner", the program changes the mode of Zoomaster to the planner mode.
+   * If the input parameter does not correspond to any of the valid modes of Zoomaster, it throws an invalid mode message to tell the
 user the valid modes of Zoomaster.
 
 #### Design consideration:
