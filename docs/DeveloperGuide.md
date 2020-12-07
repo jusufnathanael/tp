@@ -12,7 +12,7 @@ lesson users are having, allowing them to launch the correct links quickly and e
 This developer guide is for experienced programmers with knowledge of object oriented programming.
 
 ### Purpose
-This guide seeks to introduce to you the design and implementation of Zoomaster features. It will share our reasoning 
+This guide seeks to introduce you to the design and implementation of Zoomaster features. It will share our reasoning 
 behind the way we implemented different features and its logic flow. With this, you would be able to tweak and further 
 develop Zoomaster without confusion or introduce unwanted bugs to the App.
 
@@ -36,7 +36,7 @@ major sections but still larger than normal paragraphs to distinguish them.
 * [Getting Started](#getting-started)
 * [Design](#design)
   * [Architecture](#architecture)
-  * [Initialization](#initialization)
+  * [Initialisation](#initialisation)
   * [UI component](#ui-component)
   * [Parser component](#parser)
   * [Commands component](#command)
@@ -62,7 +62,6 @@ major sections but still larger than normal paragraphs to distinguish them.
   * [Advanced](#appendix-e-advanced)
 
 <br>
-<br>
 
 <a name="getting-started"></a>
 ## **Getting Started**
@@ -70,8 +69,6 @@ major sections but still larger than normal paragraphs to distinguish them.
 2. Next, follow the startup procedures as stated in the [User Guide](./UserGuide.md) and familiarize yourself with 
 Zoomaster's features.
 3. Now, you can dive into the source code and explore the inner workings of Zoomaster with this guide.
-
-<br>
 
 <a name="design"></a>
 ## **Design**
@@ -87,7 +84,7 @@ The figure below shows a high-level design for the architecture of Zoomaster.
 <div align="center"><i>Figure 1.1 Architecture diagram of Zoomaster</i></div><br>
 
 Our Program can be split into 7 components:
-* Initialization
+* Initialisation
 * User Interface
 * Parser
 * Commands
@@ -95,125 +92,135 @@ Our Program can be split into 7 components:
 * Storage
 * Local Files
 
-These components interact with each other as shown in *Figure 1.1* to execute the functionalities of Zoomaster.
+These components interact with each other as shown in Figure 1.1 to execute the functionalities of Zoomaster.
 
-<a name="initialization"></a>
-### Initialization
-The diagram below shows a class-level diagram for Zoomaster. <br/></br>
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/initial.png) <br/></br>
-*<center/> Figure 1.2 Class diagram of Initialization </center> <br/></br>*
+<br>
 
-**API**:`Zoomaster.java`
+<a name="initialisation"></a>
+### Initialisation
+The diagram below shows a class-level diagram for Zoomaster.
 
-The Initialization component is responsible for setting up Zoomaster for it to be used by users. 
+![](./diagrams/initialisation.png)
 
+<div align="center"><i>Figure 1.2 Class diagram of Initialisation</i></div>
+
+**API**: `Zoomaster.java`
+
+The Initialisation component is responsible for setting up Zoomaster for it to be used by users. 
 It consists of `Zoomaster`, `Ui`, `Storage`, `BookmarkList`, `Timetable` and `Module` classes.
 
-Its main roles are:
-* Retrieving bookmark, timetable and planner lists from storage if it exists.
-* Set the list of Modules for Zoomaster 
-* Initializes the User Interface object, as well as the 3 Storage  objects for `BookmarkList`, `Timetable` and `Planner`.
+Its main roles:
+* Retreives bookmark, timetable and planner lists from storage if it exists.
+* Sets the list of Modules for Zoomaster.
+* Initialises the User Interface object, as well as the 3 Storage  objects for `BookmarkList`, `Timetable` and `Planner`.
+
+<br>
 
 <a name="ui-component"></a>
-### User Interface component
+### User Interface Component
 
-**API**:`Ui.java`
+**API**: `Ui.java`
 
 The UI component is responsible for all visual output to the User from the app. 
-
 The only class carrying out the component's function is the `Ui` class.
 
 It utilises the `Jansi` library to enable the usage of ANSI escape codes to format the console, 
-allowing the app to output in colour. <br/>
+allowing the app to output in colour.
 
 The UI also receives input from the User using a `Scanner` object. It returns the input as a String 
-to the main function. <br/>
+to the main function.
 
 In addition, the UI contains the different exceptions and error messages which can be displayed. 
 When a particular exception is thrown (eg. **UNKNOWN_INPUT**), the corresponding method is called in UI to 
 print out the error message (**printUnknownInputMessage()**). 
 
+Its main roles:
 
-Its main roles are:
+* Receives user commands and returning it to the Main function.
+* Prints visual output in the console for the user.
 
-* Receiving user commands and returning it to the Main function.
-* Prints visual output in the console for the User
+<br>
 
 <a name="parser"></a>
 ### Parser component
 
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/parser%20class%20diagram%20new.png?raw=true) <br/></br>
-*<center/> Figure 1.3 Class diagram of Parser </center> <br/></br>*
+![](./diagrams/parser/parser.png)
 
+<div align="center"><i>Figure 1.3 Class diagram of Parser</i></div>
 
 The Parser component is responsible for decoding the user's input and telling the Main function 
-which command to execute.
+which command to execute. It consists of `Parser` and `Command` interface classes.
 
-It also contains the **programMode** which indicates which mode the program currently is in.
+It also contains the **programMode**, which indicates which mode the program currently is in and
+initialises the different commands according to the mode.
 
+Its main roles:
 
-It initializes the different commands according to which mode the program currently is in.
-
-It consists of `Parser` and the Command interface classes.
-
-
-Its main roles are:
-
-* Decoding users commands and returning the correct command to the Main function to be executed
-* Catch errors in users commands and return the appropriate exception to the Main function
-* Storing the mode Zoomaster is in (Bookmark/Timetable/Planner)
+* Decodes users commands and returning the correct command to the Main function to be executed.
+* Catches errors in users commands and return the appropriate exception to the Main function.
+* Stores the mode Zoomaster is in (Bookmark/Timetable/Planner).
 
 The interaction of the Parser component with the Command component is covered in greater detail below. 
 
+<br>
+
 <a name="command"></a>
 ### Commands component
-Figures 1.4 to 1.7 below show the class-level diagrams for Parser and Command for each different mode. <br/>
+Figures 1.4 to 1.7 below show the class-level diagrams for Parser and Command for each different mode. 
 The diagrams are colour coded as such:
+
 * Orange -> Global
 * Green -> Bookmark Mode
 * Blue -> Timetable Mode
 * Red -> Planner Mode
 
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode0.png) <br/></br>
-*<center/> Figure 1.4 Class diagram of Commands valid in all modes (Global) </center> <br/></br>*
-<br></br>
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode1.png) <br/></br>
-*<center/> Figure 1.5 Class diagram of Commands valid in Bookmark Mode </center> <br/></br>*
-<br></br>
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode2.png) <br/></br>
-*<center/> Figure 1.6 Class diagram of Commands valid in Timetable Mode</center> <br/></br>*
-<br></br>
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode3.png) <br/></br>
-*<center/> Figure 1.7 Class diagram of Commands valid in Planner Mode</center> <br/></br>*
-<br></br>
+![](./diagrams/parser/mode0.png)
+
+<div align="center"><i>Figure 1.4 Class diagram of commands valid in all modes</i></div>
+
+![](./diagrams/parser/mode1.png)
+
+<div align="center"><i>Figure 1.5 Class diagram of commands valid in bookmark mode</i></div>
+
+![](./diagrams/parser/mode2.png)
+
+<div align="center"><i>Figure 1.6 Class diagram of commands valid in timetable mode</i></div>
+
+![](./diagrams/parser/mode3.png)
+
+<div align="center"><i>Figure 1.7 Class diagram of commands valid in planner mode</i></div>
+
+
 The Command component is responsible for carrying out the functions of Zoomaster.
 
 Usually, a successful command will return a message to indicate a successful execution or updates to Zoomaster. 
 Otherwise, it will create error messages for the Ui to display to the users.
 
-It consists of `ChangeModeCommand`, `ClearCommand`,  `ExitCommand`,  `HelpCommand`,   `LaunchNowCommand`, 
-`ShowSettingsCommand`, `SetSettingsCommand`, `AddBookmarkCommand`,   `DeleteBookmarkCommand`,  `FindBookmarkCommand`,  
+It consists of `ChangeModeCommand`, `ClearCommand`, `ExitCommand`, `HelpCommand`, `LaunchNowCommand`, 
+`ShowSettingsCommand`, `SetSettingsCommand`, `AddBookmarkCommand`, `DeleteBookmarkCommand`, `FindBookmarkCommand`, 
 `LaunchBookmarkCommand`, `ShowBookmarkCommand`, `AddTimetableCommand`, `DeleteTimetableCommand`, `ShowTimetableCommand`, 
-`EditTimetableCommand`, `LaunchTimetableCommand`, `AddMeetingCommand`, `LoadPlannerCommand` and 
+`EditTimetableCommand`, `LaunchTimetableCommand`, `AddMeetingCommand`, `LoadPlannerCommand`, and 
 `SavePlannerCommand` classes.
 
-Its main roles are:
+Its main roles:
 
-* Execute commands to carry out functionalities of Zoomaster
-* Signal to Ui successful execution of commands
-* Create messages for Ui on updates to Zoomaster
-* Catch errors or conflicts in users commands and throw the appropriate exception to the Main function
+* Executes commands to carry out functionalities of Zoomaster.
+* Signals to Ui successful execution of commands.
+* Creates messages for Ui on updates to Zoomaster.
+* Catchs errors or conflicts in users commands and throw the appropriate exception to the Main function.
+
+<br>
 
 <a name="temp-list"></a>
 ### Lists component
 
 The Temp List component is responsible for holding on to temporary data of Zoomaster to be used by Commands.
 
-It consists of `BookmarkList`, `SlotList`, `Module` and `Timetable`
+It consists of `BookmarkList`, `SlotList`, `Module` and `Timetable` classes.
 
-Its main role is:
+Its main role is to hold on to temporary data about Zoomaster
 
-* Hold on to temporary data about Zoomaster
+<br>
 
 <a name="storage"></a>
 ### Storage component
@@ -229,7 +236,7 @@ The only class carrying out the component's function is the `Storage` class.
 Its main roles are:
 
 * Store Zoomaster data to an external text file for long term storage
-* Retrieve Zoomaster data on Initialization
+* Retrieve Zoomaster data on Initialisation
 * Return error messages to the users during extraction or writing
 
 <a name="local-files"></a>
@@ -344,7 +351,7 @@ Given below is a sequence diagram of how printing the timetable occurs. <br/></b
 *<center/>Figure 2.03 sequence diagram for ShowTimetableCommand</center> <br/></br>*
 
 ![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ShowTimetableCommand%20seq%20dia%202%20new2.png?raw=true) <br/></br>
-*<center/>Figure 2.04 sequence diagram for "Initialize ShowTimetableCommand" Block</center> <br/></br>*
+*<center/>Figure 2.04 sequence diagram for "Initialise ShowTimetableCommand" Block</center> <br/></br>*
 
 ![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ShowTimetableCommand%20seq%20dia%203%20new3.png?raw=true) <br/></br>
 *<center/>Figure 2.05 sequence diagram for "Execute ShowTimetableCommand" Block</center> <br/></br>*
