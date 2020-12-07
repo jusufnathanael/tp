@@ -269,8 +269,10 @@ To simplify input commands for users, all lists have the same keywords for addin
 Hence, separating both lists into different modes allows both lists to access the same keywords without causing conflicts when parsing commands.
 
 In this section:
-* *input command* will refer to the string of characters the user has typed into the command line and entered into the program. E.g., "mode bookmark" is an *input command*.
-* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*. E.g. in "mode bookmark", "mode" is the identifier string of the command and "bookmark" is the *input parameter*.
+* *input command* refers to the string of characters the user has typed into the command line and entered into the program, e.g. "mode bookmark".
+* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*, e.g. "bookmark" from the "mode bookmark" input command.
+
+<br>
 
 **Implementation**
 
@@ -278,15 +280,12 @@ This feature extends Command class with a way to toggle between different modes 
 
 * getModeFromCommand() decodes the command sent by the users to figure out which mode the user wants to move to.
 
-<br>
-
 Given below is a sequence diagram of how changing between modes occur.
 
 <div align="center">
 <img align="center" src="./diagrams/changeModeCommand_seq.png"><br><br>
 <i>Figure 2.1 Sequence diagram for ChangeModeCommand</i>
 </div><br>
-
 
 1. When Zoomaster gets an input command from the user to change modes, a new ChangeModeCommand object is created.
 2. The ChangeModeCommand passes the input command through getModeFromCommand() function to decode the mode the user wishes to change to.
@@ -329,24 +328,35 @@ user the valid modes of Zoomaster.
 <br>
 
 <a name="show-timetable"></a>
-### Show timetable feature (Tan Yu Shing)
+### Show Timetable Feature (Tan Yu Shing)
 Users can see the timetable they have created in the App using the **show** command. 
 They can see the complete timetable from monday to sunday, the timetable of a specified day of the week or the timetable today. 
 The commands for these are **show**, **show {DAY}** eg. **show mon**, **show tue** and **show today**. <br></br>
 
-In this section, I will refer to *input command* and *input parameter*. <br></br>
-* *input command* refers to the string of characters the user has typed into the command line and entered into the program. 
-Eg. "show today" is an *input command* <br></br>
-* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*. 
-Eg. "show sun", "show" is the identifier string of the command and "sun" is the *input parameter*.
+In this section:
+* *input command* refers to the string of characters the user has typed into the command line and entered into the program, e.g. "show today".
+* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*, e.g. "sun" from "show sun" input command.
 
-#### Implementation
-This feature extends the command class. It is a simple retrieval algorithm which firstly gets data from the Timetable class. Then sorts it by timing and add additional indicators for the users. And finally, prints it out using the User Interface. </br> It uses SlotContainer class sortSlotsByTime method to help sort the list of lessons and it's module code by timing. </br>
-Additionally, it implements the following operations:
-* getMessageSlotsInADay(List<Module> **modules**, List<Slot> **slots**, String **day**) - Retrieves all the lesson **slots** and it's respective **module** code on the **day** specified. It then sorts the lessons by timing and returns it as a **message string**. </br> If valid, additional formatting such as current lesson indicator or current time indicator is added to the **message string**.
-* getMessageTimetable(List<Module> **modules**, List<Slot> **slots**) - Retrieves all the lesson **slots** and it's respective **module** code for the whole week. It then sorts the lessons by timing and returns it as a **message string**.  </br> If valid, additional formatting such as current lesson indicator or current time indicator is added to the **message string**.
-* getMessageLessonAtTime(List<Module> **modules**, List<Slot> **slots**, String **dayInput**) - Decodes the mode the user wants the timetable to be printed out in using **dayInput**. </br> Then calls the appropriate methods such as getMessageSlotsInADay and getMessageTimetable to get the **message string** which is then returned to the execute function to be printed out by the User Interface. If the timetable is empty or an invalid **dayInput** is given, an **exception** is thrown to tell users their mistake.
-* hasLessonNow(Slot **slot**) - Checks if a **slot** timing is overlapping with the current system time. Returns a **boolean** true or false based on the check.
+<br>
+
+**Implementation**
+
+This feature is a simple retrieval algorithm which extends the Command class. It gets data from the Timetable class, sorts the data by timing and add additional indicators for the users, and finally prints out the data using the User Interface.
+
+It uses SlotContainer class sortSlotsByTime method to help sort the list of lessons and it's module code by timing. Additionally, it implements the following operations:
+
+* getMessageSlotsInADay(List<Module> **modules**, List<Slot> **slots**, String **day**):
+  * retrieves all the lesson **slots** and it's respective **module** code on the **day** specified and then sorts the lessons by timing and returns it as a **message string**. If valid, additional formatting such as current lesson indicator or current time indicator is added to the **message string**.
+ 
+* getMessageTimetable(List<Module> **modules**, List<Slot> **slots**):
+  * retrieves all the lesson **slots** and it's respective **module** code for the whole week and then sorts the lessons by timing and returns it as a **message string**. If valid, additional formatting such as current lesson indicator or current time indicator is added to the **message string**.
+ 
+* getMessageLessonAtTime(List<Module> **modules**, List<Slot> **slots**, String **dayInput**):
+  * decodes the mode the user wants the timetable to be printed out in using **dayInput** and then calls the appropriate methods, such as getMessageSlotsInADay and getMessageTimetable to return the **message string**. If the timetable is empty or an invalid **dayInput** is given, an **exception** is thrown to tell users their mistake.
+ 
+* hasLessonNow(Slot **slot**):
+  * checks if a **slot** timing is overlapping with the current system time. Returns a **boolean** true or false based on the check.
+  
 * getIndicatorMessage() - Returns a **String** containing an indicator with the current system time.
 * getHighlighBoxUpperMessage() - Returns a **String** containing an indicator with a message "lesson now".
 * getHighlighBoxLowerMessage() - Returns a **String** containing a indicator.
