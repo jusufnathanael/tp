@@ -373,12 +373,12 @@ Given below is a sequence diagram of how printing the timetable occurs.
 </div>
 
 <div align="center">
-<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_2.png"><br><br>
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_2.png"><br>
 <i>Figure 2.4 Sequence diagram for "Initialise ShowTimetableCommand" Block</i><br><br><br>
 </div>
 
 <div align="center">
-<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_3.png"><br><br>
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_3.png"><br>
 <i>Figure 2.5 Sequence diagram for "Execute ShowTimetableCommand" Block</i><br><br><br>
 </div>
 
@@ -391,7 +391,7 @@ Given below is a sequence diagram of how printing the timetable occurs.
 The following activity diagram summarizes what happens when a user executes a new command:
 
 <div align="center">
-<img src="./diagrams/showTimetableCommand/showTimetableCommand_activity.png"><br>
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_activity.png"><br><br>
 <i>Figure 2.6 Activity diagram for ShowTimetableCommand</i><br><br>
 </div>
 
@@ -458,7 +458,7 @@ Given below is a sequence diagram of how the feature works.
 <div align="center">
 <img src="./diagrams/addSlotCommand/addSlotSequenceDiagram.png"><br>
 <i>Figure 2.8 Sequence diagram for AddSlotCommand</i><br><br><br>
-<img src="./diagrams/addSlotCommand/addSlotSequenceDiagram2.png"><br><br>
+<img src="./diagrams/addSlotCommand/addSlotSequenceDiagram2.png"><br>
 <i>Figure 2.9 Sequence diagram for 
 "Get module if it exist, else create a new module" Block</i><br><br><br>
 <img src="./diagrams/addSlotCommand/addSlotSequenceDiagram3.png"><br>
@@ -512,26 +512,19 @@ If there is one, then the bookmark will be added to the lesson slot.
 ### Delete Module and Slot Feature (Xing Rong)
 This feature allows the user to delete the modules, slots and their bookmarks from the timetable.  
 
-Given below is a sequence diagram of how the feature works.  
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/deleteSlotCommand/deleteSlotSequenceDiagram.png?raw=true)  
-*<center/> Figure 2.14 Sequence diagram for DeleteSlotCommand </center> <br/></br>*
-<br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/deleteSlotCommand/deleteSlotSequenceDiagram2.png?raw=true)  
-*<center/> Figure 2.15 Sequence diagram for 
-"delete module" Block </center> <br/></br>*
-<br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/deleteSlotCommand/deleteSlotSequenceDiagram3.png?raw=true)  
-*<center/> Figure 2.16 Sequence diagram for 
-"delete slot" Block </center> <br/></br>*
-<br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/deleteSlotCommand/deleteSlotSequenceDiagram4.png?raw=true)  
-*<center/> Figure 2.17 Sequence diagram for 
-"delete module bookmarks" Block </center> <br/></br>*
-<br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/deleteSlotCommand/deleteSlotSequenceDiagram5.png?raw=true)  
-*<center/> Figure 2.18 Sequence diagram for 
-"delete slot bookmarks" Block </center> <br/></br>*
-<br></br>
+Given below is a sequence diagram of how the feature works.
+
+<div align="center">
+<img src="./diagrams/deleteSlotCommand/deleteSlotSequenceDiagram.png"><br>
+<i>Figure 2.14 Sequence diagram for DeleteSlotCommand</i><br><br><br>
+<img src="./diagrams/deleteSlotCommand/deleteSlotSequenceDiagram2.png"><br>
+<i>Figure 2.15 Sequence diagram for "delete module" Block</i><br><br><br>
+<img src="./diagrams/deleteSlotCommand/deleteSlotSequenceDiagram3.png"><br>
+<i>Figure 2.16 Sequence diagram for "delete slot" Block</i><br><br><br>
+<img src="./diagrams/deleteSlotCommand/deleteSlotSequenceDiagram4.png"><br>
+<i>Figure 2.17 Sequence diagram for "delete module bookmarks" Block</i><br><br><br>
+<img src="./diagrams/deleteSlotCommand/deleteSlotSequenceDiagram5.png"><br>
+<i>Figure 2.18 Sequence diagram for "delete slot bookmarks" Block</i><br><br><br>
 
 1. There will be a check if the module associated with the deleted object exists. 
 If it does not exist, an exception will be thrown.
@@ -595,12 +588,10 @@ return true. This is to allow the application to still be usable, although witho
 **Aspect:** How to allow the validation to be useful in most scenarios?
 
 * **Alternative 1 (Current choice):** Connection is needed once, to retrieve module list for the current year.
-
     * Pros: Allows for updated list of modules based on current year
     * Cons: Module validation will not work without initial internet connection
     
 * **Alternative 2:** Save the module list along with the jar file.
-
     * Pros: Does not require internet connection
     * Cons: Module list might not be updated as per the year which the application is being run, prevent newer modules from being added
 
@@ -634,22 +625,13 @@ command does not exist in that mode.
 
 Below is a sequence diagram of the extended HelpCommand.   
 
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/helpCommandOverallDiagram.png)  
-*<center/> Figure 2.20 Sequence diagram for "HelpCommand" </center> <br/></br>*
-<br></br>
-
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/helpCommandDetailsIsEmpty.png)  
-*<center/> Figure 2.21 Sequence diagram for 
-"details is empty" Block </center> <br/></br>*
-<br></br>
-
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/helpCommandDetailsNotEmpty.png)  
-*<center/> Figure 2.22 Sequence diagram for 
-"details not empty" Block </center> <br/></br>*
-<br></br>
-
-<br></br>
-
+<div align="center">
+<img src="./diagrams/loadModuleList/helpCommandOverallDiagram.png"><br>
+<i>Figure 2.20 Sequence diagram for "HelpCommand"</i><br><br><br>
+<img src="./diagrams/loadModuleList/helpCommandDetailsIsEmpty.png"><br>
+<i>Figure 2.21 Sequence diagram for "details is empty" Block</i><br><br><br>
+<img src="./diagrams/loadModuleList/helpCommandDetailsNotEmpty.png"><br>
+<i>Figure 2.22 Sequence diagram for "details not empty" Block</i><br><br><br>
 
 1. From Figure 2.20, when Zoomaster calls parse() on user input and Parser parses it as a HelpCommand, HelpCommand will check if the details 
 are not empty, then validate if the details match a valid command based on the current mode (not shown in the diagram). If the details are not valid, 
@@ -666,7 +648,7 @@ CLEAR_KW or EXIT_KW and print accordingly. If the details do not match any, the 
 
 5. The different print with colour methods utilise the JAnsi library to print to the Command Prompt in colour.
 
-<br></br>
+<br><br>
 
 
 <!-- @@author fchensan -->
