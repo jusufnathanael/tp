@@ -46,7 +46,7 @@ major sections but still larger than normal paragraphs to distinguish them.
 * [Implementation](#implementation)
   * [Modes Feature](#mode)
   * [Show Timetable Feature](#show-timetable)
-  * [Add Module and Slot Features](#add-module-slot)
+  * [Add Module and Slot Feature](#add-module-slot)
   * [Validate Modules Feature](#nusmodulelist)
   * [Extended HelpCommand Feature](#extendedhelpcommand)
   * [Edit Slot Feature](#edit-slot)
@@ -357,27 +357,27 @@ It uses SlotContainer class sortSlotsByTime method to help sort the list of less
 * hasLessonNow(Slot **slot**):
   * checks if a **slot** timing is overlapping with the current system time. Returns a **boolean** true or false based on the check.
   
-* getIndicatorMessage() - returns a **String** containing an indicator with the current system time.
-* getHighlighBoxUpperMessage() - returns a **String** containing an indicator with a message "lesson now".
-* getHighlighBoxLowerMessage() - returns a **String** containing a indicator.
+- getIndicatorMessage() - returns a **String** containing an indicator with the current system time.
+- getHighlighBoxUpperMessage() - returns a **String** containing an indicator with a message "lesson now".
+- getHighlighBoxLowerMessage() - returns a **String** containing a indicator.
 
 <br>
 
 Given below is a sequence diagram of how printing the timetable occurs.
 
 <div align="center">
-<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_1.png"><br>
-<i>Figure 2.3 Sequence diagram for ShowTimetableCommand</i><br><br>
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_1.png"><br><br>
+<i>Figure 2.3 Sequence diagram for ShowTimetableCommand</i><br><br><br>
 </div>
 
 <div align="center">
-<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_2.png"><br>
-<i>Figure 2.4 Sequence diagram for "Initialise ShowTimetableCommand" Block</i><br><br>
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_2.png"><br><br>
+<i>Figure 2.4 Sequence diagram for "Initialise ShowTimetableCommand" Block</i><br><br><br>
 </div>
 
 <div align="center">
-<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_3.png"><br>
-<i>Figure 2.5 Sequence diagram for "Execute ShowTimetableCommand" Block</i><br><br>
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_3.png"><br><br>
+<i>Figure 2.5 Sequence diagram for "Execute ShowTimetableCommand" Block</i><br><br><br>
 </div>
 
 1. When Zoomaster gets a command from the user to show the timetable, a new ShowTimetableCommand object is created.
@@ -434,43 +434,42 @@ Hence, it sets **day** variable as the day of the current system time and moves 
 
 <br>
 
-<!-- @@author -->
 <!-- @@author xingrong123-->
 <a name="add-module-slot"></a>
-### Add Module and Slot feature (Xing Rong)
+### Add Module and Slot Feature (Xing Rong)
 This feature allows the user to add modules and lesson slots into the timetable.
 Users can also add bookmarks to specific modules and slots.
 Users can enter one-shot-commands, adding multiple slots and bookmarks to a module.
 
 The class diagram below mainly shows the associations between the objects contained in the Timetable class. In the 
-following sequence diagrams, the BookmarkList class is omitted for simplicity.  
-![](diagrams/addSlotCommand/timetableClassDiagram.png)  
-*<center/> Figure 2.07 Class diagram for Timetable </center> <br/></br>*
+following sequence diagrams, the BookmarkList class is omitted for simplicity.
 
-Given below is a sequence diagram of how the feature works.  
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/addSlotCommand/addSlotSequenceDiagram.png?raw=true)  
-*<center/> Figure 2.08 Sequence diagram for AddSlotCommand </center> <br/></br>*
-<br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/addSlotCommand/addSlotSequenceDiagram2.png?raw=true)  
-*<center/> Figure 2.09 Sequence diagram for 
-"Get module if it exist, else create a new module" Block </center> <br/></br>*
-<br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/addSlotCommand/addSlotSequenceDiagram3.png?raw=true)  
-*<center/> Figure 2.10 Sequence diagram for 
-"Create bookmark for module" Block </center> <br/></br>*
-<br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/addSlotCommand/addSlotSequenceDiagram4.png?raw=true)  
-*<center/> Figure 2.11 Sequence diagram for 
-"Create bookmark for existing slot base on its index" Block </center> <br/></br>*
-<br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/addSlotCommand/addSlotSequenceDiagram5.png?raw=true)  
-*<center/> Figure 2.12 Sequence diagram for 
-"Get slot if it exist, else create a new slot" Block </center> <br/></br>*
-<br></br>
-![](https://github.com/AY2021S1-CS2113T-W11-1/tp/blob/master/docs/diagrams/addSlotCommand/addSlotSequenceDiagram6.png?raw=true)  
-*<center/> Figure 2.13 Sequence diagram for 
-"Create bookmark for slot" Block </center> <br/></br>*
-<br></br>
+<div align="center">
+<img src="./diagrams/addSlotCommand/timetableClassDiagram.png"><br>
+<i>Figure 2.7 Class diagram for Timetable</i><br><br>
+</div>
+
+Given below is a sequence diagram of how the feature works.
+
+<div align="center">
+<img src="./diagrams/addSlotCommand/addSlotSequenceDiagram.png"><br>
+<i>Figure 2.8 Sequence diagram for AddSlotCommand</i><br><br>
+<img src="./diagrams/addSlotCommand/addSlotSequenceDiagram2.png"><br>  
+<i>Figure 2.9 Sequence diagram for 
+"Get module if it exist, else create a new module" Block</i><br><br>
+<img src="./diagrams/addSlotCommand/addSlotSequenceDiagram3.png"><br>
+<i>Figure 2.10 Sequence diagram for 
+"Create bookmark for module" Block</i><br><br>
+<img src="./diagrams/addSlotCommand/addSlotSequenceDiagram4.png"><br>
+<i>Figure 2.11 Sequence diagram for 
+"Create bookmark for existing slot based on its index" Block</i><br><br>
+<img src="./diagrams/addSlotCommand/addSlotSequenceDiagram5.png"><br>
+<i>Figure 2.12 Sequence diagram for 
+"Get slot if it exist, else create a new slot" Block</i><br><br>
+<img src="./diagrams/addSlotCommand/addSlotSequenceDiagram6.png"><br>
+<i>Figure 2.13 Sequence diagram for 
+"Create bookmark for slot" Block</i><br><br>
+</div>
 
 1. After calling execute() method of the AddSlotCommand object, there will be a check on whether the module code 
 entered by the user already exists in the timetable. If it does not exist, then the module will be created.
@@ -486,17 +485,22 @@ If there is one, then the bookmark will be added to the lesson slot.
 
 6. Print the message of all commands executed and error messages.
 
-#### Design consideration:
+<br>
 
-##### Aspect: How to enable fast typing users to add modules, slots and related bookmarks faster
+**Design consideration:** How to enable fast typing users to add modules, slots and related bookmarks faster?
+
 * **Alternative 1 (Current choice):** allow one-shot command to add slots and bookmarks to a module
+
     * Pros: Fast typers can input faster
     * Cons: Difficult to implement
+    
 * **Alternative 2:** separate adding of modules, lesson slots and related bookmarks into different commands
+
     * Pros: Easy to implement
     * Pros: Lower chance of error
     * Cons: User has to enter multiple commands each at a time to perform the functions, which takes up more time.
 
+<br>
 
 <a name="add-module-slot"></a>
 ### Delete Module and Slot feature (Xing Rong)
