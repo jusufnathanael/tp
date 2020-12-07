@@ -632,7 +632,7 @@ Below is a sequence diagram of the extended HelpCommand.
 <img src="./diagrams/loadModuleList/helpCommandDetailsIsEmpty.png"><br>
 <i>Figure 2.21 Sequence diagram for "details is empty" Block</i><br><br><br>
 <img src="./diagrams/loadModuleList/helpCommandDetailsNotEmpty.png"><br>
-<i>Figure 2.22 Sequence diagram for "details not empty" Block</i><br><br><br>
+<i>Figure 2.22 Sequence diagram for "details not empty" Block</i><br><br>
 </div>
 
 1. From Figure 2.20, when Zoomaster calls parse() on user input and Parser parses it as a HelpCommand, HelpCommand will check if the details 
@@ -664,25 +664,33 @@ Given below is an example usage scenario and how the edit mechanism works.
 1. The user enters `edit title mon 2 new_title`.
 2. A new EditSlotCommand instance is created and its `execute` method is called.
 3. Based on the chosen field in the user input, different methods are called:
-    a. If the command is `edit module`, the moveSlotToAnotherModule method in timetable is called to move the slot to a given module.
-    b. If the command is `edit title`, like in the current example, the slot corresponding to the day and index given in the user input is retrieved by calling the getSlotByIndexInDay method of the timetable. 
+    - If the command is `edit module`, the moveSlotToAnotherModule method in timetable is called to move the slot to a given module.
+    - If the command is `edit title`, like in the current example, the slot corresponding to the day and index given in the user input is retrieved by calling the getSlotByIndexInDay method of the timetable. 
     In this case, the 2nd slot on Monday will be returned. The setTitle method of the retrieved slot is then called.
-    c. If the command is `edit time`, it works similar to `edit title`, but with changeSlotTime called instead. This method will call setDay(), setStartTime(), and setEndTime() of the retrieved slot.
+    - If the command is `edit time`, it works similar to `edit title`, but with changeSlotTime called instead. This method will call setDay(), setStartTime(), and setEndTime() of the retrieved slot.
 
 The sequence diagram below explains how this feature is executed:
 
- ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/editslotsequence.png)
-*<center/> Figure 2.23 Sequence diagram for EditSlotCommand </center> <br/></br>*
+<div align="center">
+<img src="./diagrams/editSlotCommand.png"><br>
+<i>Figure 2.23 Sequence diagram for EditSlotCommand </i><br><br>
+</div>
 
-#### Design consideration:
+<br>
 
-##### Aspect: What part of a slot should the user be able to edit
+#### Design Consideration
+
+**Aspect:** What part of a slot should the user be able to edit?
+
 * **Alternative 1 (Current choice):** The user can choose to edit the slot's module, title, or time.
     * Pros: Allows for quicker edits.
     * Cons: Harder to implement.
+    
 * **Alternative 2:** The user needs to type in the entire slot details (including module, title, and time).
     * Pros: Easier to implement.
     * Cons: The user needs to type the module, title, and time even when the user only wants to edit one of them.
+
+<br>
 
 <a name="showsettings"></a>
 ### Show settings feature (Francisco)
@@ -722,7 +730,7 @@ The sequence diagram below explains how this feature is executed:
  ![](https://raw.githubusercontent.com/fchensan/tp/docs-images/docs/images/setsettingssequence.png)
 *<center/> Figure 2.25 Sequence diagram for SetSettingsCommand </center> <br/></br>*
 
-#### Design consideration:
+#### Design Consideration:
 
 ##### Aspect: How should the user specify which setting to change
 * **Alternative 1 (Current choice):** The settings all have a name associated with each of them.
@@ -760,8 +768,10 @@ along with all the empty slots.
 
 The sequence diagram below explains how the load planner command is executed:
 
-![](diagrams/plannerCommand/load_planner.png) <br/>
-*<center/>Figure 2.26 Sequence diagram for LoadPlannerCommand</center> <br/>*
+<div align="center">
+<img src="./diagrams/plannerCommand/load_planner.png"><br>
+<i>Figure 2.26 Sequence diagram for LoadPlannerCommand</i><br><br>
+</div>
 
 <br>
 
@@ -772,16 +782,19 @@ The general flow of the saving process is as below:
 
 The sequence diagram below explains how the load planner command is executed:
 
-![](diagrams/plannerCommand/save_planner.png) <br/>
-*<center/>Figure 2.27 Sequence diagram for SavePlannerCommand</center> <br/>*
+<div align="center">
+<img src="./diagrams/plannerCommand/save_planner.png"><br>
+<i>Figure 2.27 Sequence diagram for SavePlannerCommand</i><br><br>
+</div>
 
-#### Design consideration:
+#### Design Consideration
 
-##### Aspect: How to load and save the group meeting to the timetables.
+**Aspect:** How to load and save the group meeting to the timetables?
 
 * **Alternative 1 (Current choice):** Manually load the individual timetables and save the new meetings (slots and bookmarks) to the timetables.
     * Pros: User can decide when to save the newly added meetings (still allow some changes).
     * Cons: In case the program crashes, the meeting will not be saved.
+    
 * **Alternative 2:** Automatically load and save the individual timetables per every command.
     * Pros: Any changes will be automatically saved, in case that the program crashes
     * Cons: Hard to implement
