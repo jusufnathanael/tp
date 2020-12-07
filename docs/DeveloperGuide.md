@@ -81,7 +81,7 @@ then its various components.
 The figure below shows a high-level design for the architecture of Zoomaster.
 
 <div align="center">
-<img src="./diagrams/architecture.png">
+<img src="./diagrams/architecture.png"><br>
 <i>Figure 1.1 Architecture diagram of Zoomaster</i>
 </div><br>
 
@@ -277,7 +277,7 @@ This feature extends Command class with a way to toggle between different modes 
 Given below is a sequence diagram of how changing between modes occur.
 
 <div align="center">
-<img align="center" src="./diagrams/changeModeCommand_seq.png">
+<img align="center" src="./diagrams/changeModeCommand_seq.png"><br>
 <i>Figure 2.1 Sequence diagram for ChangeModeCommand</i>
 </div><br>
 
@@ -305,12 +305,17 @@ user the valid modes of Zoomaster. Else, it continues to the next step.
    * If the input parameter does not correspond to any of the valid modes of Zoomaster, it throws an invalid mode message to tell the
 user the valid modes of Zoomaster.
 
+<br>
+
 **Design consideration: ways to store programMode variable for security**
 
 * **Alternative 1 (Current choice):** No security
+
     * Pros: Easy to implement
     * Cons: May introduce errors to the App if the variable is changed outside of ChangeModeCommand class objects.
+    
 * **Alternative 2:** Private variable and implement mode changing inside Parser class
+
     * Pros: Ensure the App does not change modes outside commands to change modes.
     * Cons: Reduces OOP standard of code by decoupling ChangeModeCommand from Command class and increases code complexity.
 
