@@ -525,6 +525,7 @@ Given below is a sequence diagram of how the feature works.
 <i>Figure 2.17 Sequence diagram for "delete module bookmarks" Block</i><br><br><br>
 <img src="./diagrams/deleteSlotCommand/deleteSlotSequenceDiagram5.png"><br>
 <i>Figure 2.18 Sequence diagram for "delete slot bookmarks" Block</i><br><br><br>
+</div>
 
 1. There will be a check if the module associated with the deleted object exists. 
 If it does not exist, an exception will be thrown.
