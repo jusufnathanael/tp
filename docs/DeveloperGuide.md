@@ -559,7 +559,7 @@ Below is a sequence diagram of the process of retrieving the module list. Note t
 to illustrate the try-catch block.
 
 <br><div align="center">
-<img src="./diagrams/loadModuleList/getModuleList.png" width=600><br>
+<img src="./diagrams/loadModuleList/getModuleList.png" width=700><br>
 <i>Figure 2.19 Sequence diagram for retrieving module list</i><br><br>
 </div>
 
@@ -633,6 +633,7 @@ Below is a sequence diagram of the extended HelpCommand.
 <i>Figure 2.21 Sequence diagram for "details is empty" Block</i><br><br><br>
 <img src="./diagrams/loadModuleList/helpCommandDetailsNotEmpty.png"><br>
 <i>Figure 2.22 Sequence diagram for "details not empty" Block</i><br><br><br>
+</div>
 
 1. From Figure 2.20, when Zoomaster calls parse() on user input and Parser parses it as a HelpCommand, HelpCommand will check if the details 
 are not empty, then validate if the details match a valid command based on the current mode (not shown in the diagram). If the details are not valid, 
