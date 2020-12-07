@@ -361,14 +361,19 @@ It uses SlotContainer class sortSlotsByTime method to help sort the list of less
 * getHighlighBoxUpperMessage() - Returns a **String** containing an indicator with a message "lesson now".
 * getHighlighBoxLowerMessage() - Returns a **String** containing a indicator.
 
-Given below is a sequence diagram of how printing the timetable occurs. <br/></br>
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ShowTimetableCommand%20seq%20dia%201%20new2.png?raw=true) <br/></br>
-*<center/>Figure 2.03 sequence diagram for ShowTimetableCommand</center> <br/></br>*
+<br>
 
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ShowTimetableCommand%20seq%20dia%202%20new2.png?raw=true) <br/></br>
+Given below is a sequence diagram of how printing the timetable occurs.
+
+<div align="center">
+<img src="./diagrams/showTimetableCommand/showTimetableCommand_seq_1.png"><br><br>
+<i>Figure 2.3 Sequence diagram for ShowTimetableCommand</i><br>
+<div>
+
+![](./diagrams/showTimetableCommand/showTimetableCommand_seq_2.png)
 *<center/>Figure 2.04 sequence diagram for "Initialise ShowTimetableCommand" Block</center> <br/></br>*
 
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ShowTimetableCommand%20seq%20dia%203%20new3.png?raw=true) <br/></br>
+![](./diagrams/showTimetableCommand/showTimetableCommand_seq_3.png) <br/></br>
 *<center/>Figure 2.05 sequence diagram for "Execute ShowTimetableCommand" Block</center> <br/></br>*
 
 1. When Zoomaster gets a command from the user to show the timetable, a new ShowTimetableCommand object is created.
