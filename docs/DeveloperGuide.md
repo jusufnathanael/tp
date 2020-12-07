@@ -445,18 +445,18 @@ The class diagram below mainly shows the associations between the objects contai
 following sequence diagrams, the BookmarkList class is omitted for simplicity.
 
 <div align="center">
-<img src="./diagrams/addSlotCommand/timetableClassDiagram.png"><br>
-<i>Figure 2.7 Class diagram for Timetable</i><br><br>
+<img src="./diagrams/addSlotCommand/timetableClassDiagram.png"><br><br>
+<i>Figure 2.7 Class diagram for Timetable</i><br><br><br>
 </div>
 
 Given below is a sequence diagram of how the feature works.
 
 <div align="center">
 <img src="./diagrams/addSlotCommand/addSlotSequenceDiagram.png"><br>
-<i>Figure 2.8 Sequence diagram for AddSlotCommand</i><br><br>
-<img src="./diagrams/addSlotCommand/addSlotSequenceDiagram2.png"><br>  
+<i>Figure 2.8 Sequence diagram for AddSlotCommand</i><br><br><br>
+<img src="./diagrams/addSlotCommand/addSlotSequenceDiagram2.png"><br><br>
 <i>Figure 2.9 Sequence diagram for 
-"Get module if it exist, else create a new module" Block</i><br><br>
+"Get module if it exist, else create a new module" Block</i><br><br><br>
 <img src="./diagrams/addSlotCommand/addSlotSequenceDiagram3.png"><br>
 <i>Figure 2.10 Sequence diagram for 
 "Create bookmark for module" Block</i><br><br>
@@ -503,7 +503,7 @@ If there is one, then the bookmark will be added to the lesson slot.
 <br>
 
 <a name="add-module-slot"></a>
-### Delete Module and Slot feature (Xing Rong)
+### Delete Module and Slot Feature (Xing Rong)
 This feature allows the user to delete the modules, slots and their bookmarks from the timetable.  
 
 Given below is a sequence diagram of how the feature works.  
@@ -539,16 +539,15 @@ There are four options:
 
 The whole-relationship between the objects, which can be seen from the class diagram Figure 2.07, would mean that 
 deleting an object would also delete all objects contained in it.  
-<br></br>
 
+<br>
 
-<!-- @@author -->
 <!-- @@author Speedweener -->   
 <a name="nusmodulelist"></a>
-### Validate Modules feature (Zhan Hao)
+### Validate Modules Feature (Zhan Hao)
 This feature allows the application to validate if the modules entered by the user 
 are existing NUS modules. This helps the user avoid erroneously adding modules from typos, 
-as the application might otherwise consider the input to be a new module (eg. When adding slots to 
+as the application might otherwise consider the input to be a new module (e.g. when adding slots to 
 existing module CS2113T, a typo such as CS2113R would cause the application to add a new module 
 instead).
 
@@ -559,12 +558,10 @@ will be able to read from the local file instead, which allows the application t
 Below is a sequence diagram of the process of retrieving the module list. Note that the alt block is informally used 
 to illustrate the try-catch block. 
 
-
-
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/diagrams/loadModuleList/getModuleList.png)  
-*<center/> Figure 2.19 Sequence diagram for retrieving module list </center> <br/></br>*
-
-<br></br>
+<div align="center">
+<img src="./diagrams/loadModuleList/getModuleList.png" width=500><br>
+<i>Figure 2.19 Sequence diagram for retrieving module list</i><br><br>
+</div>
 
 1. When the application is launched, the application will try to read the module list from a modulelist.txt file in the same directory. 
 It will read each line as a separate module and add them to an ArrayList.
@@ -585,13 +582,17 @@ loadModuleList() method.
 8. To be validated, the module to be added must exist in the ArrayList. However, if the ArrayList is null (Failed to Connect), the validation will always 
 return true. This is to allow the application to still be usable, although without the module validation feature.
 
-#### Design consideration:
+<br>
 
-##### Aspect: How to allow the validation to be useful in most scenarios
+**Design consideration:** How to allow the validation to be useful in most scenarios?
+
 * **Alternative 1 (Current choice):** Connection is needed once, to retrieve module list for the current year.
+
     * Pros: Allows for updated list of modules based on current year
     * Cons: Module validation will not work without initial internet connection
+    
 * **Alternative 2:** Save the module list along with the jar file.
+
     * Pros: Does not require internet connection
     * Cons: Module list might not be updated as per the year which the application is being run, prevent newer modules from being added
 
@@ -610,7 +611,7 @@ Since the start up time for the app after loading the module list from online is
 <br></br>
 
 <a name="extendedhelpcommand"></a>
-### Extended HelpCommand feature (Zhan Hao)
+### Extended HelpCommand Feature (Zhan Hao)
 This feature allows the user to query more about the different commands available in the different modes. This is to allow quick typist to 
 have a fast way to reference the purpose and format of the commands without having to consult the User Guide.
 
@@ -868,7 +869,7 @@ Hence, Zoomaster helps to organise students’ Zoom links for easy access to the
 ## **Appendix E: Instructions for manual testing**
 
 <a name="appendix-e-basic"></a>
-**Basics**
+### Basics
 1. Initial launch
     1. Download the jar file and copy it into an empty folder.
     2. Open the command prompt and change directory to the location of the jar file.
@@ -899,7 +900,7 @@ Hence, Zoomaster helps to organise students’ Zoom links for easy access to the
     launching the application. You can refer to the class diagrams above for the associations between the classes.
 
 <a name="appendix-e-advanced"></a>
-**Advanced**
+### Advanced
 1. Testing global commands (`mode`, `help`, `clear`, `showsettings`, `set`, `exit`)
     1. Test `mode` command. Enter `mode bookmark` to enter bookmark mode, you should see the message "Changing to bookmark mode". <br>
     Enter `mode timetable` to enter bookmark mode, you should see the message "Changing to timetable mode". <br>
