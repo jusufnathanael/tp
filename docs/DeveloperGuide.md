@@ -102,7 +102,7 @@ The diagram below shows a class-level diagram for Zoomaster.
 
 ![](./diagrams/initialisation.png)
 
-<div align="center"><i>Figure 1.2 Class diagram of Initialisation</i></div>
+<div align="center"><i>Figure 1.2 Class diagram of Initialisation</i></div><br>
 
 **API**: `Zoomaster.java`
 
@@ -185,19 +185,13 @@ The diagrams are colour coded as such:
 
 <br><br>![](./diagrams/parser/mode3.png)
 
-<div align="center"><i>Figure 1.7 Class diagram of commands valid in planner mode</i></div><br>
+<div align="center"><i>Figure 1.7 Class diagram of commands valid in planner mode</i></div><br><br>
 
 
 The Command component is responsible for carrying out the functions of Zoomaster.
 
 Usually, a successful command will return a message to indicate a successful execution or updates to Zoomaster. 
 Otherwise, it will create error messages for the Ui to display to the users.
-
-It consists of `ChangeModeCommand`, `ClearCommand`, `ExitCommand`, `HelpCommand`, `LaunchNowCommand`, 
-`ShowSettingsCommand`, `SetSettingsCommand`, `AddBookmarkCommand`, `DeleteBookmarkCommand`, `FindBookmarkCommand`, 
-`LaunchBookmarkCommand`, `ShowBookmarkCommand`, `AddTimetableCommand`, `DeleteTimetableCommand`, `ShowTimetableCommand`, 
-`EditTimetableCommand`, `LaunchTimetableCommand`, `AddMeetingCommand`, `LoadPlannerCommand`, and 
-`SavePlannerCommand` classes.
 
 Its main roles:
 
@@ -215,9 +209,7 @@ The Temporary List component is responsible for holding on to temporary data of 
 
 It consists of `BookmarkList`, `SlotList`, `Module` and `Timetable` classes.
 
-Its main role is to hold on to temporary data about Zoomaster
-
-<br>
+Its main role is to hold on to temporary data about Zoomaster.
 
 <a name="storage"></a>
 ### Storage Component
@@ -234,8 +226,6 @@ Its main roles:
 * Stores Zoomaster data to an external text file for long term storage.
 * Retrieves Zoomaster data on Initialisation.
 * Returns error messages to the users during extraction or writing.
-
-<br>
 
 <a name="local-files"></a>
 ### Local Files Component
