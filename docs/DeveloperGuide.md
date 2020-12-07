@@ -80,8 +80,10 @@ then its various components.
 ### Architecture
 The figure below shows a high-level design for the architecture of Zoomaster.
 
-![](./diagrams/architecture.png)
-<div align="center"><i>Figure 1.1 Architecture diagram of Zoomaster</i></div><br>
+<div align="center">
+<img src="./diagrams/architecture.png">
+<i>Figure 1.1 Architecture diagram of Zoomaster</i>
+</div><br>
 
 Our Program can be split into 7 components:
 * Initialisation
@@ -264,17 +266,20 @@ In this section:
 * *input command* will refer to the string of characters the user has typed into the command line and entered into the program. E.g., "mode bookmark" is an *input command*.
 * *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*. E.g. in "mode bookmark", "mode" is the identifier string of the command and "bookmark" is the *input parameter*.
 
-#### Implementation
+**Implementation**
 
 This feature extends Command class with a way to toggle between different modes of Zoomaster. The integer variable used to control the modes is stored in the Parser class called "programMode". Additionally, it implements the following operation:
 
 * getModeFromCommand() decodes the command sent by the users to figure out which mode the user wants to move to.
 
+<br>
+
 Given below is a sequence diagram of how changing between modes occur.
 
-![](./diagrams/changeModeCommand_seq.png)
-
-<div align="center"><i>Figure 2.1 Sequence diagram for ChangeModeCommand</i></div><br>
+<div align="center">
+<img align="center" src="./diagrams/changeModeCommand_seq.png">
+<i>Figure 2.1 Sequence diagram for ChangeModeCommand</i>
+</div><br>
 
 
 1. When Zoomaster gets an input command from the user to change modes, a new ChangeModeCommand object is created.
@@ -286,7 +291,7 @@ The following activity diagram summarizes what happens when a user executes a ne
 
 ![](./diagrams/changeModeCommand_activity.png)
 
-<div align="center"><i>Figure 2.2 Activity diagram for ChangeModeCommand</i></div><br/></br>
+<div align="center"><i>Figure 2.2 Activity diagram for ChangeModeCommand</i></div><br>
 
 1. First, the program checks if the length of the input command is more than 5. Any input command of length less than 5 is
 an invalid mode command. This is because mode command requires an input parameter separated by a space hence "mode " or "mode1"
@@ -300,9 +305,7 @@ user the valid modes of Zoomaster. Else, it continues to the next step.
    * If the input parameter does not correspond to any of the valid modes of Zoomaster, it throws an invalid mode message to tell the
 user the valid modes of Zoomaster.
 
-#### Design consideration:
-
-##### Aspect: How to store programMode variable for security
+**Design consideration: ways to store programMode variable for security**
 
 * **Alternative 1 (Current choice):** No security
     * Pros: Easy to implement
@@ -310,6 +313,8 @@ user the valid modes of Zoomaster.
 * **Alternative 2:** Private variable and implement mode changing inside Parser class
     * Pros: Ensure the App does not change modes outside commands to change modes.
     * Cons: Reduces OOP standard of code by decoupling ChangeModeCommand from Command class and increases code complexity.
+
+<br>
 
 <a name="show-timetable"></a>
 ### Show timetable feature (Tan Yu Shing)
