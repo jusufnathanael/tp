@@ -175,7 +175,7 @@ The diagrams are colour coded as such:
 * Blue -> Timetable Mode
 * Red -> Planner Mode
 
-<div align="center">
+<br><div align="center">
 <img src="./diagrams/parser/mode0.png"><br><br>
 <i>Figure 1.4 Class diagram of commands valid in all modes</i>
 </div>
@@ -237,6 +237,8 @@ Its main roles:
 * Retrieves Zoomaster data on Initialisation.
 * Returns error messages to the users during extraction or writing.
 
+<br>
+
 <a name="local-files"></a>
 ### Local Files Component
 
@@ -253,7 +255,7 @@ running the application.
 <br>
 <br>
 
-## **Implementation**
+## Implementation
 
 This section explains the implementations of Zoomaster's features. It goes through the step-by-step process, 
 expected outcomes of each feature and the design considerations.
@@ -274,7 +276,6 @@ In this section:
 * *input command* refers to the string of characters the user has typed into the command line and entered into the program, e.g. "mode bookmark".
 * *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*, e.g. "bookmark" from the "mode bookmark" input command.
 
-<br>
 
 #### Implementation
 
@@ -313,9 +314,9 @@ user the valid modes of Zoomaster. Else, it continues to the next step.
    * If the input parameter does not correspond to any of the valid modes of Zoomaster, it throws an invalid mode message to tell the
 user the valid modes of Zoomaster.
 
-<br>
 
-## Design Consideration
+
+#### Design Consideration
 
 **Aspect:** How to store programMode variable for security?
 
@@ -338,8 +339,6 @@ The commands for these are **show**, **show {DAY}** eg. **show mon**, **show tue
 In this section:
 * *input command* refers to the string of characters the user has typed into the command line and entered into the program, e.g. "show today".
 * *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*, e.g. "sun" from "show sun" input command.
-
-<br>
 
 #### Implementation
 
