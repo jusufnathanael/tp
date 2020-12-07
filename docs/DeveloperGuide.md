@@ -12,7 +12,7 @@ lesson users are having, allowing them to launch the correct links quickly and e
 This developer guide is for experienced programmers with knowledge of object oriented programming.
 
 ### Purpose
-This guide seeks to introduce to you the design and implementation of Zoomaster features. It will share our reasoning 
+This guide seeks to introduce you to the design and implementation of Zoomaster features. It will share our reasoning 
 behind the way we implemented different features and its logic flow. With this, you would be able to tweak and further 
 develop Zoomaster without confusion or introduce unwanted bugs to the App.
 
@@ -36,20 +36,20 @@ major sections but still larger than normal paragraphs to distinguish them.
 * [Getting Started](#getting-started)
 * [Design](#design)
   * [Architecture](#architecture)
-  * [Initialization](#initialization)
-  * [UI component](#ui-component)
-  * [Parser component](#parser)
-  * [Commands component](#command)
-  * [Temporary list component](#temp-list)
-  * [Storage component](#storage-component)
-  * [Local files component](#local-files)
+  * [Initialisation](#initialisation)
+  * [UI Component](#ui-component)
+  * [Parser Component](#parser)
+  * [Commands Component](#command)
+  * [Temporary List Component](#temp-list)
+  * [Storage Component](#storage-component)
+  * [Local Files Component](#local-files)
 * [Implementation](#implementation)
-  * [Bookmark and Timetable modes feature](#mode)
-  * [Show timetable feature](#show-timetable)
-  * [Add Module and Slot features](#add-module-slot)
-  * [Validate Modules feature](#nusmodulelist)
-  * [Extended HelpCommand feature](#extendedhelpcommand)
-  * [Edit Slot feature](#edit-slot)
+  * [Modes Feature](#mode)
+  * [Show Timetable Feature](#show-timetable)
+  * [Add Module and Slot Features](#add-module-slot)
+  * [Validate Modules Feature](#nusmodulelist)
+  * [Extended HelpCommand Feature](#extendedhelpcommand)
+  * [Edit Slot Feature](#edit-slot)
   * [Show Settings Feature](#showsettings)
   * [Set Settings Feature](#setsettings)
   * [Planner Feature](#planner)
@@ -62,7 +62,6 @@ major sections but still larger than normal paragraphs to distinguish them.
   * [Advanced](#appendix-e-advanced)
 
 <br>
-<br>
 
 <a name="getting-started"></a>
 ## **Getting Started**
@@ -70,8 +69,6 @@ major sections but still larger than normal paragraphs to distinguish them.
 2. Next, follow the startup procedures as stated in the [User Guide](./UserGuide.md) and familiarize yourself with 
 Zoomaster's features.
 3. Now, you can dive into the source code and explore the inner workings of Zoomaster with this guide.
-
-<br>
 
 <a name="design"></a>
 ## **Design**
@@ -87,7 +84,7 @@ The figure below shows a high-level design for the architecture of Zoomaster.
 <div align="center"><i>Figure 1.1 Architecture diagram of Zoomaster</i></div><br>
 
 Our Program can be split into 7 components:
-* Initialization
+* Initialisation
 * User Interface
 * Parser
 * Commands
@@ -95,155 +92,156 @@ Our Program can be split into 7 components:
 * Storage
 * Local Files
 
-These components interact with each other as shown in *Figure 1.1* to execute the functionalities of Zoomaster.
+These components interact with each other as shown in Figure 1.1 to execute the functionalities of Zoomaster.
 
-<a name="initialization"></a>
-### Initialization
-The diagram below shows a class-level diagram for Zoomaster. <br/></br>
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/initial.png) <br/></br>
-*<center/> Figure 1.2 Class diagram of Initialization </center> <br/></br>*
+<br>
 
-**API**:`Zoomaster.java`
+<a name="initialisation"></a>
+### Initialisation
+The diagram below shows a class-level diagram for Zoomaster.
 
-The Initialization component is responsible for setting up Zoomaster for it to be used by users. 
+![](./diagrams/initialisation.png)
 
+<div align="center"><i>Figure 1.2 Class diagram of Initialisation</i></div><br>
+
+**API**: `Zoomaster.java`
+
+The Initialisation component is responsible for setting up Zoomaster for it to be used by users. 
 It consists of `Zoomaster`, `Ui`, `Storage`, `BookmarkList`, `Timetable` and `Module` classes.
 
-Its main roles are:
-* Retrieving bookmark, timetable and planner lists from storage if it exists.
-* Set the list of Modules for Zoomaster 
-* Initializes the User Interface object, as well as the 3 Storage  objects for `BookmarkList`, `Timetable` and `Planner`.
+Its main roles:
+* Retreives bookmark, timetable and planner lists from storage if it exists.
+* Sets the list of Modules for Zoomaster.
+* Initialises the User Interface object, as well as the 3 Storage  objects for `BookmarkList`, `Timetable` and `Planner`.
+
+<br>
 
 <a name="ui-component"></a>
-### User Interface component
+### User Interface Component
 
-**API**:`Ui.java`
+**API**: `Ui.java`
 
-The UI component is responsible for all visual output to the User from the app. 
+The UI component is responsible for all visual output to the User from the app, and 
+the only class carrying out the component's function is the `Ui` class. This component 
+utilises the `Jansi` library to enable the usage of ANSI escape codes to format the console, 
+allowing the app to output in colour.
 
-The only class carrying out the component's function is the `Ui` class.
+The UI receives input from the User using a `Scanner` object. It returns the input as a String 
+to the main function. In addition, the UI contains the different exceptions and error messages
+which can be displayed. When a particular exception is thrown, the corresponding method is called
+in UI to print out an error message.
 
-It utilises the `Jansi` library to enable the usage of ANSI escape codes to format the console, 
-allowing the app to output in colour. <br/>
+Its main roles:
 
-The UI also receives input from the User using a `Scanner` object. It returns the input as a String 
-to the main function. <br/>
+* Receives user commands and returning it to the Main function.
+* Prints visual output in the console for the user.
 
-In addition, the UI contains the different exceptions and error messages which can be displayed. 
-When a particular exception is thrown (eg. **UNKNOWN_INPUT**), the corresponding method is called in UI to 
-print out the error message (**printUnknownInputMessage()**). 
-
-
-Its main roles are:
-
-* Receiving user commands and returning it to the Main function.
-* Prints visual output in the console for the User
+<br>
 
 <a name="parser"></a>
-### Parser component
+### Parser Component
 
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/parser%20class%20diagram%20new.png?raw=true) <br/></br>
-*<center/> Figure 1.3 Class diagram of Parser </center> <br/></br>*
+![](./diagrams/parser/parser.png)
 
+<div align="center"><i>Figure 1.3 Class diagram of Parser</i></div><br>
 
 The Parser component is responsible for decoding the user's input and telling the Main function 
-which command to execute.
+which command to execute. It consists of `Parser` and `Command` interface classes.
 
-It also contains the **programMode** which indicates which mode the program currently is in.
+It also contains the **programMode**, which indicates which mode the program currently is in and
+initialises the different commands according to the mode.
 
+Its main roles:
 
-It initializes the different commands according to which mode the program currently is in.
-
-It consists of `Parser` and the Command interface classes.
-
-
-Its main roles are:
-
-* Decoding users commands and returning the correct command to the Main function to be executed
-* Catch errors in users commands and return the appropriate exception to the Main function
-* Storing the mode Zoomaster is in (Bookmark/Timetable/Planner)
+* Decodes users commands and returning the correct command to the Main function to be executed.
+* Catches errors in users commands and return the appropriate exception to the Main function.
+* Stores the mode Zoomaster is in (Bookmark/Timetable/Planner).
 
 The interaction of the Parser component with the Command component is covered in greater detail below. 
 
+<br>
+
 <a name="command"></a>
-### Commands component
-Figures 1.4 to 1.7 below show the class-level diagrams for Parser and Command for each different mode. <br/>
+### Commands Component
+Figures 1.4 to 1.7 below show the class-level diagrams for Parser and Command for each different mode. 
 The diagrams are colour coded as such:
+
 * Orange -> Global
 * Green -> Bookmark Mode
 * Blue -> Timetable Mode
 * Red -> Planner Mode
 
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode0.png) <br/></br>
-*<center/> Figure 1.4 Class diagram of Commands valid in all modes (Global) </center> <br/></br>*
-<br></br>
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode1.png) <br/></br>
-*<center/> Figure 1.5 Class diagram of Commands valid in Bookmark Mode </center> <br/></br>*
-<br></br>
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode2.png) <br/></br>
-*<center/> Figure 1.6 Class diagram of Commands valid in Timetable Mode</center> <br/></br>*
-<br></br>
-![](https://raw.githubusercontent.com/AY2021S1-CS2113T-W11-1/tp/master/docs/images/parsercommand/mode3.png) <br/></br>
-*<center/> Figure 1.7 Class diagram of Commands valid in Planner Mode</center> <br/></br>*
-<br></br>
+<br>![](./diagrams/parser/mode0.png)
+
+<div align="center"><i>Figure 1.4 Class diagram of commands valid in all modes</i></div>
+
+<br><br>![](./diagrams/parser/mode1.png)
+
+<div align="center"><i>Figure 1.5 Class diagram of commands valid in bookmark mode</i></div>
+
+<br><br>![](./diagrams/parser/mode2.png)
+
+<div align="center"><i>Figure 1.6 Class diagram of commands valid in timetable mode</i></div>
+
+<br><br>![](./diagrams/parser/mode3.png)
+
+<div align="center"><i>Figure 1.7 Class diagram of commands valid in planner mode</i></div><br><br>
+
+
 The Command component is responsible for carrying out the functions of Zoomaster.
 
 Usually, a successful command will return a message to indicate a successful execution or updates to Zoomaster. 
 Otherwise, it will create error messages for the Ui to display to the users.
 
-It consists of `ChangeModeCommand`, `ClearCommand`,  `ExitCommand`,  `HelpCommand`,   `LaunchNowCommand`, 
-`ShowSettingsCommand`, `SetSettingsCommand`, `AddBookmarkCommand`,   `DeleteBookmarkCommand`,  `FindBookmarkCommand`,  
-`LaunchBookmarkCommand`, `ShowBookmarkCommand`, `AddTimetableCommand`, `DeleteTimetableCommand`, `ShowTimetableCommand`, 
-`EditTimetableCommand`, `LaunchTimetableCommand`, `AddMeetingCommand`, `LoadPlannerCommand` and 
-`SavePlannerCommand` classes.
+Its main roles:
 
-Its main roles are:
+* Executes commands to carry out functionalities of Zoomaster.
+* Signals to Ui successful execution of commands.
+* Creates messages for Ui on updates to Zoomaster.
+* Catchs errors or conflicts in users commands and throw the appropriate exception to the Main function.
 
-* Execute commands to carry out functionalities of Zoomaster
-* Signal to Ui successful execution of commands
-* Create messages for Ui on updates to Zoomaster
-* Catch errors or conflicts in users commands and throw the appropriate exception to the Main function
+<br>
 
 <a name="temp-list"></a>
-### Lists component
+### Temporary List Component
 
-The Temp List component is responsible for holding on to temporary data of Zoomaster to be used by Commands.
+The Temporary List component is responsible for holding on to temporary data of Zoomaster to be used by Commands.
 
-It consists of `BookmarkList`, `SlotList`, `Module` and `Timetable`
+It consists of `BookmarkList`, `SlotList`, `Module` and `Timetable` classes.
 
-Its main role is:
-
-* Hold on to temporary data about Zoomaster
+Its main role is to hold on to temporary data about Zoomaster.
 
 <a name="storage"></a>
-### Storage component
+### Storage Component
 
 The Storage component is responsible for saving and retrieving Zoomaster data to and from an external text file.
+The only class carrying out the component's function is the `Storage` class.
 
 It uses `Gson` library to encode temporary data from Temp List into an HTML format. Then it writes the encoded data to 
 an external text file. On the other hand, it decodes the HTML format from the external text file and updates the 
 Temp List of Zoomaster.
 
-The only class carrying out the component's function is the `Storage` class.
+Its main roles:
 
-Its main roles are:
-
-* Store Zoomaster data to an external text file for long term storage
-* Retrieve Zoomaster data on Initialization
-* Return error messages to the users during extraction or writing
+* Stores Zoomaster data to an external text file for long term storage.
+* Retrieves Zoomaster data on Initialisation.
+* Returns error messages to the users during extraction or writing.
 
 <a name="local-files"></a>
-### Local Files component
+### Local Files Component
 
-The Local Files component is where Zoomaster's long term storage of data is kept
+The Local Files component is where Zoomaster kept its long term data.
+Its main role is to store Zoomaster data.
 
-Its main role is:
+In addition, the file path to the directory containing the jar file is obtained
+by the getJarFilePath() method in `Zoomaster`.
+The files are saved using this file path, allowing them to be saved in the same
+directory as the jar file. This allows for more convenient running of Zoomaster, 
+as the user does not have to switch to the same directory of the jar file when 
+running the application.
 
-* Store Zoomaster data
-
-In addition, the file path to the directory containing the jar file is obtained by the getJarFilePath() method in `Zoomaster`.
-The files are saved using this file path, allowing them to be saved in the same directory as the jar file. This allows for more convenient running of Zoomaster, as the user does not have to switch to the same directory of the jar file when running the application.
-
+<br>
+<br>
 
 ## **Implementation**
 
@@ -252,57 +250,54 @@ expected outcomes of each feature and the design considerations.
 
 <!-- @@author TYS0n1 -->
 <a name="mode"></a>
-### Bookmark, Timetable and Planner modes feature (Tan Yu Shing)
+### Modes Feature (Tan Yu Shing)
 
-Zoomaster has three modes for users to interact in. First, bookmark mode has the list of bookmarks with links to online resources. 
-Secondly, timetable mode has a list of timetable slots. Lastly, planner mode which helps users plan their timetable. 
+Zoomaster has three modes for users to interact in.
+* Bookmark mode has the list of bookmarks with links to online resources.
+* Timetable mode has a list of timetable slots.
+* Lastly, planner mode which helps users plan their timetable. 
+
 To simplify input commands for users, all lists have the same keywords for adding, deleting, and showing items in the lists. 
 Hence, separating both lists into different modes allows both lists to access the same keywords without causing conflicts when parsing commands.
 
-In this section, I will refer to *input command* and *input parameter*. <br></br>
-* *input command* refers to the string of characters the user has typed into the command line and entered into the program. Eg. "mode bookmark" is an *input command* <br></br>
-* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*. 
-Eg. "mode bookmark", "mode" is the identifier string of the command and "bookmark" is the *input parameter*.
+In this section:
+* *input command* will refer to the string of characters the user has typed into the command line and entered into the program. E.g., "mode bookmark" is an *input command*.
+* *input parameter* refers to the string of characters the proceeds after the identifier string of the *input command*. E.g. in "mode bookmark", "mode" is the identifier string of the command and "bookmark" is the *input parameter*.
 
 #### Implementation
 
 This feature extends Command class with a way to toggle between different modes of Zoomaster. The integer variable used to control the modes is stored in the Parser class called "programMode". Additionally, it implements the following operation:
-* getModeFromCommand() - Decodes the command sent by the users to figure out which mode the user wants to move to.
+
+* getModeFromCommand() decodes the command sent by the users to figure out which mode the user wants to move to.
 
 Given below is a sequence diagram of how changing between modes occur.
 
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ChangeModeCommand%20seq%20dia%20new1.png?raw=true) <br/><br/>
+![](./diagrams/changeModeCommand_seq.png)
 
-*<center/>Figure 2.01 sequence diagram for ChangeModeCommand</center> <br/></br>*
+<div align="center"><i>Figure 2.1 Sequence diagram for ChangeModeCommand</i></div><br>
 
 
 1. When Zoomaster gets an input command from the user to change modes, a new ChangeModeCommand object is created.
-
 2. The ChangeModeCommand passes the input command through getModeFromCommand() function to decode the mode the user wishes to change to.
-
 3. Zoomaster now executes the command and changes to the respective mode. 
-
 4. If an invalid mode was given by the user or if the input field was empty, the execute function throws an exception and tells the user valid modes for Zoomaster.
 
 The following activity diagram summarizes what happens when a user executes a new command:
 
-![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/activity%20diagram%20change%20mode%20command%20new.png?raw=true) <br/></br>
-*<center/> Figure 2.02 Activity diagram for ChangeModeCommand </center> <br/></br>*
+![](./diagrams/changeModeCommand_activity.png)
+
+<div align="center"><i>Figure 2.2 Activity diagram for ChangeModeCommand</i></div><br/></br>
 
 1. First, the program checks if the length of the input command is more than 5. Any input command of length less than 5 is
 an invalid mode command. This is because mode command requires an input parameter separated by a space hence "mode " or "mode1"
 are examples of invalid mode commands with a length of less than 5. If this is so, it throws an invalid mode message to tell the
 user the valid modes of Zoomaster. Else, it continues to the next step.
 
-2. Secondly, the program checks if the input parameter corresponds to a valid mode of Zoomaster.
-
-3. If the input parameter corresponds to "bookmark", the program changes the mode of Zoomaster to the bookmark mode.
-
-4. If the input parameter corresponds to "timetable", the program changes the mode of Zoomaster to the timetable mode.
-
-5. If the input parameter corresponds to "planner", the program changes the mode of Zoomaster to the planner mode.
-
-6. If the input parameter does not correspond to any of the valid modes of Zoomaster, it throws an invalid mode message to tell the
+2. Second, the program checks if the input parameter corresponds to a valid mode of Zoomaster.
+   * If the input parameter corresponds to "bookmark", the program changes the mode of Zoomaster to the bookmark mode.
+   * If the input parameter corresponds to "timetable", the program changes the mode of Zoomaster to the timetable mode.
+   * If the input parameter corresponds to "planner", the program changes the mode of Zoomaster to the planner mode.
+   * If the input parameter does not correspond to any of the valid modes of Zoomaster, it throws an invalid mode message to tell the
 user the valid modes of Zoomaster.
 
 #### Design consideration:
@@ -344,7 +339,7 @@ Given below is a sequence diagram of how printing the timetable occurs. <br/></b
 *<center/>Figure 2.03 sequence diagram for ShowTimetableCommand</center> <br/></br>*
 
 ![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ShowTimetableCommand%20seq%20dia%202%20new2.png?raw=true) <br/></br>
-*<center/>Figure 2.04 sequence diagram for "Initialize ShowTimetableCommand" Block</center> <br/></br>*
+*<center/>Figure 2.04 sequence diagram for "Initialise ShowTimetableCommand" Block</center> <br/></br>*
 
 ![](https://github.com/TYS0n1/tp/blob/master/docs/diagrams/ShowTimetableCommand%20seq%20dia%203%20new3.png?raw=true) <br/></br>
 *<center/>Figure 2.05 sequence diagram for "Execute ShowTimetableCommand" Block</center> <br/></br>*
